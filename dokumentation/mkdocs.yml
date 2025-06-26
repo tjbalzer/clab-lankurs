@@ -1,0 +1,63 @@
+---
+site_name: "Kurs Netzwerk Grundlagen"
+site_description: "Kurs Netzwerk Grundlagen"
+site_url: ""
+use_directory_urls: false
+nav:
+  - Einführung: "index.md"
+  - Vorbereitungen: "vorbereitungen.md"
+  - Labs: "labs.md"
+
+repo_url: https://github.com/tjbalzer/clab-lankurs
+repo_name: clab-lankurs
+
+
+theme:
+  name: material
+  logo: img/netzebw_logo.svg
+  favicon: img/favicon.ico
+  palette:
+    # - scheme: slate
+    #   primary: custom
+    #   accent: custom
+
+    # Palette toggle for light mode
+    - scheme: default
+      primary: white
+      accent: cyan
+      toggle:
+        icon: material/brightness-7 
+        name: Switch to dark mode
+
+    # Palette toggle for dark mode
+    - scheme: slate
+      primary: yellow
+      accent: cyan
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+
+  features:
+    - navigation.tracking
+#extra_css:
+#  - stylesheets/extra.css
+
+plugins: []
+    # - with-pdf:
+    #     author: Martin Scheu, Mischa Diehm, Christopher Scherb
+    #     copyright: ""
+    #     cover_subtitle: Sichere und zuverlässige OT-Netzwerke designen
+    #     output_path: ot-net101-workshop.pdf
+        #enabled_if_env: ENABLE_PDF_EXPORT
+        #
+        # debug_html: true
+        #show_anchors: true
+        # verbose: true
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - attr_list
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg

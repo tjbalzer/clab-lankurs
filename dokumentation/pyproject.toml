@@ -1,0 +1,10 @@
+[project]
+name = "clab-lankurs"
+version = "0.1.0"
+description = "Containlab Labs für Kurs Netzwerk Grundlagen"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "mkdocs-material[imaging]>=9.6.14",
+    "mkdocs[imageing,imaging]>=1.6.1",
+]
