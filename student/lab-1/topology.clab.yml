@@ -1,0 +1,100 @@
+name: lab1
+
+mgmt:
+  network: lankurs
+  ipv4-subnet: auto
+
+topology:
+  nodes:
+    SW1:
+      kind: cisco_iol
+      image: vrnetlab/cisco_iol:L2-17.15.01
+      type: L2
+      startup-config: configs/sw1.cfg.partial
+      labels:
+        graph-posX: "865"
+        graph-posY: "445"
+        graph-groupLabelPos: bottom-center
+    SW2:
+      kind: cisco_iol
+      image: vrnetlab/cisco_iol:L2-17.15.01
+      type: L2
+      startup-config: configs/sw2.cfg.partial
+      labels:
+        graph-posX: "955"
+        graph-posY: "445"
+        graph-groupLabelPos: bottom-center
+    HUB:
+      kind: cisco_iol
+      image: vrnetlab/cisco_iol:L2-17.15.01
+      type: L2
+      startup-config: configs/hub.cfg.partial
+      labels:
+        graph-posX: "805"
+        graph-posY: "485"
+        graph-groupLabelPos: bottom-center
+    PC1:
+      kind: linux
+      image: ghcr.io/srl-labs/network-multitool
+      exec:
+        - ip address add 192.168.1.1/24 dev eth1
+        - sysctl -w net.ipv6.conf.all.disable_ipv6=1
+        - sysctl -w net.ipv6.conf.default.disable_ipv6=1
+      labels:
+        graph-posX: "805"
+        graph-posY: "385"
+        graph-groupLabelPos: bottom-center
+    PC2:
+      kind: linux
+      image: ghcr.io/srl-labs/network-multitool
+      exec:
+        - ip address add 192.168.1.2/24 dev eth1
+        - sysctl -w net.ipv6.conf.all.disable_ipv6=1
+        - sysctl -w net.ipv6.conf.default.disable_ipv6=1
+      labels:
+        graph-posX: "735"
+        graph-posY: "445"
+        graph-groupLabelPos: bottom-center
+    PC3:
+      kind: linux
+      image: ghcr.io/srl-labs/network-multitool
+      exec:
+        - ip address add 192.168.1.3/24 dev eth1
+        - sysctl -w net.ipv6.conf.all.disable_ipv6=1
+        - sysctl -w net.ipv6.conf.default.disable_ipv6=1
+      labels:
+        graph-posX: "735"
+        graph-posY: "525"
+        graph-groupLabelPos: bottom-center
+    PC4:
+      kind: linux
+      image: ghcr.io/srl-labs/network-multitool
+      exec:
+        - ip address add 192.168.1.4/24 dev eth1
+        - sysctl -w net.ipv6.conf.all.disable_ipv6=1
+        - sysctl -w net.ipv6.conf.default.disable_ipv6=1
+      labels:
+        graph-posX: "1025"
+        graph-posY: "395"
+        graph-groupLabelPos: bottom-center
+    PC5:
+      kind: linux
+      image: ghcr.io/srl-labs/network-multitool
+      exec:
+        - ip address add 192.168.1.5/24 dev eth1
+        - sysctl -w net.ipv6.conf.all.disable_ipv6=1
+      labels:
+        graph-posX: "1025"
+        graph-posY: "485"
+        graph-groupLabelPos: bottom-center
+  #    br-lankurs:
+  #      kind: bridge
+
+  links:
+    - endpoints: [ "SW1:e0/1", "SW2:e0/1" ]
+    - endpoints: [ "SW1:e0/2", "HUB:eth1" ]
+    - endpoints: [ "SW1:e0/3", "PC1:eth1" ]
+    - endpoints: [ "SW2:e0/2", "PC4:eth1" ]
+    - endpoints: [ "SW2:e0/3", "PC5:eth1" ]
+    - endpoints: [ "PC2:eth1", "HUB:eth2" ]
+    - endpoints: [ "PC3:eth1", "HUB:eth3" ]
