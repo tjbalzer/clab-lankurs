@@ -1,2 +1,2 @@
 # clab-lankurs
-Containerlab labs für Kurs Netzwerk Grundlagen
+Containerlab Labs für Kurs Netzwerk Grundlagen
