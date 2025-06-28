@@ -74,6 +74,53 @@ Die Übungen werden über das GitHub Repository [clab-lankurs](https://github.co
 Dieser _Fork_ des Original GitHub-Repositories wird wie folgt erstellt:
 
 - Öffnen der GitHub-Webseite des _clab-lankurs_ Repositories: [https://github.com/tjbalzer/clab-lankurs](https://github.com/tjbalzer/clab-lankurs)
+- Button _Fork_ auswählen, um das _clab-lankurs_ Repository als eigenes Repository in die GitHub-Umgebung des Nutzers zu kopieren
+- Fork durch Bestätigung der Eingabemaske _Create a new fork_ über den Button _Create fork_ erstellen
+
+![Fork erstellen #1](img/create-lankurs-fork-1.png)
+![Fork erstellen #2](img/create-lankurs-fork-2.png)
+![Fork erstellen #3](img/create-lankurs-fork-3.png)
+![Fork erstellen #4](img/create-lankurs-fork-4.png)
+
+## Dev Container in GitHub Codespaces erstellen und starten
+
+Die Netzwerk Labs sollen in einer virtuellen Maschine (VM) auf GitHub bereitgestellt werden. Die VM wird als _Dev Container_ (auf GitHub auch _Codespace_ genannt) definiert und erstellt. Der Dev Container ist im geforkten Repository in der Datei `.devcontainer/devocontainer.json` definiert und basiert auf einem Containerlab Dev Container der SRL Labs:
+
+``` JSON
+{
+    "image": "ghcr.io/srl-labs/containerlab/devcontainer-dind-slim:0.68.0",
+    "hostRequirements": {
+        "cpus": 2, 
+        "memory": "8gb",
+        "storage": "32gb"
+    }
+}
+```
+
+Die Existenz der Datei `.devcontainer/devcontainer.json` im _clab-lankurs_ Repository wird von GitHub automatisch erkannt und wir können den Dev Container (Codespace) wie folgt erstellen:
+
+- Auf der Hauptseite des geklonten Repositories _clab-lankurs_ den Button _<> Code_ auswählen
+- Daraufin wird ein Dialog mit den Reitern _Local_ und _Codespaces_ angezeigt
+- Auswahl des Reiters _Codespaces_ und Erstellung des Dev Containers über den Button _Create codespace on main_
+- Die Erstellung des Codespaces dauert in der Regel 5-10 Minuten
+- Über den Informationsdialog `Setting up remote connection` unten rechts kann durch klicken auf `Building codespace...` bei Bedarf das Log für den Aufbau im Bereich `TERMINAL` angezeigt und verfolgt werden
+- Die Erstellung und der Start des Codepaces ist abgeschlossen, wenn unten links der Verbindungsstatus `>< Codespaces: <zufälliger Name des Codespaces>` angezeigt, im Hauptfenster die _Containerlab Willkommensnachricht_ erscheint und das Containerlab Symbol am linken Rand in der vertikalen Bedienleiste eingeblendet wird 
+
+!!! warning
+    Als _Default Idle Timeout_ für GitHub Codespaces sind 30 Minuten vorkonfiguriert. Nutzt man einen gestarteten Codespace für 30 Minuten nicht, wie der Codespace automatisch gestoppt.
+
+!!! warning
+    Als _Default Retention Time_ für GitHub Codespaces sind 30 Tage vorkonfiguriert. Codespaces werden maximal 30 Tage nach der letzten Nutzung gelöscht.
+
+!!! info
+    Die Codepace-Einstellungen für seinen GitHub-Account erreicht man unter dem folgenden Link, wenn man bereits mit seinem Nutzernamen auf GitHub angemeldet ist: [https://github.com/settings/codespaces](https://github.com/settings/codespaces)
+
+![Codespace erstellen #1](img/create-codespace-1.png)
+![Codespace erstellen #2](img/create-codespace-2.png)
+![Codespace erstellen #3](img/create-codespace-3.png)
+![Codespace erstellen #4](img/create-codespace-4.png)
+![Codespace erstellen #5](img/create-codespace-5.png)
+![Codespace erstellen #6](img/create-codespace-6.png)
 
 ## Installation von Wireshark auf dem SmartClient
 
