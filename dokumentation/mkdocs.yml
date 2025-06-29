@@ -44,7 +44,8 @@ theme:
 #extra_css:
 #  - stylesheets/extra.css
 
-plugins: []
+plugins:
+  - glightbox
     # - with-pdf:
     #     author: Martin Scheu, Mischa Diehm, Christopher Scherb
     #     copyright: ""
@@ -71,3 +72,4 @@ markdown_extensions:
   - pymdownx.inlinehilite
   - pymdownx.snippets
   - pymdownx.superfences
+  - pymdownx.keys
