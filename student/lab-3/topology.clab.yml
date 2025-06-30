@@ -8,39 +8,39 @@ topology:
   nodes:
     SW1:
       kind: cisco_iol
-      image: vrnetlab/cisco_iol:L2-17.15.01
+      image: ghcr.io/tjbalzer/cisco_iol:L2-17.15.01
       type: L2
       #startup-config: configs/sw1.cfg.partial
     SW2:
       kind: cisco_iol
-      image: vrnetlab/cisco_iol:L2-17.15.01
+      image: ghcr.io/tjbalzer/cisco_iol:L2-17.15.01
       type: L2
       #startup-config: configs/sw2.cfg.partial
     SW3:
       kind: cisco_iol
-      image: vrnetlab/cisco_iol:L2-17.15.01
+      image: ghcr.io/tjbalzer/cisco_iol:L2-17.15.01
       type: L2
       #startup-config: configs/sw3.cfg.partial
     SW4:
       kind: cisco_iol
-      image: vrnetlab/cisco_iol:L2-17.15.01
+      image: ghcr.io/tjbalzer/cisco_iol:L2-17.15.01
       type: L2
       #startup-config: configs/sw4.cfg.partial
     R1:
       kind: cisco_iol
-      image: vrnetlab/cisco_iol:17.15.01
+      image: ghcr.io/tjbalzer/cisco_iol:17.15.01
       startup-config: configs/r1.cfg.partial
     R2:
       kind: cisco_iol
-      image: vrnetlab/cisco_iol:17.15.01
+      image: ghcr.io/tjbalzer/cisco_iol:17.15.01
       startup-config: configs/r2.cfg.partial
     R3:
       kind: cisco_iol
-      image: vrnetlab/cisco_iol:17.15.01
+      image: ghcr.io/tjbalzer/cisco_iol:17.15.01
       startup-config: configs/r3.cfg.partial
     R4:
       kind: cisco_iol
-      image: vrnetlab/cisco_iol:17.15.01
+      image: ghcr.io/tjbalzer/cisco_iol:17.15.01
       startup-config: configs/r4.cfg.partial
     PC1:
       kind: linux

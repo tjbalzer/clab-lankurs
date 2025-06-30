@@ -8,7 +8,7 @@ topology:
   nodes:
     SW1:
       kind: cisco_iol
-      image: vrnetlab/cisco_iol:L2-17.15.01
+      image: ghcr.io/tjbalzer/cisco_iol:L2-17.15.01
       type: L2
       startup-config: configs/sw1.cfg.partial
       labels:
@@ -17,7 +17,7 @@ topology:
         graph-groupLabelPos: bottom-center
     SW2:
       kind: cisco_iol
-      image: vrnetlab/cisco_iol:L2-17.15.01
+      image: ghcr.io/tjbalzer/cisco_iol:L2-17.15.01
       type: L2
       startup-config: configs/sw2.cfg.partial
       labels:
@@ -26,7 +26,7 @@ topology:
         graph-groupLabelPos: bottom-center
     HUB:
       kind: cisco_iol
-      image: vrnetlab/cisco_iol:L2-17.15.01
+      image: ghcr.io/tjbalzer/cisco_iol:L2-17.15.01
       type: L2
       startup-config: configs/hub.cfg.partial
       labels:
