@@ -22,15 +22,26 @@ Mit eurem GitHub Account:
 
 ### Zugriff auf GitHub Docker Registry einrichten
 
+Für die Funktion der Labornetzwerke müssen nach dem ersten Start des Codespaces einmalig beim Start des ersten Labors noch einige Docker-Images
+aus einer zentralen GitHub Docker-Registry geladen werden. Um dies zu ermöglichen, muss der Zugang zu wie folgt eingerichtet werden:
+
 !!! info
     Wenn im Verlauf der folgenden Schritte im Browser ein Dialog erscheint, der den Zugriff auf die Zwischenablage anfordert, bitte Zugriff erlauben:
 
     ??? info "Screenshot: Clipboard Dialog im Browser"
         ![zugriff-clipboard-browser](img/zugriff-clipboard-browser.png)
 
+!!! info
+    Die für die nächsten Schritte benötigten Informationen `<YOUR_TOKEN>` und `<USERNAME>` erhalten die Schulungsteilnehmerauf drei Wegen:
+
+    1. per E-Mail (für Smart Client Nutzer)
+    2. in einer Datei auf dem Desktop des Schulungs-PCs
+    3. über den Kursleiter (Fallback, falls 1. + 2. nicht verfügbar)   
+
 Bitte die folgende Schritte im Bereich `TERMINAL` des im Browser geöffneten Codespace eingeben:
 
 - Environment-Variable mit Zugriffstoken setzen
+
 ```
 export CR_PAT=<YOUR_TOKEN>
 ```
@@ -42,18 +53,13 @@ echo $CR_PAT | docker login ghcr.io -u <USERNAME> --password-stdin
 ??? info "Screenshot: _GitHub Docker Registry Login_"
     ![login-docker-registry](img/login-docker-registry.png)
 
-
-!!! info
-    Die benötigten Informationen für `<YOUR_TOKEN>` und `<USERNAME>` erhalten die Schulungsteilnehmerauf drei Wegen:
-    1. per E-Mail (für Smart Client Nutzer)
-    2. in einer Datei auf dem Desktop des Schulungs-PCs
-    3. über den Kursleiter (Fallback, falls 1.+2. nicht verfügbar)   
-
 ### Containerlab Topology Dateien anzeigen und ändern
 
 - `EXPLORER`-Ansicht auswählen (Dateistruktur wird angezeigt)
 - Die Dateien zu den einzelnen Übungen liegen im Verzeichnis `student` (Lab 1 bis 10)
 - Bitte Verzeichnis `student/lab-2/topology.clab.yml` auswählen (Datei wird als Reiter im Editor-Bereich geöffnet)
+- Bei Bedarf kann das Labornetzwerk über diese Datei konfiguriert werden (wird ggf. in künftigen Labs benötigt)
+- Erklärungstexte für die einzelnen Bereiche können im folgenden Listing durch einen Klick auf die :material-plus-circle:-Symbole angezeigt werden
 
 ``` yaml title="student/lab-2/topology.clab.yml"
 name: lab2 # (1) 
@@ -129,19 +135,84 @@ topology: # (5)
 15. Links-Sektion: Beschreibungd der Verbindungen zwischen den Containern
 16. Verbindung der Endpunkte SW1 Interface e0/1 nach R1 Interface eth1
 
-### Lab-2 starten
+### Lab: Labornetzwerk starten
 
 - Containerlab-Bereich auswählen (über Containerlab Symbol)
 - Im Bereich `UNDEPLOYED LOCAL LABS` das Verzeichnis `student/lab-2` öffnen
 - Rechtsklick auf Datei `topology.clab.yml` und Start des Labors über Menüeintrag `Deploy`
-  * Fehlende Conatainer-Images werden aus der GitHub Docker Registry `ghcr.io` heruntergeladen und gespeichert
-  * Labor Nodes werden gestartet und Verbindungen zwischen den Nodes etabliert
-  * Node Status grün/Up wird im Bereich `RUNNING LABS` angezeigt
+- Optional: Im Informations-Dialog unten rechts `View Logs` klicken:
+    * Fehlende Conatainer-Images werden aus der GitHub Docker Registry `ghcr.io` heruntergeladen und gespeichert
+    * Labor Nodes werden gestartet und Verbindungen zwischen den Nodes etabliert
+    * Node Status wird farbig bzw. als `Up`/`Down` im Bereich `RUNNING LABS` angezeigt
+    * Status der einzelen Nodes durch _aufklappen_ des Labs im Bereich `RUNNING LABS` angezeigt
+- alternativ: ++ctrl+alt+d++
 
+??? note "Screenshots: _Lab starten_"
+    ![start-codespace-1](img/start-lab2-1.png)
+    ![start-codespace-1](img/start-lab2-2.png)
+    ![start-codespace-1](img/start-lab2-3.png)
+    ![start-codespace-1](img/start-lab2-4.png)
+    ![start-codespace-1](img/start-lab2-5.png)
 
+### Lab: Topology Graph des Labornetzwerkes anzeigen
 
+Eine grafische Übersicht kann z.B. über den eingebauten Topology Viewer angezeigt werden:
+
+- Rechtsklick auf `lab2` im Bereich `RUNNING LABS`
+- Im Kontextmenü `Graph (TopoViewer)`auswählen
+- alternativ: ++ctrl+alt+g++
+
+??? note "Screenshots: _Lab Topology Graph anzeigen_"
+    ![start-codespace-1](img/lab2-topology-graph-1.png)
+    ![start-codespace-1](img/lab2-topology-graph-2.png)
+
+### Lab: Mit Kommandozeile eines PCs verbinden
+
+Um eine Kommandozeile der PCs in einer Labor-Topologie zu öffnen gibt es drei Möglichkeiten:
+
+Variante 1:
+
+- Rechtsklick auf den Namen des gewünschten PCs (z.B. `PC1`) im Bereich `RUNNING LABS`
+- Im Kontextmenü `Attach Shell` auswählen
+- Im Bereich `TERMINAL` öffnet sich eine Shell (Kommandozeile) für den ausgeählten PC
+
+??? note "Screenshots: _Variante 1_"
+    ![start-codespace-1](img/attach-shell-var1-1.png)
+    ![start-codespace-1](img/attach-shell-var1-2.png)
+
+Variante 2:
+
+- RechtAuswahl des gewünschten PCs (z.B. `PC1`) im Bereich `RUNNING LABS`
+- Das mittlere der drei Symbole rechts neben dem PC auswählen 
+- Im Bereich `TERMINAL` öffnet sich eine Shell (Kommandozeile) für den ausgeählten PC
+
+??? note "Screenshots: _Variante 2_"
+    ![start-codespace-1](img/attach-shell-var2-1.png)
+    ![start-codespace-1](img/attach-shell-var2-2.png)
+
+Variante 3:
+
+- Symbol des PCs (z.B. PC3) in der TopoViewer-Ansicht auswählen
+- Im Dialog `Actions` den Eintrag `Attach Shell`auswählen
+- Im Bereich `TERMINAL` öffnet sich eine Shell (Kommandozeile) für den ausgeählten PC
+
+??? note "Screenshots: _Variante 3_"
+    ![start-codespace-1](img/attach-shell-var3-1.png)
+    ![start-codespace-1](img/attach-shell-var3-2.png)
+
+### Lab: Befehl auf Kommandozeile eines PCs ausführen
+
+- Mit Kommandzeile von PC1 verbinden (siehe oben)
+- Ping-Befehl für eine Prüfung der Verbindung zu PC3 eingeben:
+    * `ping 192.168.12.11`
+- Ping-Befehl mit ++ctrl+c++ abbrechen
+
+??? note "Screenshot: _Ping-Befehl eingeben_"
+    ![start-codespace-1](img/ping-lab2-pc1-pc3.png)
 
 ### Codespace im GitHub Repository _clab_lankurs_ stoppen
+
+Variante 1 (direkt auf GitHub):
 
 - Ansicht __clab-lankurs__ GitHub Repository öffnen
 - Über grünen Button `<> Code` + Reiter `Codespaces` (Codespace wird als `Active` angezeigt) + `...`-Menü im Bereich `On current branch`den Eintrag `Stop codespace` auswählen
@@ -151,6 +222,19 @@ topology: # (5)
     ![start-codespace-1](img/stopp-codespace-1.png)
     ![start-codespace-2](img/stopp-codespace-2.png)
     ![start-codespace-3](img/stopp-codespace-3.png)
+
+Variante 2 (im Browser):
+
+- Auf Fläche `>< Codespaces: <Name des Codespaces` unten links im Broswer klicken
+- Im angezeigten Menü `Stop Current Codespace`auswählen
+- Codespace mit Simulationsumgebung wird gestoppt
+
+??? note "Screenshots: _Stopp Codespace_"
+    ![start-codespace-1](img/stopp-codespace-var2-1.png)
+    ![start-codespace-2](img/stopp-codespace-var2-2.png)
+    ![start-codespace-3](img/stopp-codespace-var2-3.png)
+    ![start-codespace-3](img/stopp-codespace-var2-4.png)
+    ![start-codespace-3](img/stopp-codespace-var2-5.png)
 
 ## Lab 1 - Containerlab & Wireshark
 
