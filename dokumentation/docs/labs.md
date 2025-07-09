@@ -19,70 +19,95 @@ Darüber hinaus wird das Basiswissen zum Umgang mit _Containerlab_ vermittelt:
 Lab Topology
 ///
 
-### Codespace im GitHub Repository _clab_lankurs_ starten
+### VS Code starten und GitHub Sign-in
 
-Mit eurem GitHub Account:
+Um mit der Laborumgebung zu arbeiten, werden die installierten VS Code Extensions aus dem _Remote Development Pack_ genutzt um VS Code mit dem GitHub-Account des jeweilugen Kursteilnehers zu verbinden, damit der in den [Vorbereitungen](vorbereitungen.md#dev-container-in-github-codespaces-erstellen-und-starten) erstellte _Dev Container_ mit der _Containerlab_ Laborumgebung genutzt werden kann:
 
-- Ansicht __clab-lankurs__ GitHub Repository öffnen
-- Über grünen Button `<> Code` + Reiter `Codespaces` + `...-Menü im Bereich` `On current branch`den Eintrag `Open in Browser` auswählen
-- Codespace mit Simulationsumgebung wird gestartet
+- VS Code auf dem Schulungs-Notebook bzw. Smart-Client starten 
+- Im Menübalken am linken Rand den _Remote Explorer_ auswählen
+- Über den Button `Sign in to GitHub` und die Eingabe des eigenen Usernames bzw. der E-Mail Adresse und des Passworts an GitHub anmelden
+    * `Sign in to GitHub` Button auswählen
+    * Den Dialog `The extension 'GitHub Codespaces' wants to sign in using GitHub._ über den `Allow`-Button bestätigen
+    * Usernamen und Passwort eingeben und über den `Sign in`-Button bestätigen
+    * Button `Continue` neben Usernamen auf Seite `Select user to authorize` auswählen
+    * `Authorize Visual Studio Code`-Webseite über den Button `Authorize Visual-Studio-Code` bestätigen
+    * Falls ein Dialog mit der Frage `https://vscode.dec erlauben, den vscode-Link mit dem System Handler zu öffen, den Haken für `...immer erlauben...` setzen und mit dem Button `Link öffnen` bestätigen
+- Im VS Code Remote Explorer wird nun der Codespace des geforkten `clab-lankurs`-Repositries angezeigt
+
+??? info "Screenshots: _VS Code GitHub Sign-in_"
+    ![start-codespace-1](img/github-codespace-signin-1.png)
+    ![start-codespace-1](img/github-codespace-signin-2.png)
+    ![start-codespace-1](img/github-codespace-signin-3.png)
+    ![start-codespace-1](img/github-codespace-signin-4.png)
+    ![start-codespace-1](img/github-codespace-signin-5.png)
+    ![start-codespace-1](img/github-codespace-signin-6.png)
+    ![start-codespace-1](img/github-codespace-signin-7.png)
+    ![start-codespace-1](img/github-codespace-signin-8.png)
+    ![start-codespace-1](img/github-codespace-signin-9.png)
+    ![start-codespace-1](img/github-codespace-signin-10.png)
+    ![start-codespace-1](img/github-codespace-signin-11.png)
+
+### Verbindung zu `clab-lankurs` Codespace herstellen
+
+Nachdem der GitHub Sign-in erfolgreich war, kann die Verbindung von VS Code zum Codespace `clab-lankurs`, in welchem die Simulationsumgebung laufen wird, hergestellt werden (während dieses Vorgangs wird der Codespace Dev Container gestartet):
+
+- Im _VS Code Remote Explorer_ mit der Maus den angezeigten GitHub Codespace `<DEIN_GITHUB_USER>/clab-lankurs/ <NAME_DEINES_DEV_CONTAINERS> main` auswählen
+- _Dev Container_ über das _Steckersymbol_ `Connect to Codespace` rechts neben dem Namen des Codespaces starten und VS Code mit dem GitHub Codespace verbinden
+- _Containerlab_ Laborumgebung startet und die VS Code _Containerlab Extension_ zeigt im VS Code _Explorer_ das Verzeichnis des `clab-lankurs`-Repositories an, dessen Dateien in die Laborumgebung im Codespace kopiert wurden und dort nun verwendet werden können
 
 !!! note
-    Die Steuerung der GitHub Codespace Simulationsumgebung mit Containerlab erfolgt durch eine Browserversion des [_Visual Studio Code Editors_](https://code.visualstudio.com/) von Microsoft. _VS Code_ wird mit entsprechenden Plugins durch die Aktivierung des GitHub Codespaces automatisch im lokalen Webbrower gestartet. Die Deteils der Steuerung der Simulationsumgebung über _VS Code_ werden im Verlauf der Übungen schrittweise vorgestellt.
-
-!!! tip
-    Sollten im Webbrowser Probleme mit der Steuerung der Simulationsumgebung auftreten oder Fehlermeldungen angezeigt werden, wurde ggf. die Verbindung zwischen Webbrowser und Codespace unterbrochen bzw. der Codespace unerwartet gestoppt. In diesen Fällen kann die Funktion meist wiederhergestellt werden, indem man den Seiteninhalt über den `Reload`-Button des Webbrowser erneut lädt.
-
-??? info "Screenshots: _Start Codespace_"
-    ![start-codespace-1](img/start-codespace-1.png)
-    ![start-codespace-2](img/start-codespace-2.png)
-    ![start-codespace-3](img/start-codespace-3.png)
-    ![start-codespace-4](img/start-codespace-4.png)
-    ![start-codespace-5](img/start-codespace-5.png)
+    Die Steuerung der GitHub Codespace Simulationsumgebung mit Containerlab erfolgt über die [_Containerlab_ VS Code Extension](https://marketplace.visualstudio.com/items?itemName=srl-labs.vscode-containerlab). Die Details der Steuerung der Simulationsumgebung über _VS Code_ werden im Verlauf der Übungen schrittweise vorgestellt.
 
 !!! note
-    Der Reiter _Welcome to Containerlab_ wird nicht benötigt und kann geschlossen werden (Tipp: Haken `Don't show this page again` setzen).
+    Der Reiter _Welcome to Containerlab_ wird nicht benötigt und kann bei Bedarf geschlossen werden (Tipp: Haken `Don't show this page again` setzen).
+
+??? info "Screenshots: _VS Code mit Codespace des `clab-lankurs`-Repositories verbinden_ "
+    ![start-codespace-1](img/connect-to-codespace-1.png)
+    ![start-codespace-1](img/connect-to-codespace-2.png)
+    ![start-codespace-1](img/connect-to-codespace-3.png)
+    ![start-codespace-1](img/connect-to-codespace-4.png)
+
 
 ### Zugriff auf GitHub Docker Registry einrichten
+
+!!! info
+    Die für die nächsten Schritte benötigten Informationen `<YOUR_TOKEN>` und `<USERNAME>` erhalten die Schulungsteilnehmer auf drei Wegen:
+
+    1. per E-Mail (für Smart Client Nutzer)
+    2. in einer Datei auf dem Desktop des Schulungs-Notebooks (Teilnehmer ohne Smatz Client)
+    3. über den Kursleiter (Fallback, falls 1. + 2. nicht verfügbar)
 
 Für die Funktion der Labornetzwerke müssen nach dem ersten Start des Codespaces einmalig beim Start des ersten Labors noch einige Docker-Images
 aus einer zentralen GitHub Docker-Registry geladen werden. Um dies zu ermöglichen, muss der Zugang zu wie folgt eingerichtet werden:
 
-!!! note
-    Wenn im Verlauf der folgenden Schritte im Browser ein Dialog erscheint, der den Zugriff auf die Zwischenablage anfordert, bitte Zugriff erlauben:
+- In VS Code ein neues Terminal über da Menü `Terminal` und den Menüeintrag `New Terminal` öffnen
+- Die folgende Schritte im Bereich `TERMINAL` des in VS Code Codespace eingeben:
+    * Environment-Variable mit Zugriffstoken setzen (Platzhhalter <YOUR_TOKEN> mit dem erhaltenen GitHub-Token ersetzen)
+    ```
+    export CR_PAT=<YOUR_TOKEN>
+    ```
+    * Anmeldung an die GitHub Container Registry des GitHub-Users <USERNAME> (Platzhalter <USERNAME> mit GitHub Usernamen des Kursteilnehmers ersetzen)
+    ```
+    echo $CR_PAT | docker login ghcr.io -u <USERNAME> --password-stdin
+    ```
 
-    ??? info "Screenshot: Clipboard Dialog im Browser"
-        ![zugriff-clipboard-browser](img/zugriff-clipboard-browser.png)
-
-!!! info
-    Die für die nächsten Schritte benötigten Informationen `<YOUR_TOKEN>` und `<USERNAME>` erhalten die Schulungsteilnehmerauf drei Wegen:
-
-    1. per E-Mail (für Smart Client Nutzer)
-    2. in einer Datei auf dem Desktop des Schulungs-PCs
-    3. über den Kursleiter (Fallback, falls 1. + 2. nicht verfügbar)   
-
-Bitte die folgende Schritte im Bereich `TERMINAL` des im Browser geöffneten Codespace eingeben:
-
-- Environment-Variable mit Zugriffstoken setzen
-
-```
-export CR_PAT=<YOUR_TOKEN>
-```
-- Anmeldung an die GitHub Container Registry des GitHub-Users <USERNAME>
-```
-echo $CR_PAT | docker login ghcr.io -u <USERNAME> --password-stdin
-```
-
-??? info "Screenshot: _GitHub Docker Registry Login_"
-    ![login-docker-registry](img/login-docker-registry.png)
+??? info "Screenshots: _GitHub Docker Registry Login_"
+    ![login-docker-registry](img/login-docker-registry-1.png)
+    ![login-docker-registry](img/login-docker-registry-2.png)
+    ![login-docker-registry](img/login-docker-registry-3.png)
+    ![login-docker-registry](img/login-docker-registry-4.png)
 
 ### Containerlab Topology Dateien anzeigen und ändern
 
 - `EXPLORER`-Ansicht auswählen (Dateistruktur wird angezeigt)
 - Die Dateien zu den einzelnen Übungen liegen im Verzeichnis `student` (Lab 1 bis 10)
-- Bitte Verzeichnis `student/lab-2/topology.clab.yml` auswählen (Datei wird als Reiter im Editor-Bereich geöffnet)
+- Bitte Verzeichnis `student/lab-2/` die Datei `topology.clab.yml` auswählen (Datei wird als Reiter `topology.clab.yml` im Editor-Bereich geöffnet)
 - Bei Bedarf kann das Labornetzwerk über diese Datei konfiguriert werden (wird ggf. in künftigen Labs benötigt)
 - Erklärungstexte für die einzelnen Bereiche können im folgenden Listing durch einen Klick auf die :material-plus-circle:-Symbole angezeigt werden
+
+??? info "Screenshot: _Containerlab Toplogy Dateien anzeigen_"
+    ![login-docker-registry](img/edit-clab-topology-file.png)
+
 
   ``` yaml title="student/lab-2/topology.clab.yml"
   name: lab2 # (1) 
@@ -164,24 +189,29 @@ echo $CR_PAT | docker login ghcr.io -u <USERNAME> --password-stdin
   21. Links-Sektion: Beschreibungd der Verbindungen zwischen den Containern
   22. Verbindung der Endpunkte SW1 Interface e0/1 nach R1 Interface eth1
 
-### Lab: Labornetzwerk starten
+### Lab: Labornetzwerk starten (Deploy)
 
 - Containerlab-Bereich auswählen (über Containerlab Symbol)
 - Im Bereich `UNDEPLOYED LOCAL LABS` das Verzeichnis `student/lab-2` öffnen
 - Rechtsklick auf Datei `topology.clab.yml` und Start des Labors über Menüeintrag `Deploy`
-- Optional: Im Informations-Dialog unten rechts `View Logs` klicken:
+- Optional: Im Informations-Dialog unten rechts `View Logs` klicken, danach kann man die Logmeldungen während des Starts im Bereich `OUTPUT` beobachten:
     * Fehlende Conatainer-Images werden aus der GitHub Docker Registry `ghcr.io` heruntergeladen und gespeichert
     * Labor Nodes werden gestartet und Verbindungen zwischen den Nodes etabliert
-    * Node Status wird farbig bzw. als `Up`/`Down` im Bereich `RUNNING LABS` angezeigt
-    * Status der einzelen Nodes durch _aufklappen_ des Labs im Bereich `RUNNING LABS` angezeigt
-- alternativ: ++ctrl+alt+d++
+- Nach dem Start im Bereich `RUNNING LABS`:
+    * Node Status wird farbig bzw. als `Up`/`Down` angezeigt
+    * Status der einzelen Nodes durch _aufklappen_ des Labs angezeigt
+- Alternativ kann die ausgewähle Topology Datei über die folgende Tastenkombination _deployed_ werden: ++ctrl+alt+d++
 
 ??? info "Screenshots: _Lab starten_"
-    ![start-codespace-1](img/start-lab2-1.png)
-    ![start-codespace-1](img/start-lab2-2.png)
-    ![start-codespace-1](img/start-lab2-3.png)
-    ![start-codespace-1](img/start-lab2-4.png)
-    ![start-codespace-1](img/start-lab2-5.png)
+    ![start-codespace-1](img/deploy-lab2-1.png)
+    ![start-codespace-1](img/deploy-lab2-2.png)
+    ![start-codespace-1](img/deploy-lab2-3.png)
+    ![start-codespace-1](img/deploy-lab2-4.png)
+    ![start-codespace-1](img/deploy-lab2-5.png)
+    ![start-codespace-1](img/deploy-lab2-6.png)
+    ![start-codespace-1](img/deploy-lab2-7.png)
+    ![start-codespace-1](img/deploy-lab2-8.png)
+    ![start-codespace-1](img/deploy-lab2-9.png)
 
 ### Lab: Topology Graph des Labornetzwerkes anzeigen
 
@@ -189,11 +219,14 @@ Eine grafische Übersicht kann z.B. über den eingebauten Topology Viewer angeze
 
 - Rechtsklick auf `lab2` im Bereich `RUNNING LABS`
 - Im Kontextmenü `Graph (TopoViewer)`auswählen
-- alternativ: ++ctrl+alt+g++
+- In der grafuschen Ansicht werden die Devices, Ports und Verbindungen angezeigt (siehe Detailausschnitte)
+- Alternativ statt Menüeintrag: ++ctrl+alt+g++
 
 ??? info "Screenshots: _Lab Topology Graph anzeigen_"
     ![start-codespace-1](img/lab2-topology-graph-1.png)
     ![start-codespace-1](img/lab2-topology-graph-2.png)
+    ![start-codespace-1](img/lab2-topology-graph-3.png)
+    ![start-codespace-1](img/lab2-topology-graph-4.png)
 
 ### Lab: Mit Kommandozeile eines PCs verbinden
 
@@ -205,9 +238,9 @@ Variante 1:
 - Im Kontextmenü `Attach Shell` auswählen
 - Im Bereich `TERMINAL` öffnet sich eine Shell (Kommandozeile) für den ausgeählten PC
 
-??? note "Screenshots: _Variante 1_"
-    ![start-codespace-1](img/attach-shell-var1-1.png)
-    ![start-codespace-1](img/attach-shell-var1-2.png)
+??? info "Screenshots: _Variante 1_"
+    ![start-codespace-1](img/attach-shell-var1.png)
+    ![start-codespace-1](img/attach-shell-terminal.png)
 
 Variante 2:
 
@@ -215,9 +248,9 @@ Variante 2:
 - Das mittlere der drei Symbole rechts neben dem PC auswählen 
 - Im Bereich `TERMINAL` öffnet sich eine Shell (Kommandozeile) für den ausgeählten PC
 
-??? note "Screenshots: _Variante 2_"
-    ![start-codespace-1](img/attach-shell-var2-1.png)
-    ![start-codespace-1](img/attach-shell-var2-2.png)
+??? info "Screenshots: _Variante 2_"
+    ![start-codespace-1](img/attach-shell-var2.png)
+    ![start-codespace-1](img/attach-shell-terminal.png)
 
 Variante 3:
 
@@ -228,6 +261,7 @@ Variante 3:
 ??? info "Screenshots: _Variante 3_"
     ![start-codespace-1](img/attach-shell-var3-1.png)
     ![start-codespace-1](img/attach-shell-var3-2.png)
+    ![start-codespace-1](img/attach-shell-terminal.png)
 
 ### Lab: Befehl auf Kommandozeile eines PCs ausführen
 
@@ -241,29 +275,28 @@ Variante 3:
 
 ### Codespace im GitHub Repository _clab_lankurs_ stoppen
 
-Variante 1 (direkt auf GitHub):
+Variante 1 (in VS Code):
+
+- Auf Fläche `>< Codespaces: <Name des Codespaces>` unten links in VS Code klicken
+- Im angezeigten Menü `Stop Current Codespace`auswählen
+- Codespace mit Simulationsumgebung wird gestoppt
+
+??? info "Screenshots: _Stopp Codespace (VS Code Editor)_"
+    ![start-codespace-1](img/stop-codespace-var1-1.png)
+    ![start-codespace-2](img/stop-codespace-var1-2.png)
+    ![start-codespace-3](img/stop-codespace-var1-3.png)
+    ![start-codespace-3](img/stop-codespace-var1-4.png)
+
+Variante 2 (direkt auf GitHub):
 
 - Ansicht __clab-lankurs__ GitHub Repository öffnen
 - Über grünen Button `<> Code` + Reiter `Codespaces` (Codespace wird als `Active` angezeigt) + `...`-Menü im Bereich `On current branch`den Eintrag `Stop codespace` auswählen
 - Codespace mit Simulationsumgebung wird gestoppt
 
-??? info "Screenshots: _Stopp Codespace_"
-    ![start-codespace-1](img/stopp-codespace-1.png)
-    ![start-codespace-2](img/stopp-codespace-2.png)
-    ![start-codespace-3](img/stopp-codespace-3.png)
-
-Variante 2 (im Browser):
-
-- Auf Fläche `>< Codespaces: <Name des Codespaces` unten links im Broswer klicken
-- Im angezeigten Menü `Stop Current Codespace`auswählen
-- Codespace mit Simulationsumgebung wird gestoppt
-
-??? info "Screenshots: _Stopp Codespace_"
-    ![start-codespace-1](img/stopp-codespace-var2-1.png)
-    ![start-codespace-2](img/stopp-codespace-var2-2.png)
-    ![start-codespace-3](img/stopp-codespace-var2-3.png)
-    ![start-codespace-3](img/stopp-codespace-var2-4.png)
-    ![start-codespace-3](img/stopp-codespace-var2-5.png)
+??? info "Screenshots: _Stopp Codespace (GitHub)_"
+    ![start-codespace-1](img/stop-codespace-var2-1.png)
+    ![start-codespace-2](img/stop-codespace-var2-2.png)
+    ![start-codespace-3](img/stop-codespace-var2-3.png)
 
 ## Lab 1 - Containerlab & Wireshark
 
@@ -316,9 +349,9 @@ _Edgeshark_ wird über die [_VS Code_](https://code.visualstudio.com/) _Command 
 - Nach dem erfolgreichen Start von _Edgeshark_ können Paketaufzeichnungen gestartet und die aufgezeichneten Paket lokal in Wireshark angzeigt werden (Wireshark wird automatisch nach dem Start der Paketaufzeichnung im entfernten Containerlab Labor lokal gestartet)
 
 ??? info "Screenshots: _Edgeshark im GitHub Codespace starten_"
-    ![start-codespace-1](img/stopp-codespace-1.png)
-    ![start-codespace-2](img/stopp-codespace-2.png)
-    ![start-codespace-3](img/stopp-codespace-3.png)
+    ![start-codespace-1](img/stop-codespace-var1-1.png)
+    ![start-codespace-2](img/stop-codespace-var1-2.png)
+    ![start-codespace-3](img/stop-codespace-var1-3.png)
 
 Der erfolgreiche Start kann bei Bedarf geprüft werden, indem man die _Edgeshark_ Startseite aufruft. Nach dem Start von _Edgeshark_ wird unten rechts im Webbrowser
 

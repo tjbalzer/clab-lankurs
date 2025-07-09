@@ -17,10 +17,8 @@ Ein GitHub Account wird wie folgt angelegt:
 
 [GitHub-Startseite](https://gigthub.com) in Webbrowser öffnen und Sign-up Button auswählen:
 
-??? info "Screenshot: _GitHub Startseite_"
+??? info "Screenshots: _GitHub Sign-up_"
     ![GitHub aufrufen](img/github-profil-anlegen-1.png)
-
-??? info "Screenshot: _Sign-up Dialog (leere Eingabefelder_"
     ![GitHub Sign-up #1](img/github-profil-anlegen-2a.png)
 
 #### Benutzername und Passwort anlegen
@@ -43,13 +41,9 @@ Der neue GitHub Account wird nun verifziert (hier am Beispiel _Bilderrätsel_ da
 - Auswahl über den Button _Absenden_ bestätigen
 - Bestätigungsnachricht wird angezeigt, wenn die Auswahl korrekt war, ansonsten wird ein neues Bilderrätsel angezeigt
 
-??? info "Screenshot: _Account Verification 1_"
+??? info "Screenshots: _Account Verification_"
     ![GitHub Verification #1](img/github-profil-anlegen-3a.png)
-
-??? info "Screenshot: _Account Verification 2_"
     ![GitHub Verification #2](img/github-profil-anlegen-3c.png)
-
-??? info "Screenshot: _Erfolgreiche Account Verification 1_"
     ![GitHub Verification #3](img/github-profil-anlegen-3d.png)
 
 #### E-Mail Adresse bestätigen
@@ -61,20 +55,16 @@ Nach den Account Verifikation wird die E-Mail Adresse überprüft:
 - Eingabe über den Button _Continue_ abschließen (dadurch werden auch die GitHub _Terms of Service_ angenommen)
 - Es folgt die Anzeige der GitHub Sign-in Seite
 
-??? info "Screenshot: _E-Mail Verification (Code-Eingabe)_"
+??? info "Screenshot: _E-Mail Adresse bestätigen_"
     ![GitHub Verification #4](img/github-profil-anlegen-4.png)
-
-??? info "Screenshot: _Leerer Anmeldialog nach erfolgreicher Account-Erstellung_"
     ![GitHub Verification #5](img/github-profil-anlegen-5.png)
 
 ### GitHub Sign-in
 
 Anmelden mit den Benutzerdaten des neu angelegten oder eines bereits bestehenden GitHub-Profils:
 
-??? info "Screenshot: _Beispiel Anmeldedialog mit Username und Passwort_"
+??? info "Screenshot: _Beispiel GitHub Sign-in_"
     ![GitHub Sign-in](img/github-anmeldung-1.png)
-
-??? info "Screenshot: _GitHub Startbildschirm nach erfolgreicher Anmeldung mit neuem Account_"
     ![GitHub Sign-in](img/github-anmeldung-2.png)
 
 ## _Forken_ des GitHub-Repositories für die Netzwerkübungen
@@ -87,17 +77,12 @@ Dieser _Fork_ des Original GitHub-Repositories wird wie folgt erstellt:
 - Button _Fork_ auswählen, um das _clab-lankurs_ Repository als eigenes Repository in die GitHub-Umgebung des Nutzers zu kopieren
 - Fork durch Bestätigung der Eingabemaske _Create a new fork_ über den Button _Create fork_ erstellen
 
-??? info "Screenshot: _Fork anlegen_"
+??? info "Screenshot: _LAN-Kurs Repository forken_"
     ![Fork erstellen #1](img/create-lankurs-fork-1.png)
-
-??? info "Screenshot: _Create Fork Dialog_"
     ![Fork erstellen #2](img/create-lankurs-fork-2.png)
-
-??? info "Screenshot: _Forking clab-lankurs Repository_"
     ![Fork erstellen #3](img/create-lankurs-fork-3.png)
-
-??? info "Screenshot: _Forked Repository_"
     ![Fork erstellen #4](img/create-lankurs-fork-4.png)
+
 
 ## Dev Container in GitHub Codespaces erstellen und starten
 
@@ -129,38 +114,77 @@ Die Existenz der Datei `.devcontainer/devcontainer.json` im _clab-lankurs_ Repos
 - Die Erstellung und der Start des Codepaces ist abgeschlossen, wenn unten links der Verbindungsstatus `>< Codespaces: <zufälliger Name des Codespaces>` angezeigt, im Hauptfenster die _Containerlab Willkommensnachricht_ erscheint und das Containerlab Symbol am linken Rand in der vertikalen Bedienleiste eingeblendet wird
 - Codespace läuft und die Laborumgebung kann genutzt werden
 
-!!! warning
+!!! info
     Als _Default Idle Timeout_ für GitHub Codespaces sind 30 Minuten vorkonfiguriert. Nutzt man einen gestarteten Codespace für 30 Minuten nicht, wird der Codespace automatisch gestoppt.
 
-!!! warning
+!!! info
     Als _Default Retention Time_ für GitHub Codespaces sind 30 Tage vorkonfiguriert. Codespaces werden maximal 30 Tage nach der letzten Nutzung gelöscht.
 
 !!! info
     Die Codepace-Einstellungen für seinen GitHub-Account erreicht man unter dem folgenden Link, wenn man bereits mit seinem Nutzernamen auf GitHub angemeldet ist: [https://github.com/settings/codespaces](https://github.com/settings/codespaces)
 
-??? info "Screenshot: _Codespace erstellen_"
+??? info "Screenshots: _Codespace erstellen_"
     ![Codespace erstellen #1](img/create-codespace-1.png)
-
-??? info "Screenshot: _Fortschritt Codespace-Erstellung 1_"
     ![Codespace erstellen #2](img/create-codespace-2.png)
-
-??? info "Screenshot: _Fortschritt Codespace-Erstellung 2_"
     ![Codespace erstellen #3](img/create-codespace-3.png)
-
-??? info "Screenshot: _Fortschritt Codespace-Erstellung 3_"
     ![Codespace erstellen #4](img/create-codespace-4.png)
-
-??? info "Screenshot: _Codepace erstellt_"
     ![Codespace erstellen #5](img/create-codespace-5.png)
-
-??? info "Screenshot: _Hauptansicht Containerlab Plugin_"
     ![Codespace erstellen #6](img/create-codespace-6.png)
 
 ### Codespace Stoppen
 
-## Installation __Wireshark__ & __Containershark Extcap Plugin for Wireshark__ (Smart Client)
+- Ansicht __clab-lankurs__ GitHub Repository öffnen
+- Über grünen Button `<> Code` + Reiter `Codespaces` (Codespace wird als `Active` angezeigt) + `...`-Menü im Bereich `On current branch`den Eintrag `Stop codespace` auswählen
+- Codespace mit Simulationsumgebung wird gestoppt
 
-Soll statt eines Schulungs-Notebooks der persönliche EnBW Smart Client genutzt werden, muss zusätzliche Software auf dem Smart Client installiert werden. Hierbei handelt es sich um den Network Protocol Analyzer [_Wireshark_](https://www.wireshark.org) und ein Capture Plugin zu Unterstützung von Packet Captures über [_Edgeshark_](https://github.com/siemens/edgeshark). _Edgeshark_ ermöglicht es, mit _Wireshark_ den Netzwerkverkehr zwischen Docker Containern aufzuzeichnen, die auf dem lokalen Rechner oder entfernten Systemen ausgeführt werden.
+??? info "Screenshots: _Stopp Codespace (GitHub)_"
+    ![start-codespace-1](img/stop-codespace-var2-1.png)
+    ![start-codespace-2](img/stop-codespace-var2-2.png)
+    ![start-codespace-3](img/stop-codespace-var2-3.png)
+
+## Softwareinstallation auf dem Smart Client 
+
+Soll statt eines Schulungs-Notebooks der persönliche EnBW Smart Client genutzt werden, muss zusätzliche Software auf dem Smart Client installiert werden. Hierbei handelt es sich um die IDE [_Microsoft Visual Studio Code_](https://code.visualstudio.com) zur Steuerung der Laborumgebung, den Network Protocol Analyzer [_Wireshark_](https://www.wireshark.org) sowie ein Capture Plugin für Wireshark zu Unterstützung von Packet Captures über [_Edgeshark_](https://github.com/siemens/edgeshark). _Edgeshark_ ermöglicht es, mit _Wireshark_ den Netzwerkverkehr zwischen Docker Containern aufzuzeichnen, die auf dem lokalen Rechner oder entfernten Systemen ausgeführt werden.
+
+### Installation von Microsoft VS Code
+
+- [Download VS Code für Windows](https://code.visualstudio.com/Download) (Installationsdatei)
+- Installationsdatei starten und _VS Code für Windows_ installieren (Adminrechte werden NICHT benötigt!)
+
+??? info "Screenshots: _Microsoft VS Code installieren_"
+    ![start-codespace-1](img/install-vscode-1.png)
+    ![start-codespace-1](img/install-vscode-2.png)
+    ![start-codespace-1](img/install-vscode-3.png)
+    ![start-codespace-1](img/install-vscode-4.png)
+    ![start-codespace-1](img/install-vscode-5.png)
+    ![start-codespace-1](img/install-vscode-6.png)
+    ![start-codespace-1](img/install-vscode-7.png)
+    ![start-codespace-1](img/install-vscode-8.png)
+    ![start-codespace-1](img/install-vscode-9.png)
+    ![start-codespace-1](img/install-vscode-10.png)
+
+### Installation notwendiger VS Code Extensions
+
+Damit die Laborumgebung des Kurses mit _VS Code_ gesteuert werden kann sowie der Zugriff auf die entfernt in einem GitHub Codespace laufende Laborumgebung funktioniert, müssen einige _VS Code Extensions_ installiert werden:
+
+- [Containerlab Extension](https://marketplace.visualstudio.com/items?itemName=srl-labs.vscode-containerlab)
+- [Remote Development Pack](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.vscode-remote-extensionpack), bestehend aus:
+    * [Remote - SSH](https://aka.ms/vscode-remote/download/ssh)
+    * [Remote - Tunnels](https://marketplace.visualstudio.com/items?itemName=ms-vscode.remote-server)
+    * [Dev Containers](https://aka.ms/vscode-remote/download/containers)
+    * [WSL](https://aka.ms/vscode-remote/download/wsl)
+- [GitHub Codespaces Extension](https://marketplace.visualstudio.com/items?itemName=GitHub.codespaces)
+
+??? info "Screenshots: _VS Code Extensions installieren_"
+    ![start-codespace-1](img/install-vscode-extensions-1.png)
+    ![start-codespace-1](img/install-vscode-extensions-2.png)
+    ![start-codespace-1](img/install-vscode-extensions-3.png)
+    ![start-codespace-1](img/install-vscode-extensions-4.png)
+    ![start-codespace-1](img/install-vscode-extensions-5.png)
+    ![start-codespace-1](img/install-vscode-extensions-6.png)
+    ![start-codespace-1](img/install-vscode-extensions-7.png)
+
+### Installation von __Wireshark__ & __Containershark Extcap Plugin for Wireshark__
 
 !!! info
     Voraussetzung: Der Schulungsteilnehmer muss über Adminrechte auf dem Smart Client verfügen.
@@ -177,7 +201,7 @@ Soll statt eines Schulungs-Notebooks der persönliche EnBW Smart Client genutzt 
 
 Diese Schritte sind im Folgenden mit Screenshots der Details dargestellt:
 
-### Installation __Wireshark__ 
+#### Installation __Wireshark__ 
 
 - [Wireshark Installer x64](https://2.na.dl.wireshark.org/win64/Wireshark-4.4.7-x64.exe) herunterladen
 - Installationsdatei mit Adminrechten ausführen (Installation von Wireshark startet)
@@ -202,7 +226,7 @@ Diese Schritte sind im Folgenden mit Screenshots der Details dargestellt:
     ![Wireshark installieren #1](img/wireshark-installation-17.png)
     ![Wireshark installieren #1](img/wireshark-installation-18.png)
 
-### Installation __Containershark Extcap Plugins for Wireshark__
+#### Installation __Containershark Extcap Plugins for Wireshark__
 
 - [Containershark Extcap Plugin for Wireshark](https://github.com/siemens/cshargextcap/releases/download/v0.10.7/cshargextcap_0.10.7_windows_amd64.zip) herunterladen
 - ZIP-Datei `cshargextcap_0.10.7_windows_amd64.zip` in ein Verzeichnis entpacken
@@ -220,7 +244,7 @@ Diese Schritte sind im Folgenden mit Screenshots der Details dargestellt:
     ![cshargextcap Plugin installieren #8](img/cshargextcap-installation-08.png)
     ![cshargextcap Plugin installieren #9](img/cshargextcap-installation-09.png)
 
-### Import der Registry Keys für __Containershark Extcap Plugin for Wireshark__
+#### Import der Registry Keys für __Containershark Extcap Plugin for Wireshark__
 
 !!! info
     Während der Installation des _Containershark Extcap Plugins for Wireshark_ werden wichtige Keys für die Funktion des Wireshark Plugins in die Registry eingetragen. Da das Setup-Programm die Registry Keys in die Registry Sektion  `HKEY_CURRENT_USER` einträgt und die Installation mit Adminrechten erfolgt, werden diese Einträge nicht im korrekten Userkontext vorgenommen. Daher ist es wichtig, die Registry Keys nach Abschluss der Installation nochmals zu importieren.
