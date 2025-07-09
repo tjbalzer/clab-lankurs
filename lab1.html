@@ -11,8 +11,10 @@
       
       
       
+        <link rel="prev" href="lab0.html">
       
-        <link rel="next" href="vorbereitungen.html">
+      
+        <link rel="next" href="lab2.html">
       
       
       <link rel="icon" href="img/favicon.ico">
@@ -20,7 +22,7 @@
     
     
       
-        <title>Kurs Netzwerk Grundlagen</title>
+        <title>Lab 1: Containerlab & Wireshark - Kurs Netzwerk Grundlagen</title>
       
     
     
@@ -80,6 +82,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#lab-1-containerlab-wireshark" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -111,7 +118,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Einführung
+              Lab 1: Containerlab & Wireshark
             
           </span>
         </div>
@@ -213,17 +220,10 @@
       
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-      <a href="index.html" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="index.html" class="md-nav__link">
         
   
   
@@ -234,7 +234,6 @@
   
 
       </a>
-      
     </li>
   
 
@@ -287,10 +286,32 @@
       
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="lab1.html" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Lab 1: Containerlab & Wireshark
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="lab1.html" class="md-nav__link md-nav__link--active">
         
   
   
@@ -301,6 +322,53 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#github-codespace-und-lab-2-starten" class="md-nav__link">
+    <span class="md-ellipsis">
+      GitHub Codespace und Lab-2 starten
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lab-edgeshark-im-github-codespace-starten" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lab: Edgeshark im GitHub Codespace starten
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lab-2-und-github-codespace-stoppen" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lab-2 und GitHub Codespace stoppen
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -520,6 +588,43 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#github-codespace-und-lab-2-starten" class="md-nav__link">
+    <span class="md-ellipsis">
+      GitHub Codespace und Lab-2 starten
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lab-edgeshark-im-github-codespace-starten" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lab: Edgeshark im GitHub Codespace starten
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lab-2-und-github-codespace-stoppen" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lab-2 und GitHub Codespace stoppen
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -538,64 +643,58 @@
   
 
 
-  <h1>Einführung</h1>
-
-<p>Der Kurs <em>Netzwerk Grundlagen</em> der NETZ KDIN vermittelt Basiskenntnisse zur Funktion von IT-Netzwerken.</p>
-<p>Der Kurs ist in folgende Kapitel eingeteilt:</p>
-<ul>
-<li>
-<p>Einführung</p>
-<ul>
-<li>Entwicklung von Datennetzen</li>
-<li>Aufbau von Datennetzen</li>
-<li>Charakterisierung von Datennetzen</li>
-<li>Protokolle un Protokollhierarchien</li>
-</ul>
-</li>
-<li>
-<p>Ethernet Netzwerke</p>
-<ul>
-<li>Die Geschichte des Ethernet</li>
-<li>Ethernet Technologien</li>
-<li>Ethernet Komponenten</li>
-<li>Netzwerk Verkabelung</li>
-</ul>
-</li>
-<li>
-<p>Netzwerkprotokolle (TCP/IP)</p>
-<ul>
-<li>Einführung</li>
-<li>Internet Protokoll (IP)</li>
-<li>Die Transportprotokolle TCP und UDP</li>
-<li>Hilfs- und Anwendungsprotokolle</li>
-</ul>
-</li>
-<li>
-<p>Zusatzkapitel</p>
-<ul>
-<li>Funktion eines Routers </li>
-<li>Dynamisches Routing</li>
-</ul>
-</li>
-</ul>
+<h1 id="lab-1-containerlab-wireshark">Lab 1: Containerlab &amp; Wireshark</h1>
+<p>Der <a href="https://wireshark.org">Network Protocol Analyzer <em>Wireshark</em></a> ist die am meisten genutzte Software für die Netzwerk Paketanalyse. Wireshark ist ein Open Source Programm, das für private und kommerzielle Zwecke frei genutzt werden kann. Ein Network Protcol Analyzer kann Netzwerk Pakete aufzeichnen sowie die in den Paketen übertragenen Netzwerkprotokolle analysieren und unterstützt Netzwerkadminstratoren somit bei der Fehlersuche. Die Funktionen von Wireshark sind auch hervoragend geeignet, um den Aufbau von Netzwerkframes, -paketen und -segmenten sowie die Funktionsweise von Netzwerkprotokollen auf den verschieden Schichten des ISO/OSI Modells darzustellen, weshalb <em>Wireshark</em> hervorragend für Ausbildungszwecke geeignet ist.</p>
+<p>In dieser Übung gehen wir die ersten Schritte mit Wireshark. Hierzu arbeiten wir wieder mit Containerlab im GitHub Codespace, starten ein Labornetzwerk und zeichen mit Wireshark einen <em>Ping</em> von PC1 nach PC3 auf.</p>
 <div class="admonition info">
 <p class="admonition-title">Info</p>
-<p>Die Kursunterlagen sind auf dem NETZ KDIN SharePoint abgelegt und für die Schulungsteilnehmer freigegeben. Die Teilnehmer haben einige Tage vor Kursbeginn eine Nachricht per E-Mail mit weiteren Details erhalten. Sollte dies nicht der Fall sein, wende dich bitte zu Kursbeginn an den Kursleiter.</p>
+<p>Der <em>Ping-Befehl</em> basiert auf dem <em>ICMP-Protokoll</em>, welches im Rahmen dieses Kurses zu einem späteren Zeitpunkt detailliert behandelt wird. Für den Moment soll genügen, dass der Ping-Befehl genutzt werden kann, um z.B. die Funktion einer Netzwerkverbindung zwischen zwei Endgeräten im Netzwerk zu überprüfen. Hierzu schickt ein Endgerät einen sog. <em>Ping-Request</em> an ein anderes Endgerät im Netzwerk. Funktioniert die Netzwerkverbindung, erreicht der Ping-Request des ersten Endgeräts das zweite Endgerät und letzteres antwortet auf den empfangenen <em>Ping-Request</em> mit einem <em>Ping-Reply</em> an das erste Endgerät.</p>
+<p>Ein Ping, z.B. von PC1 nach PC3 wird auf der Kommandozeile von PC1 durch die Eingabe des Befehls <code>ping 192.168.12.11</code> gestartet, wobei <code>192.168.12.11</code> die IP-Adresse von PC3 darstellt, über welche PC3 für andere Endgeräte im Netzwerk erreichbar ist.</p>
 </div>
-<p>Unterstützend zur Theorie enthält der Kurs Laborübungen, die mit Hilfe von Netzwerksimulationen realisiert werden. Im Rahmen der Übungen werden die erworbenen theoretischen Kenntnisse u.a. durch Messungen bzw. die Aufzeichnung von Netzwerkpaketen mit dem Network Protocol Analyzer <a href="https://www.wireshark.org/"><em>Wireshark</em></a> vertieft. Zur komfortableren Bedienung der Laborumgebung wird <a href="https://code.visualstudio.com">Microsoft Visual Studio Code</a> mit einigen zusätzlichen Extensions verwendet:</p>
+<figure>
+<p><a class="glightbox" href="img/lankurs-lab2.svg#only-light" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Toplogy Lab-2" src="img/lankurs-lab2.svg#only-light" /></a>
+<a class="glightbox" href="img/lankurs-lab2-dark.svg#only-dark" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Toplogy Lab-2" src="img/lankurs-lab2-dark.svg#only-dark" /></a></p>
+<figcaption>
+<p>Lab Topology</p>
+</figcaption>
+</figure>
+<p>Die dafür notwendigen Schritte sind:</p>
 <ul>
-<li><a href="https://marketplace.visualstudio.com/items?itemName=srl-labs.vscode-containerlab">Containerlab Extension</a></li>
-<li><a href="https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.vscode-remote-extensionpack">Remote Development Pack</a>, bestehend aus:<ul>
-<li><a href="https://aka.ms/vscode-remote/download/ssh">Remote - SSH</a></li>
-<li><a href="https://marketplace.visualstudio.com/items?itemName=ms-vscode.remote-server">Remote - Tunnels</a></li>
-<li><a href="https://aka.ms/vscode-remote/download/containers">Dev Containers</a></li>
-<li><a href="https://aka.ms/vscode-remote/download/wsl">WSL</a></li>
+<li>GitHub Codespace starten</li>
+<li>Containerlab <em>Lab-2</em> starten (Deploy)</li>
+<li>Mit Kommandozeile vn PC1 verbinden</li>
+<li>Ping-Befehl zwischen PC1 und PC3 starten</li>
+<li>Ping-Pakete zwischen PC1 und PC3 mit Wireshark aufzeichen</li>
+<li>Ping-Befehl stoppen</li>
+<li>Containerlab <em>Lab-2</em> stoppen (Destroy)</li>
+<li>GitHub Codespace stoppen</li>
 </ul>
-</li>
-<li><a href="https://marketplace.visualstudio.com/items?itemName=GitHub.codespaces">GitHub Codespaces Extension</a></li>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Die notwendigen Vorgehensweisen zum Handling des Codspaces sowie das Starten und Stoppen von Containerlab Topologien wurden in <em>Lab 0</em> vorgestellt und in dieser Übung als bekannt vorausgesetzt. Bei Bedarf bitte die Beschreibung im <a href="lab0.html#lab-0-laborumgebung-mit-containerlab">Kapitel zu Lab 0</a> als Referenz nutzen.</p>
+</div>
+<h2 id="github-codespace-und-lab-2-starten">GitHub Codespace und Lab-2 starten</h2>
+<p>GitHub Codespace und Containerlab Lab-2 analog der <a href="lab0.html#lab-0-laborumgebung-mit-containerlab">Übung Lab 0</a> starten.</p>
+<h2 id="lab-edgeshark-im-github-codespace-starten">Lab: Edgeshark im GitHub Codespace starten</h2>
+<p>Wireshark läuft im Rahmen dieses Kurses auf lokalen Notebooks im Schulungsraum. Da unsere Labornetzwerke entfernt in einem GitHub Codespace in der Microsoft Azure Cloud laufen, müssen wir dafür sorgen, dass die entfernten Netzwerkpakete an die lokale Wireshark-Instanz geschickt werden. Hierzu wird auf der entfernten virtuellen Maschine (der GitHub Codespace) die Open Source Software <a href="https://edgeshark.siemens.io">Edgeshark</a> in Form eines Docker Container gestartet.</p>
+<p>Edgeshark liest die Netzwerkpakete auf den Verbindungen der einzelnen Netzwerkcontainer in unserer Lab-2 Containerlab Topolology und überträgt die Pakete an das <code>cshargextcap</code>-Plugin von Wireshark auf dem lokalen Schulungs-PC oder Smart Client (auf den SmartClients wurde das <code>cshargextcap</code>-Plugin während der Durchführung der Maßnahmen in der Sektion <a href="vorbereitungen.html">Vorbereitungen</a> installiert.</p>
+<p><em>Edgeshark</em> wird über die <a href="https://code.visualstudio.com/"><em>VS Code</em></a> <em>Command Palette</em> wie folgt im GitHub Codespace gestartet:</p>
+<ul>
+<li><em>VS Code Command Palette</em> über <span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-shift">Shift</kbd><span>+</span><kbd class="key-p">P</kbd></span> aufrufen</li>
+<li><code>edgeshark</code> in der Eingabezeile der _VS Code Command Palette` eingeben</li>
+<li>Befehl <code>Containerlab: Instll Edgeshark</code> aus der Liste auswählen</li>
+<li>Edgeshark Container wird bei Bedarf aus dem Internet geladen, lokal gespeichert und gestartet</li>
+<li>Nach dem erfolgreichen Start von <em>Edgeshark</em> können Paketaufzeichnungen gestartet und die aufgezeichneten Paket lokal in Wireshark angzeigt werden (Wireshark wird automatisch nach dem Start der Paketaufzeichnung im entfernten Containerlab Labor lokal gestartet)</li>
 </ul>
-<p>Sämtliche benötigte Software ist auf den Schulungs-Notebooks vorinstalliert. Die Installation auf Smart Clients ist <a href="vorbereitungen.html#softwareinstallation-auf-dem-smart-client">hier</a> im Kapitel beschrieben.</p>
-<p>Die notwendigen <a href="vorbereitungen.html">Vorbereitungen</a> zu Durchführung der Laborübungen sowie die Details zur Bearbeitung der Übungen (Kapitel Lab0 bis Lab 10) sind in den folgende Kapiteln dieser Dokumentation beschrieben.</p>
+<details class="info">
+<summary>Screenshots: <em>Edgeshark im GitHub Codespace starten</em></summary>
+<p><a class="glightbox" href="img/stop-codespace-var1-1.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="start-codespace-1" src="img/stop-codespace-var1-1.png" /></a>
+<a class="glightbox" href="img/stop-codespace-var1-2.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="start-codespace-2" src="img/stop-codespace-var1-2.png" /></a>
+<a class="glightbox" href="img/stop-codespace-var1-3.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="start-codespace-3" src="img/stop-codespace-var1-3.png" /></a></p>
+</details>
+<p>Der erfolgreiche Start kann bei Bedarf geprüft werden, indem man die <em>Edgeshark</em> Startseite aufruft. Nach dem Start von <em>Edgeshark</em> wird unten rechts im Webbrowser</p>
+<h2 id="lab-2-und-github-codespace-stoppen">Lab-2 und GitHub Codespace stoppen</h2>
+<p>Containerlab Lab-2 und GitHub Codespace analog der <a href="lab0.html#lab-0-laborumgebung-mit-containerlab">Übung Lab 0</a> stoppen.</p>
 
 
 
