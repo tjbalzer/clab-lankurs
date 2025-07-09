@@ -325,9 +325,18 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#codespace-im-github-repository-clab_lankurs-starten" class="md-nav__link">
+  <a href="#vs-code-starten-und-github-sign-in" class="md-nav__link">
     <span class="md-ellipsis">
-      Codespace im GitHub Repository clab_lankurs starten
+      VS Code starten und GitHub Sign-in
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#verbindung-zu-clab-lankurs-codespace-herstellen" class="md-nav__link">
+    <span class="md-ellipsis">
+      Verbindung zu clab-lankurs Codespace herstellen
     </span>
   </a>
   
@@ -352,9 +361,9 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#lab-labornetzwerk-starten" class="md-nav__link">
+  <a href="#lab-labornetzwerk-starten-deploy" class="md-nav__link">
     <span class="md-ellipsis">
-      Lab: Labornetzwerk starten
+      Lab: Labornetzwerk starten (Deploy)
     </span>
   </a>
   
@@ -569,9 +578,18 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#codespace-im-github-repository-clab_lankurs-starten" class="md-nav__link">
+  <a href="#vs-code-starten-und-github-sign-in" class="md-nav__link">
     <span class="md-ellipsis">
-      Codespace im GitHub Repository clab_lankurs starten
+      VS Code starten und GitHub Sign-in
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#verbindung-zu-clab-lankurs-codespace-herstellen" class="md-nav__link">
+    <span class="md-ellipsis">
+      Verbindung zu clab-lankurs Codespace herstellen
     </span>
   </a>
   
@@ -596,9 +614,9 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#lab-labornetzwerk-starten" class="md-nav__link">
+  <a href="#lab-labornetzwerk-starten-deploy" class="md-nav__link">
     <span class="md-ellipsis">
-      Lab: Labornetzwerk starten
+      Lab: Labornetzwerk starten (Deploy)
     </span>
   </a>
   
@@ -805,74 +823,101 @@
 <p>Lab Topology</p>
 </figcaption>
 </figure>
-<h3 id="codespace-im-github-repository-clab_lankurs-starten">Codespace im GitHub Repository <em>clab_lankurs</em> starten</h3>
-<p>Mit eurem GitHub Account:</p>
+<h3 id="vs-code-starten-und-github-sign-in">VS Code starten und GitHub Sign-in</h3>
+<p>Um mit der Laborumgebung zu arbeiten, werden die installierten VS Code Extensions aus dem <em>Remote Development Pack</em> genutzt um VS Code mit dem GitHub-Account des jeweilugen Kursteilnehers zu verbinden, damit der in den <a href="vorbereitungen.html#dev-container-in-github-codespaces-erstellen-und-starten">Vorbereitungen</a> erstellte <em>Dev Container</em> mit der <em>Containerlab</em> Laborumgebung genutzt werden kann:</p>
 <ul>
-<li>Ansicht <strong>clab-lankurs</strong> GitHub Repository öffnen</li>
-<li>Über grünen Button <code>&lt;&gt; Code</code> + Reiter <code>Codespaces</code> + <code>...-Menü im Bereich</code> <code>On current branch</code>den Eintrag <code>Open in Browser</code> auswählen</li>
-<li>Codespace mit Simulationsumgebung wird gestartet</li>
+<li>VS Code auf dem Schulungs-Notebook bzw. Smart-Client starten </li>
+<li>Im Menübalken am linken Rand den <em>Remote Explorer</em> auswählen</li>
+<li>Über den Button <code>Sign in to GitHub</code> und die Eingabe des eigenen Usernames bzw. der E-Mail Adresse und des Passworts an GitHub anmelden<ul>
+<li><code>Sign in to GitHub</code> Button auswählen</li>
+<li>Den Dialog <code>The extension 'GitHub Codespaces' wants to sign in using GitHub._ über den</code>Allow`-Button bestätigen</li>
+<li>Usernamen und Passwort eingeben und über den <code>Sign in</code>-Button bestätigen</li>
+<li>Button <code>Continue</code> neben Usernamen auf Seite <code>Select user to authorize</code> auswählen</li>
+<li><code>Authorize Visual Studio Code</code>-Webseite über den Button <code>Authorize Visual-Studio-Code</code> bestätigen</li>
+<li>Falls ein Dialog mit der Frage <code>https://vscode.dec erlauben, den vscode-Link mit dem System Handler zu öffen, den Haken für</code>...immer erlauben...<code>setzen und mit dem Button</code>Link öffnen` bestätigen</li>
+</ul>
+</li>
+<li>Im VS Code Remote Explorer wird nun der Codespace des geforkten <code>clab-lankurs</code>-Repositries angezeigt</li>
+</ul>
+<details class="info">
+<summary>Screenshots: <em>VS Code GitHub Sign-in</em></summary>
+<p><a class="glightbox" href="img/github-codespace-signin-1.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="start-codespace-1" src="img/github-codespace-signin-1.png" /></a>
+<a class="glightbox" href="img/github-codespace-signin-2.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="start-codespace-1" src="img/github-codespace-signin-2.png" /></a>
+<a class="glightbox" href="img/github-codespace-signin-3.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="start-codespace-1" src="img/github-codespace-signin-3.png" /></a>
+<a class="glightbox" href="img/github-codespace-signin-4.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="start-codespace-1" src="img/github-codespace-signin-4.png" /></a>
+<a class="glightbox" href="img/github-codespace-signin-5.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="start-codespace-1" src="img/github-codespace-signin-5.png" /></a>
+<a class="glightbox" href="img/github-codespace-signin-6.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="start-codespace-1" src="img/github-codespace-signin-6.png" /></a>
+<a class="glightbox" href="img/github-codespace-signin-7.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="start-codespace-1" src="img/github-codespace-signin-7.png" /></a>
+<a class="glightbox" href="img/github-codespace-signin-8.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="start-codespace-1" src="img/github-codespace-signin-8.png" /></a>
+<a class="glightbox" href="img/github-codespace-signin-9.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="start-codespace-1" src="img/github-codespace-signin-9.png" /></a>
+<a class="glightbox" href="img/github-codespace-signin-10.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="start-codespace-1" src="img/github-codespace-signin-10.png" /></a>
+<a class="glightbox" href="img/github-codespace-signin-11.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="start-codespace-1" src="img/github-codespace-signin-11.png" /></a></p>
+</details>
+<h3 id="verbindung-zu-clab-lankurs-codespace-herstellen">Verbindung zu <code>clab-lankurs</code> Codespace herstellen</h3>
+<p>Nachdem der GitHub Sign-in erfolgreich war, kann die Verbindung von VS Code zum Codespace <code>clab-lankurs</code>, in welchem die Simulationsumgebung laufen wird, hergestellt werden (während dieses Vorgangs wird der Codespace Dev Container gestartet):</p>
+<ul>
+<li>Im <em>VS Code Remote Explorer</em> mit der Maus den angezeigten GitHub Codespace <code>&lt;DEIN_GITHUB_USER&gt;/clab-lankurs/ &lt;NAME_DEINES_DEV_CONTAINERS&gt; main</code> auswählen</li>
+<li><em>Dev Container</em> über das <em>Steckersymbol</em> <code>Connect to Codespace</code> rechts neben dem Namen des Codespaces starten und VS Code mit dem GitHub Codespace verbinden</li>
+<li><em>Containerlab</em> Laborumgebung startet und die VS Code <em>Containerlab Extension</em> zeigt im VS Code <em>Explorer</em> das Verzeichnis des <code>clab-lankurs</code>-Repositories an, dessen Dateien in die Laborumgebung im Codespace kopiert wurden und dort nun verwendet werden können</li>
 </ul>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Die Steuerung der GitHub Codespace Simulationsumgebung mit Containerlab erfolgt durch eine Browserversion des <a href="https://code.visualstudio.com/"><em>Visual Studio Code Editors</em></a> von Microsoft. <em>VS Code</em> wird mit entsprechenden Plugins durch die Aktivierung des GitHub Codespaces automatisch im lokalen Webbrower gestartet. Die Deteils der Steuerung der Simulationsumgebung über <em>VS Code</em> werden im Verlauf der Übungen schrittweise vorgestellt.</p>
+<p>Die Steuerung der GitHub Codespace Simulationsumgebung mit Containerlab erfolgt über die <a href="https://marketplace.visualstudio.com/items?itemName=srl-labs.vscode-containerlab"><em>Containerlab</em> VS Code Extension</a>. Die Details der Steuerung der Simulationsumgebung über <em>VS Code</em> werden im Verlauf der Übungen schrittweise vorgestellt.</p>
 </div>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p>Sollten im Webbrowser Probleme mit der Steuerung der Simulationsumgebung auftreten oder Fehlermeldungen angezeigt werden, wurde ggf. die Verbindung zwischen Webbrowser und Codespace unterbrochen bzw. der Codespace unerwartet gestoppt. In diesen Fällen kann die Funktion meist wiederhergestellt werden, indem man den Seiteninhalt über den <code>Reload</code>-Button des Webbrowser erneut lädt.</p>
-</div>
-<details class="info">
-<summary>Screenshots: <em>Start Codespace</em></summary>
-<p><a class="glightbox" href="img/start-codespace-1.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="start-codespace-1" src="img/start-codespace-1.png" /></a>
-<a class="glightbox" href="img/start-codespace-2.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="start-codespace-2" src="img/start-codespace-2.png" /></a>
-<a class="glightbox" href="img/start-codespace-3.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="start-codespace-3" src="img/start-codespace-3.png" /></a>
-<a class="glightbox" href="img/start-codespace-4.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="start-codespace-4" src="img/start-codespace-4.png" /></a>
-<a class="glightbox" href="img/start-codespace-5.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="start-codespace-5" src="img/start-codespace-5.png" /></a></p>
-</details>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Der Reiter <em>Welcome to Containerlab</em> wird nicht benötigt und kann geschlossen werden (Tipp: Haken <code>Don't show this page again</code> setzen).</p>
+<p>Der Reiter <em>Welcome to Containerlab</em> wird nicht benötigt und kann bei Bedarf geschlossen werden (Tipp: Haken <code>Don't show this page again</code> setzen).</p>
 </div>
+<details class="info">
+<summary>Screenshots: <em>VS Code mit Codespace des <code>clab-lankurs</code>-Repositories verbinden</em> </summary>
+<p><a class="glightbox" href="img/connect-to-codespace-1.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="start-codespace-1" src="img/connect-to-codespace-1.png" /></a>
+<a class="glightbox" href="img/connect-to-codespace-2.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="start-codespace-1" src="img/connect-to-codespace-2.png" /></a>
+<a class="glightbox" href="img/connect-to-codespace-3.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="start-codespace-1" src="img/connect-to-codespace-3.png" /></a>
+<a class="glightbox" href="img/connect-to-codespace-4.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="start-codespace-1" src="img/connect-to-codespace-4.png" /></a></p>
+</details>
 <h3 id="zugriff-auf-github-docker-registry-einrichten">Zugriff auf GitHub Docker Registry einrichten</h3>
-<p>Für die Funktion der Labornetzwerke müssen nach dem ersten Start des Codespaces einmalig beim Start des ersten Labors noch einige Docker-Images
-aus einer zentralen GitHub Docker-Registry geladen werden. Um dies zu ermöglichen, muss der Zugang zu wie folgt eingerichtet werden:</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Wenn im Verlauf der folgenden Schritte im Browser ein Dialog erscheint, der den Zugriff auf die Zwischenablage anfordert, bitte Zugriff erlauben:</p>
-<details class="info">
-<summary>Screenshot: Clipboard Dialog im Browser</summary>
-<p><a class="glightbox" href="img/zugriff-clipboard-browser.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="zugriff-clipboard-browser" src="img/zugriff-clipboard-browser.png" /></a></p>
-</details>
-</div>
 <div class="admonition info">
 <p class="admonition-title">Info</p>
-<p>Die für die nächsten Schritte benötigten Informationen <code>&lt;YOUR_TOKEN&gt;</code> und <code>&lt;USERNAME&gt;</code> erhalten die Schulungsteilnehmerauf drei Wegen:</p>
+<p>Die für die nächsten Schritte benötigten Informationen <code>&lt;YOUR_TOKEN&gt;</code> und <code>&lt;USERNAME&gt;</code> erhalten die Schulungsteilnehmer auf drei Wegen:</p>
 <ol>
 <li>per E-Mail (für Smart Client Nutzer)</li>
-<li>in einer Datei auf dem Desktop des Schulungs-PCs</li>
-<li>über den Kursleiter (Fallback, falls 1. + 2. nicht verfügbar)   </li>
+<li>in einer Datei auf dem Desktop des Schulungs-Notebooks (Teilnehmer ohne Smatz Client)</li>
+<li>über den Kursleiter (Fallback, falls 1. + 2. nicht verfügbar)</li>
 </ol>
 </div>
-<p>Bitte die folgende Schritte im Bereich <code>TERMINAL</code> des im Browser geöffneten Codespace eingeben:</p>
+<p>Für die Funktion der Labornetzwerke müssen nach dem ersten Start des Codespaces einmalig beim Start des ersten Labors noch einige Docker-Images
+aus einer zentralen GitHub Docker-Registry geladen werden. Um dies zu ermöglichen, muss der Zugang zu wie folgt eingerichtet werden:</p>
 <ul>
-<li>Environment-Variable mit Zugriffstoken setzen</li>
-</ul>
-<p><div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>export CR_PAT=&lt;YOUR_TOKEN&gt;
-</span></code></pre></div>
-- Anmeldung an die GitHub Container Registry des GitHub-Users <USERNAME>
+<li>In VS Code ein neues Terminal über da Menü <code>Terminal</code> und den Menüeintrag <code>New Terminal</code> öffnen</li>
+<li>Die folgende Schritte im Bereich <code>TERMINAL</code> des in VS Code Codespace eingeben:<ul>
+<li>Environment-Variable mit Zugriffstoken setzen (Platzhhalter <YOUR_TOKEN> mit dem erhaltenen GitHub-Token ersetzen)
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>export CR_PAT=&lt;YOUR_TOKEN&gt;
+</span></code></pre></div></li>
+<li>Anmeldung an die GitHub Container Registry des GitHub-Users <USERNAME> (Platzhalter <USERNAME> mit GitHub Usernamen des Kursteilnehmers ersetzen)
 <div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>echo $CR_PAT | docker login ghcr.io -u &lt;USERNAME&gt; --password-stdin
-</span></code></pre></div></p>
+</span></code></pre></div></li>
+</ul>
+</li>
+</ul>
 <details class="info">
-<summary>Screenshot: <em>GitHub Docker Registry Login</em></summary>
-<p><a class="glightbox" href="img/login-docker-registry.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="login-docker-registry" src="img/login-docker-registry.png" /></a></p>
+<summary>Screenshots: <em>GitHub Docker Registry Login</em></summary>
+<p><a class="glightbox" href="img/login-docker-registry-1.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="login-docker-registry" src="img/login-docker-registry-1.png" /></a>
+<a class="glightbox" href="img/login-docker-registry-2.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="login-docker-registry" src="img/login-docker-registry-2.png" /></a>
+<a class="glightbox" href="img/login-docker-registry-3.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="login-docker-registry" src="img/login-docker-registry-3.png" /></a>
+<a class="glightbox" href="img/login-docker-registry-4.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="login-docker-registry" src="img/login-docker-registry-4.png" /></a></p>
 </details>
 <h3 id="containerlab-topology-dateien-anzeigen-und-andern">Containerlab Topology Dateien anzeigen und ändern</h3>
 <ul>
 <li><code>EXPLORER</code>-Ansicht auswählen (Dateistruktur wird angezeigt)</li>
 <li>Die Dateien zu den einzelnen Übungen liegen im Verzeichnis <code>student</code> (Lab 1 bis 10)</li>
-<li>Bitte Verzeichnis <code>student/lab-2/topology.clab.yml</code> auswählen (Datei wird als Reiter im Editor-Bereich geöffnet)</li>
+<li>Bitte Verzeichnis <code>student/lab-2/</code> die Datei <code>topology.clab.yml</code> auswählen (Datei wird als Reiter <code>topology.clab.yml</code> im Editor-Bereich geöffnet)</li>
 <li>Bei Bedarf kann das Labornetzwerk über diese Datei konfiguriert werden (wird ggf. in künftigen Labs benötigt)</li>
 <li>Erklärungstexte für die einzelnen Bereiche können im folgenden Listing durch einen Klick auf die <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 13h-4v4h-2v-4H7v-2h4V7h2v4h4m-5-9A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2"/></svg></span>-Symbole angezeigt werden</li>
 </ul>
+<details class="info">
+<summary>Screenshot: <em>Containerlab Toplogy Dateien anzeigen</em></summary>
+<p><a class="glightbox" href="img/edit-clab-topology-file.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="login-docker-registry" src="img/edit-clab-topology-file.png" /></a></p>
+</details>
 <div class="language-yaml highlight"><span class="filename">student/lab-2/topology.clab.yml</span><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">lab2</span><span class="w"> </span><span class="c1"># (1) </span>
 </span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
 </span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="nt">mgmt</span><span class="p">:</span><span class="w"> </span><span class="c1"># (2)</span>
@@ -952,39 +997,49 @@ aus einer zentralen GitHub Docker-Registry geladen werden. Um dies zu ermöglich
 <li>Links-Sektion: Beschreibungd der Verbindungen zwischen den Containern</li>
 <li>Verbindung der Endpunkte SW1 Interface e0/1 nach R1 Interface eth1</li>
 </ol>
-<h3 id="lab-labornetzwerk-starten">Lab: Labornetzwerk starten</h3>
+<h3 id="lab-labornetzwerk-starten-deploy">Lab: Labornetzwerk starten (Deploy)</h3>
 <ul>
 <li>Containerlab-Bereich auswählen (über Containerlab Symbol)</li>
 <li>Im Bereich <code>UNDEPLOYED LOCAL LABS</code> das Verzeichnis <code>student/lab-2</code> öffnen</li>
 <li>Rechtsklick auf Datei <code>topology.clab.yml</code> und Start des Labors über Menüeintrag <code>Deploy</code></li>
-<li>Optional: Im Informations-Dialog unten rechts <code>View Logs</code> klicken:<ul>
+<li>Optional: Im Informations-Dialog unten rechts <code>View Logs</code> klicken, danach kann man die Logmeldungen während des Starts im Bereich <code>OUTPUT</code> beobachten:<ul>
 <li>Fehlende Conatainer-Images werden aus der GitHub Docker Registry <code>ghcr.io</code> heruntergeladen und gespeichert</li>
 <li>Labor Nodes werden gestartet und Verbindungen zwischen den Nodes etabliert</li>
-<li>Node Status wird farbig bzw. als <code>Up</code>/<code>Down</code> im Bereich <code>RUNNING LABS</code> angezeigt</li>
-<li>Status der einzelen Nodes durch <em>aufklappen</em> des Labs im Bereich <code>RUNNING LABS</code> angezeigt</li>
 </ul>
 </li>
-<li>alternativ: <span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-alt">Alt</kbd><span>+</span><kbd class="key-d">D</kbd></span></li>
+<li>Nach dem Start im Bereich <code>RUNNING LABS</code>:<ul>
+<li>Node Status wird farbig bzw. als <code>Up</code>/<code>Down</code> angezeigt</li>
+<li>Status der einzelen Nodes durch <em>aufklappen</em> des Labs angezeigt</li>
+</ul>
+</li>
+<li>Alternativ kann die ausgewähle Topology Datei über die folgende Tastenkombination <em>deployed</em> werden: <span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-alt">Alt</kbd><span>+</span><kbd class="key-d">D</kbd></span></li>
 </ul>
 <details class="info">
 <summary>Screenshots: <em>Lab starten</em></summary>
-<p><a class="glightbox" href="img/start-lab2-1.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="start-codespace-1" src="img/start-lab2-1.png" /></a>
-<a class="glightbox" href="img/start-lab2-2.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="start-codespace-1" src="img/start-lab2-2.png" /></a>
-<a class="glightbox" href="img/start-lab2-3.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="start-codespace-1" src="img/start-lab2-3.png" /></a>
-<a class="glightbox" href="img/start-lab2-4.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="start-codespace-1" src="img/start-lab2-4.png" /></a>
-<a class="glightbox" href="img/start-lab2-5.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="start-codespace-1" src="img/start-lab2-5.png" /></a></p>
+<p><a class="glightbox" href="img/deploy-lab2-1.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="start-codespace-1" src="img/deploy-lab2-1.png" /></a>
+<a class="glightbox" href="img/deploy-lab2-2.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="start-codespace-1" src="img/deploy-lab2-2.png" /></a>
+<a class="glightbox" href="img/deploy-lab2-3.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="start-codespace-1" src="img/deploy-lab2-3.png" /></a>
+<a class="glightbox" href="img/deploy-lab2-4.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="start-codespace-1" src="img/deploy-lab2-4.png" /></a>
+<a class="glightbox" href="img/deploy-lab2-5.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="start-codespace-1" src="img/deploy-lab2-5.png" /></a>
+<a class="glightbox" href="img/deploy-lab2-6.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="start-codespace-1" src="img/deploy-lab2-6.png" /></a>
+<a class="glightbox" href="img/deploy-lab2-7.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="start-codespace-1" src="img/deploy-lab2-7.png" /></a>
+<a class="glightbox" href="img/deploy-lab2-8.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="start-codespace-1" src="img/deploy-lab2-8.png" /></a>
+<a class="glightbox" href="img/deploy-lab2-9.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="start-codespace-1" src="img/deploy-lab2-9.png" /></a></p>
 </details>
 <h3 id="lab-topology-graph-des-labornetzwerkes-anzeigen">Lab: Topology Graph des Labornetzwerkes anzeigen</h3>
 <p>Eine grafische Übersicht kann z.B. über den eingebauten Topology Viewer angezeigt werden:</p>
 <ul>
 <li>Rechtsklick auf <code>lab2</code> im Bereich <code>RUNNING LABS</code></li>
 <li>Im Kontextmenü <code>Graph (TopoViewer)</code>auswählen</li>
-<li>alternativ: <span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-alt">Alt</kbd><span>+</span><kbd class="key-g">G</kbd></span></li>
+<li>In der grafuschen Ansicht werden die Devices, Ports und Verbindungen angezeigt (siehe Detailausschnitte)</li>
+<li>Alternativ statt Menüeintrag: <span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-alt">Alt</kbd><span>+</span><kbd class="key-g">G</kbd></span></li>
 </ul>
 <details class="info">
 <summary>Screenshots: <em>Lab Topology Graph anzeigen</em></summary>
 <p><a class="glightbox" href="img/lab2-topology-graph-1.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="start-codespace-1" src="img/lab2-topology-graph-1.png" /></a>
-<a class="glightbox" href="img/lab2-topology-graph-2.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="start-codespace-1" src="img/lab2-topology-graph-2.png" /></a></p>
+<a class="glightbox" href="img/lab2-topology-graph-2.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="start-codespace-1" src="img/lab2-topology-graph-2.png" /></a>
+<a class="glightbox" href="img/lab2-topology-graph-3.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="start-codespace-1" src="img/lab2-topology-graph-3.png" /></a>
+<a class="glightbox" href="img/lab2-topology-graph-4.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="start-codespace-1" src="img/lab2-topology-graph-4.png" /></a></p>
 </details>
 <h3 id="lab-mit-kommandozeile-eines-pcs-verbinden">Lab: Mit Kommandozeile eines PCs verbinden</h3>
 <p>Um eine Kommandozeile der PCs in einer Labor-Topologie zu öffnen gibt es drei Möglichkeiten:</p>
@@ -994,10 +1049,10 @@ aus einer zentralen GitHub Docker-Registry geladen werden. Um dies zu ermöglich
 <li>Im Kontextmenü <code>Attach Shell</code> auswählen</li>
 <li>Im Bereich <code>TERMINAL</code> öffnet sich eine Shell (Kommandozeile) für den ausgeählten PC</li>
 </ul>
-<details class="note">
+<details class="info">
 <summary>Screenshots: <em>Variante 1</em></summary>
-<p><a class="glightbox" href="img/attach-shell-var1-1.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="start-codespace-1" src="img/attach-shell-var1-1.png" /></a>
-<a class="glightbox" href="img/attach-shell-var1-2.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="start-codespace-1" src="img/attach-shell-var1-2.png" /></a></p>
+<p><a class="glightbox" href="img/attach-shell-var1.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="start-codespace-1" src="img/attach-shell-var1.png" /></a>
+<a class="glightbox" href="img/attach-shell-terminal.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="start-codespace-1" src="img/attach-shell-terminal.png" /></a></p>
 </details>
 <p>Variante 2:</p>
 <ul>
@@ -1005,10 +1060,10 @@ aus einer zentralen GitHub Docker-Registry geladen werden. Um dies zu ermöglich
 <li>Das mittlere der drei Symbole rechts neben dem PC auswählen </li>
 <li>Im Bereich <code>TERMINAL</code> öffnet sich eine Shell (Kommandozeile) für den ausgeählten PC</li>
 </ul>
-<details class="note">
+<details class="info">
 <summary>Screenshots: <em>Variante 2</em></summary>
-<p><a class="glightbox" href="img/attach-shell-var2-1.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="start-codespace-1" src="img/attach-shell-var2-1.png" /></a>
-<a class="glightbox" href="img/attach-shell-var2-2.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="start-codespace-1" src="img/attach-shell-var2-2.png" /></a></p>
+<p><a class="glightbox" href="img/attach-shell-var2.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="start-codespace-1" src="img/attach-shell-var2.png" /></a>
+<a class="glightbox" href="img/attach-shell-terminal.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="start-codespace-1" src="img/attach-shell-terminal.png" /></a></p>
 </details>
 <p>Variante 3:</p>
 <ul>
@@ -1019,7 +1074,8 @@ aus einer zentralen GitHub Docker-Registry geladen werden. Um dies zu ermöglich
 <details class="info">
 <summary>Screenshots: <em>Variante 3</em></summary>
 <p><a class="glightbox" href="img/attach-shell-var3-1.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="start-codespace-1" src="img/attach-shell-var3-1.png" /></a>
-<a class="glightbox" href="img/attach-shell-var3-2.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="start-codespace-1" src="img/attach-shell-var3-2.png" /></a></p>
+<a class="glightbox" href="img/attach-shell-var3-2.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="start-codespace-1" src="img/attach-shell-var3-2.png" /></a>
+<a class="glightbox" href="img/attach-shell-terminal.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="start-codespace-1" src="img/attach-shell-terminal.png" /></a></p>
 </details>
 <h3 id="lab-befehl-auf-kommandozeile-eines-pcs-ausfuhren">Lab: Befehl auf Kommandozeile eines PCs ausführen</h3>
 <ul>
@@ -1035,31 +1091,30 @@ aus einer zentralen GitHub Docker-Registry geladen werden. Um dies zu ermöglich
 <p><a class="glightbox" href="img/ping-lab2-pc1-pc3.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="start-codespace-1" src="img/ping-lab2-pc1-pc3.png" /></a></p>
 </details>
 <h3 id="codespace-im-github-repository-clab_lankurs-stoppen">Codespace im GitHub Repository <em>clab_lankurs</em> stoppen</h3>
-<p>Variante 1 (direkt auf GitHub):</p>
+<p>Variante 1 (in VS Code):</p>
+<ul>
+<li>Auf Fläche <code>&gt;&lt; Codespaces: &lt;Name des Codespaces&gt;</code> unten links in VS Code klicken</li>
+<li>Im angezeigten Menü <code>Stop Current Codespace</code>auswählen</li>
+<li>Codespace mit Simulationsumgebung wird gestoppt</li>
+</ul>
+<details class="info">
+<summary>Screenshots: <em>Stopp Codespace (VS Code Editor)</em></summary>
+<p><a class="glightbox" href="img/stop-codespace-var1-1.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="start-codespace-1" src="img/stop-codespace-var1-1.png" /></a>
+<a class="glightbox" href="img/stop-codespace-var1-2.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="start-codespace-2" src="img/stop-codespace-var1-2.png" /></a>
+<a class="glightbox" href="img/stop-codespace-var1-3.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="start-codespace-3" src="img/stop-codespace-var1-3.png" /></a>
+<a class="glightbox" href="img/stop-codespace-var1-4.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="start-codespace-3" src="img/stop-codespace-var1-4.png" /></a></p>
+</details>
+<p>Variante 2 (direkt auf GitHub):</p>
 <ul>
 <li>Ansicht <strong>clab-lankurs</strong> GitHub Repository öffnen</li>
 <li>Über grünen Button <code>&lt;&gt; Code</code> + Reiter <code>Codespaces</code> (Codespace wird als <code>Active</code> angezeigt) + <code>...</code>-Menü im Bereich <code>On current branch</code>den Eintrag <code>Stop codespace</code> auswählen</li>
 <li>Codespace mit Simulationsumgebung wird gestoppt</li>
 </ul>
 <details class="info">
-<summary>Screenshots: <em>Stopp Codespace</em></summary>
-<p><a class="glightbox" href="img/stopp-codespace-1.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="start-codespace-1" src="img/stopp-codespace-1.png" /></a>
-<a class="glightbox" href="img/stopp-codespace-2.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="start-codespace-2" src="img/stopp-codespace-2.png" /></a>
-<a class="glightbox" href="img/stopp-codespace-3.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="start-codespace-3" src="img/stopp-codespace-3.png" /></a></p>
-</details>
-<p>Variante 2 (im Browser):</p>
-<ul>
-<li>Auf Fläche <code>&gt;&lt; Codespaces: &lt;Name des Codespaces</code> unten links im Broswer klicken</li>
-<li>Im angezeigten Menü <code>Stop Current Codespace</code>auswählen</li>
-<li>Codespace mit Simulationsumgebung wird gestoppt</li>
-</ul>
-<details class="info">
-<summary>Screenshots: <em>Stopp Codespace</em></summary>
-<p><a class="glightbox" href="img/stopp-codespace-var2-1.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="start-codespace-1" src="img/stopp-codespace-var2-1.png" /></a>
-<a class="glightbox" href="img/stopp-codespace-var2-2.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="start-codespace-2" src="img/stopp-codespace-var2-2.png" /></a>
-<a class="glightbox" href="img/stopp-codespace-var2-3.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="start-codespace-3" src="img/stopp-codespace-var2-3.png" /></a>
-<a class="glightbox" href="img/stopp-codespace-var2-4.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="start-codespace-3" src="img/stopp-codespace-var2-4.png" /></a>
-<a class="glightbox" href="img/stopp-codespace-var2-5.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="start-codespace-3" src="img/stopp-codespace-var2-5.png" /></a></p>
+<summary>Screenshots: <em>Stopp Codespace (GitHub)</em></summary>
+<p><a class="glightbox" href="img/stop-codespace-var2-1.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="start-codespace-1" src="img/stop-codespace-var2-1.png" /></a>
+<a class="glightbox" href="img/stop-codespace-var2-2.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="start-codespace-2" src="img/stop-codespace-var2-2.png" /></a>
+<a class="glightbox" href="img/stop-codespace-var2-3.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="start-codespace-3" src="img/stop-codespace-var2-3.png" /></a></p>
 </details>
 <h2 id="lab-1-containerlab-wireshark">Lab 1 - Containerlab &amp; Wireshark</h2>
 <p>Der <a href="https://wireshark.org">Network Protocol Analyzer <em>Wireshark</em></a> ist die am meisten genutzte Software für die Netzwerk Paketanalyse. Wireshark ist ein Open Source Programm, das für private und kommerzielle Zwecke frei genutzt werden kann. Ein Network Protcol Analyzer kann Netzwerk Pakete aufzeichnen sowie die in den Paketen übertragenen Netzwerkprotokolle analysieren und unterstützt Netzwerkadminstratoren somit bei der Fehlersuche. Die Funktionen von Wireshark sind auch hervoragend geeignet, um den Aufbau von Netzwerkframes, -paketen und -segmenten sowie die Funktionsweise von Netzwerkprotokollen auf den verschieden Schichten des ISO/OSI Modells darzustellen, weshalb <em>Wireshark</em> hervorragend für Ausbildungszwecke geeignet ist.</p>
@@ -1106,9 +1161,9 @@ aus einer zentralen GitHub Docker-Registry geladen werden. Um dies zu ermöglich
 </ul>
 <details class="info">
 <summary>Screenshots: <em>Edgeshark im GitHub Codespace starten</em></summary>
-<p><a class="glightbox" href="img/stopp-codespace-1.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="start-codespace-1" src="img/stopp-codespace-1.png" /></a>
-<a class="glightbox" href="img/stopp-codespace-2.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="start-codespace-2" src="img/stopp-codespace-2.png" /></a>
-<a class="glightbox" href="img/stopp-codespace-3.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="start-codespace-3" src="img/stopp-codespace-3.png" /></a></p>
+<p><a class="glightbox" href="img/stop-codespace-var1-1.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="start-codespace-1" src="img/stop-codespace-var1-1.png" /></a>
+<a class="glightbox" href="img/stop-codespace-var1-2.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="start-codespace-2" src="img/stop-codespace-var1-2.png" /></a>
+<a class="glightbox" href="img/stop-codespace-var1-3.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="start-codespace-3" src="img/stop-codespace-var1-3.png" /></a></p>
 </details>
 <p>Der erfolgreiche Start kann bei Bedarf geprüft werden, indem man die <em>Edgeshark</em> Startseite aufruft. Nach dem Start von <em>Edgeshark</em> wird unten rechts im Webbrowser</p>
 <h3 id="lab-2-und-github-codespace-stoppen">Lab-2 und GitHub Codespace stoppen</h3>
