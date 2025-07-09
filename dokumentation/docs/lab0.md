@@ -299,25 +299,3 @@ Variante 2 (direkt auf GitHub):
     ![start-codespace-2](img/stop-codespace-var2-2.png)
     ![start-codespace-3](img/stop-codespace-var2-3.png)
 
-
-### Lab-2 und GitHub Codespace stoppen
-
-Containerlab Lab-2 und GitHub Codespace analog der [Übung Lab 0](lab0.md#lab-0-laborumgebung-mit-containerlab) stoppen.
-
-## Lab 2 - Hubs & Switches
-
-## Lab 3 - Ethernet Frameformate 
-
-## Lab 4 - Ethernet, ARP & IP Adressen
-
-## Lab 5 - VLANs & statisches Routing
-
-## Lab 6 - Dynamisches Routing
-
-## Lab 7 - User Datagram Protokol (UDP)
-
-## Lab 8 - Transmission Control Protocol (TCP)
-
-## Lab 9 - Anwendungsprotokolle & Tools
-
-## Lab 10 - Firewalls & Portscanning
