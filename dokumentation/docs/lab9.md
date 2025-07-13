@@ -20,6 +20,20 @@ Lab Topology
 
 Wie im Kurs gezeigt, kann im Hintergrund viel passieren, wenn die hierarchischen DNS-Server untereinander kommunizieren (rekursiv oder iterativ), um die Anfrage aufzulösen. Für den DNS-Client selbst bleibt das Protokoll jedoch sehr einfach – er stellt eine Anfrage an den lokalen Server und erhält eine Antwort.
 
+![Toplogy Lab-7](img/dns-iterative-light.svg#only-light)
+![Toplogy Lab-7](img/dns-iterative-dark.svg#only-dark)
+
+/// caption
+Iteratives Vorgehen
+///
+
+![Toplogy Lab-7](img/dns-recursive-light.svg#only-light)
+![Toplogy Lab-7](img/dns-recursive-dark.svg#only-dark)
+
+/// caption
+Rekursives Vorgehen
+///
+
 Bevor du dieses Labor startest, sollten im Unterricht vor allem die Themen lokale DNS-Server, DNS-Caching, DNS-Records und Nachrichtenformate sowie das TYPE-Feld im DNS-Record behandelt worden sein. 
 
 !!! tip
