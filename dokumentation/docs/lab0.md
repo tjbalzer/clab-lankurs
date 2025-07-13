@@ -2,7 +2,7 @@
 
 In dieser Übung wird gezeigt, wie der in den Vorbereitungen angelegte GitHub Codespace gestartet und gestoppt werden kann. 
 
-Darüber hinaus wird das Basiswissen zum Umgang mit _Containerlab_ vermittelt:
+Darüber hinaus wird das Basiswissen zum Umgang mit [Containerlab](https://containerlab.dev) vermittelt:
 
 - Anzeige und Aufbau der Containerlab Topology-Dateien
 - Lab in Containerlab starten und stoppen
@@ -10,8 +10,8 @@ Darüber hinaus wird das Basiswissen zum Umgang mit _Containerlab_ vermittelt:
 - Verbindung mit der Kommandzeile von PCs im Labornetzwerk
 - Ausführen von Befehlen in der Kommandozeile eines Labornetz-PCs
 
-  ![Toplogy Lab-2](img/lankurs-lab2.svg#only-light)
-  ![Toplogy Lab-2](img/lankurs-lab2-dark.svg#only-dark)
+![Toplogy Lab-2](img/lankurs-lab2.svg#only-light)
+![Toplogy Lab-2](img/lankurs-lab2-dark.svg#only-dark)
 
 /// caption
 Lab Topology
@@ -190,9 +190,9 @@ aus einer zentralen GitHub Docker-Registry geladen werden. Um dies zu ermöglich
   21. Links-Sektion: Beschreibungd der Verbindungen zwischen den Containern
   22. Verbindung der Endpunkte SW1 Interface e0/1 nach R1 Interface eth1
 
-## Lab: Labornetzwerk starten (Deploy)
+## Labornetzwerk starten (Deploy)
 
-- Containerlab-Bereich auswählen (über Containerlab Symbol)
+- Containerlab-Bereich auswählen (über Containerlab Symbol im linken Randmenü)
 - Im Bereich `UNDEPLOYED LOCAL LABS` das Verzeichnis `student/lab-2` öffnen
 - Rechtsklick auf Datei `topology.clab.yml` und Start des Labors über Menüeintrag `Deploy`
 - Optional: Im Informations-Dialog unten rechts `View Logs` klicken, danach kann man die Logmeldungen während des Starts im Bereich `OUTPUT` beobachten:
@@ -214,7 +214,7 @@ aus einer zentralen GitHub Docker-Registry geladen werden. Um dies zu ermöglich
     ![start-codespace-1](img/deploy-lab2-8.png)
     ![start-codespace-1](img/deploy-lab2-9.png)
 
-## Lab: Topology Graph des Labornetzwerkes anzeigen
+## Topology Graph des Labornetzwerkes anzeigen
 
 Eine grafische Übersicht kann z.B. über den eingebauten Topology Viewer angezeigt werden:
 
@@ -229,7 +229,7 @@ Eine grafische Übersicht kann z.B. über den eingebauten Topology Viewer angeze
     ![start-codespace-1](img/lab2-topology-graph-3.png)
     ![start-codespace-1](img/lab2-topology-graph-4.png)
 
-## Lab: Mit Kommandozeile eines PCs verbinden
+## Mit Kommandozeile eines PCs verbinden
 
 Um eine Kommandozeile der PCs in einer Labor-Topologie zu öffnen gibt es drei Möglichkeiten:
 
@@ -264,7 +264,7 @@ Variante 3:
     ![start-codespace-1](img/attach-shell-var3-2.png)
     ![start-codespace-1](img/attach-shell-terminal.png)
 
-## Lab: Befehl auf Kommandozeile eines PCs ausführen
+## Befehl auf Kommandozeile eines PCs ausführen
 
 - Mit Kommandzeile von PC1 verbinden (siehe oben)
 - Ping-Befehl für eine Prüfung der Verbindung zu PC3 eingeben:
@@ -274,12 +274,20 @@ Variante 3:
 ??? info "Screenshot: _Ping-Befehl eingeben_"
     ![start-codespace-1](img/ping-lab2-pc1-pc3.png)
 
+## Containerlab _Lab-2_ stoppen (Destroy)
+
+Das gestartete Labor kann über die Auswahl des Befehls `Destroy` im Kontextmenü von Lab-2 im Bereich `RUNNING LABS` beendet werden.
+
+??? info "Screenshot: _Stopp (Desroy) Lab-2_"
+    ![start-codespace-1](img/destroy-containerlab-lab-2-1.png)
+    ![start-codespace-1](img/destroy-containerlab-lab-2-2.png)
+
 ## Codespace im GitHub Repository _clab_lankurs_ stoppen
 
 Variante 1 (in VS Code):
 
 - Auf Fläche `>< Codespaces: <Name des Codespaces>` unten links in VS Code klicken
-- Im angezeigten Menü `Stop Current Codespace`auswählen
+- Im angezeigten Menü `Stop Current Codespace` auswählen
 - Codespace mit Simulationsumgebung wird gestoppt
 
 ??? info "Screenshots: _Stopp Codespace (VS Code Editor)_"
@@ -298,4 +306,3 @@ Variante 2 (direkt auf GitHub):
     ![start-codespace-1](img/stop-codespace-var2-1.png)
     ![start-codespace-2](img/stop-codespace-var2-2.png)
     ![start-codespace-3](img/stop-codespace-var2-3.png)
-
