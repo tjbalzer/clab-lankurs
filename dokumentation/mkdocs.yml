@@ -8,15 +8,16 @@ nav:
   - Vorbereitungen: "vorbereitungen.md"
   - "Lab 0: Laborumgebung mit Containerlab": "lab0.md"
   - "Lab 1: Containerlab & Wireshark": "lab1.md"
-  - "Lab 2: Hubs & Switches": "lab2.md"
-  - "Lab 3: Ethernet Frameformate": "lab3.md"
+  - "Lab 2: Ethernet Frameformate": "lab2.md"
+  - "Lab 3: Hubs & Switches": "lab3.md"
   - "Lab 4: Ethernet, ARP & IP Adressen": "lab4.md"
   - "Lab 5: VLANs & statisches Routing": "lab5.md"
   - "Lab 6: Dynamisches Routing": "lab6.md"
   - "Lab 7: User Datagram Protocol (UDP)": "lab7.md"
-  - "Lab 8: Transmission Control Protocol (TCP)": "lab8.md"
-  - "Lab 9: Anwendungsprotokolle & Tools": "lab9.md"
-  - "Lab 10: Firewalls & Portscanning": "lab10.md"
+  - "Lab 8: Dynamic Host Configuration Protocol (DHCP)": "lab8.md"
+  - "Lab 9: Domain Name System Protokoll (DNS)": "lab9.md"
+  - "Lab 10: Network Time Protocol (NTP)": "lab10.md"
+  - "Lab 11: Transmission Control Protocol (TCP)": "lab11.md"
 
 repo_url: https://github.com/tjbalzer/clab-lankurs
 repo_name: clab-lankurs
@@ -70,6 +71,7 @@ plugins:
 markdown_extensions:
   - admonition
   - attr_list
+  - footnotes
   - pymdownx.details
   - pymdownx.superfences
   - pymdownx.blocks.caption
