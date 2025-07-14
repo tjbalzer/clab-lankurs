@@ -22,7 +22,7 @@
     
     
       
-        <title>Lab 8: Transmission Control Protocol (TCP) - Kurs Netzwerk Grundlagen</title>
+        <title>Lab 8: Dynamic Host Configuration Protocol (DHCP) - Kurs Netzwerk Grundlagen</title>
       
     
     
@@ -83,7 +83,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#lab-8-transmission-control-protocol-tcp" class="md-skip">
+        <a href="#lab-8-dynamic-host-configuration-protocol-dhcp" class="md-skip">
           Skip to content
         </a>
       
@@ -118,7 +118,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Lab 8: Transmission Control Protocol (TCP)
+              Lab 8: Dynamic Host Configuration Protocol (DHCP)
             
           </span>
         </div>
@@ -316,7 +316,7 @@
   
   
   <span class="md-ellipsis">
-    Lab 2: Hubs & Switches
+    Lab 2: Ethernet Frameformate
     
   </span>
   
@@ -338,7 +338,7 @@
   
   
   <span class="md-ellipsis">
-    Lab 3: Ethernet Frameformate
+    Lab 3: Hubs & Switches
     
   </span>
   
@@ -452,17 +452,184 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Lab 8: Dynamic Host Configuration Protocol (DHCP)
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="lab8.html" class="md-nav__link md-nav__link--active">
         
   
   
   <span class="md-ellipsis">
-    Lab 8: Transmission Control Protocol (TCP)
+    Lab 8: Dynamic Host Configuration Protocol (DHCP)
     
   </span>
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#einfuhrung" class="md-nav__link">
+    <span class="md-ellipsis">
+      Einführung
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#paketmitschnitt-erstellen" class="md-nav__link">
+    <span class="md-ellipsis">
+      Paketmitschnitt erstellen
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Paketmitschnitt erstellen">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#auf-einem-linux-rechner" class="md-nav__link">
+    <span class="md-ellipsis">
+      Auf einem Linux-Rechner
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Auf einem Linux-Rechner">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#variante-1-aktuelle-ubuntu-versionen-mit-network-manager-wie-auf-den-schulungs-notebooks-installiert" class="md-nav__link">
+    <span class="md-ellipsis">
+      Variante 1 (aktuelle Ubuntu Versionen mit Network Manager, wie auf den Schulungs-Notebooks installiert)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#variante-2-wenn-dhclient-installiert-ist" class="md-nav__link">
+    <span class="md-ellipsis">
+      Variante 2 (wenn dhclient installiert ist)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#auf-einem-windows-pc-bzw-smart-client-nur-wenn-wireshark-installiert-ist" class="md-nav__link">
+    <span class="md-ellipsis">
+      Auf einem Windows-PC bzw. Smart Client (nur wenn Wireshark installiert ist)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#auf-einem-mac" class="md-nav__link">
+    <span class="md-ellipsis">
+      Auf einem Mac
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nach-der-aufzeichnung" class="md-nav__link">
+    <span class="md-ellipsis">
+      Nach der Aufzeichnung
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#analysefragen" class="md-nav__link">
+    <span class="md-ellipsis">
+      Analysefragen
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Analysefragen">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dhcp-discover" class="md-nav__link">
+    <span class="md-ellipsis">
+      DHCP Discover
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dhcp-offer" class="md-nav__link">
+    <span class="md-ellipsis">
+      DHCP Offer
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dhcp-request" class="md-nav__link">
+    <span class="md-ellipsis">
+      DHCP Request
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dhcp-ack" class="md-nav__link">
+    <span class="md-ellipsis">
+      DHCP ACK
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -480,7 +647,7 @@
   
   
   <span class="md-ellipsis">
-    Lab 9: Anwendungsprotokolle & Tools
+    Lab 9: Domain Name System Protokoll (DNS)
     
   </span>
   
@@ -502,7 +669,29 @@
   
   
   <span class="md-ellipsis">
-    Lab 10: Firewalls & Portscanning
+    Lab 10: Network Time Protocol (NTP)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="lab11.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Lab 11: Transmission Control Protocol (TCP)
     
   </span>
   
@@ -532,6 +721,149 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#einfuhrung" class="md-nav__link">
+    <span class="md-ellipsis">
+      Einführung
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#paketmitschnitt-erstellen" class="md-nav__link">
+    <span class="md-ellipsis">
+      Paketmitschnitt erstellen
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Paketmitschnitt erstellen">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#auf-einem-linux-rechner" class="md-nav__link">
+    <span class="md-ellipsis">
+      Auf einem Linux-Rechner
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Auf einem Linux-Rechner">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#variante-1-aktuelle-ubuntu-versionen-mit-network-manager-wie-auf-den-schulungs-notebooks-installiert" class="md-nav__link">
+    <span class="md-ellipsis">
+      Variante 1 (aktuelle Ubuntu Versionen mit Network Manager, wie auf den Schulungs-Notebooks installiert)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#variante-2-wenn-dhclient-installiert-ist" class="md-nav__link">
+    <span class="md-ellipsis">
+      Variante 2 (wenn dhclient installiert ist)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#auf-einem-windows-pc-bzw-smart-client-nur-wenn-wireshark-installiert-ist" class="md-nav__link">
+    <span class="md-ellipsis">
+      Auf einem Windows-PC bzw. Smart Client (nur wenn Wireshark installiert ist)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#auf-einem-mac" class="md-nav__link">
+    <span class="md-ellipsis">
+      Auf einem Mac
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nach-der-aufzeichnung" class="md-nav__link">
+    <span class="md-ellipsis">
+      Nach der Aufzeichnung
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#analysefragen" class="md-nav__link">
+    <span class="md-ellipsis">
+      Analysefragen
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Analysefragen">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dhcp-discover" class="md-nav__link">
+    <span class="md-ellipsis">
+      DHCP Discover
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dhcp-offer" class="md-nav__link">
+    <span class="md-ellipsis">
+      DHCP Offer
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dhcp-request" class="md-nav__link">
+    <span class="md-ellipsis">
+      DHCP Request
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dhcp-ack" class="md-nav__link">
+    <span class="md-ellipsis">
+      DHCP ACK
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -549,7 +881,199 @@
   
 
 
-<h1 id="lab-8-transmission-control-protocol-tcp">Lab 8: Transmission Control Protocol (TCP)</h1>
+<h1 id="lab-8-dynamic-host-configuration-protocol-dhcp">Lab 8: Dynamic Host Configuration Protocol (DHCP)</h1>
+<p>Quelle: Orginalaufgabe als Ergänzung zu „Computer Networking: A Top-Down Approach“, 8. Auflage von J.F. Kurose und K.W. Ross (ins Deutsche übersetzt mit Hilfe von ChatGPT).</p>
+<p>© 2005–2021, J.F. Kurose und K.W. Ross. Alle Rechte vorbehalten.</p>
+<h2 id="einfuhrung">Einführung</h2>
+<p>In diesem Lab werfen wir einen kurzen Blick auf das <strong>Dynamic Host Configuration Protocol (DHCP)</strong>.</p>
+<p>Erinnere dich: DHCP wird in Unternehmens-, Hochschul- und Heimnetzwerken (LANs, egal ob Kabel oder WLAN) umfassend eingesetzt, um Hosts dynamisch IP-Adressen und andere Netzwerkinformationen zuzuweisen.  </p>
+<p>Bevor du startest, sollte dir der Ablauf der Anforderung einer IP-Adresse über DHCP klar sein. Besonders die folgende Abbildung ist wichtig, da wir hier genau die Nachrichten <strong>DHCP Discover, Offer, Request und ACK</strong> untersuchen, die in dieser Abbildung gezeigt werden.</p>
+<figure>
+<p><a class="glightbox" href="img/dhcp-discover-offer-request-ack.svg#only-light" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Ablauf DCHP" src="img/dhcp-discover-offer-request-ack.svg#only-light" /></a>
+<a class="glightbox" href="img/dhcp-discover-offer-request-ack-dark.svg#only-dark" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Ablauf DCHP" src="img/dhcp-discover-offer-request-ack-dark.svg#only-dark" /></a></p>
+<figcaption>
+<p>Lab Topology</p>
+</figcaption>
+</figure>
+<p>Wie in den früheren Wireshark-Labs wirst du ein paar gezielte Aktionen auf deinem Rechner ausführen, die DHCP in Gang setzen, und dann <strong>Wireshark</strong> verwenden, um den Datenverkehr aufzuzeichnen und zu analysieren.</p>
+<h2 id="paketmitschnitt-erstellen">Paketmitschnitt erstellen</h2>
+<p>Die ersten beiden Schritte in Abbildung (Discover und Offer) sind technisch optional (d. h. sie müssen nicht immer auftreten, z. B. beim Verlängern einer bestehenden Adresse). Die Nachrichten <strong>Request</strong> und <strong>ACK</strong> sind jedoch immer erforderlich.</p>
+<p>Damit du einen Mitschnitt bekommst, der <strong>alle vier Nachrichtentypen</strong> enthält, musst du ein paar Kommandos auf deinem Rechner ausführen.</p>
+<h3 id="auf-einem-linux-rechner">Auf einem Linux-Rechner</h3>
+<h4 id="variante-1-aktuelle-ubuntu-versionen-mit-network-manager-wie-auf-den-schulungs-notebooks-installiert">Variante 1 (aktuelle Ubuntu Versionen mit Network Manager, wie auf den Schulungs-Notebooks installiert)</h4>
+<ul>
+<li>Öffne ein Terminalfenster und gib ein: <code>ip link</code></li>
+</ul>
+<div class="admonition example">
+<p class="admonition-title">Beispiel-Ausgabe auf einem der Ubuntu Schulungs-Notebooks</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>1: lo: &lt;LOOPBACK,UP,LOWER_UP&gt; mtu 65536 qdisc noqueue state UNKNOWN mode DEFAULT group default qlen 1000
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>2: enp0s25: &lt;NO-CARRIER,BROADCAST,MULTICAST,UP&gt; mtu 1500 qdisc fq_codel state DOWN mode DEFAULT group default qlen 1000
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>    link/ether 28:d2:44:16:13:3f brd ff:ff:ff:ff:ff:ff
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>3: wlp3s0: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc noqueue state UP mode DORMANT group default qlen 1000
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>    link/ether 6c:88:14:bf:13:c8 brd ff:ff:ff:ff:ff:ff
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>4: docker0: &lt;NO-CARRIER,BROADCAST,MULTICAST,UP&gt; mtu 1500 qdisc noqueue state DOWN mode DEFAULT group default 
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>    link/ether 02:42:f1:45:2a:b0 brd ff:ff:ff:ff:ff:ff
+</span></code></pre></div>
+</div>
+<ul>
+<li><code>wlp3s0</code> ist hier z.B. das WLAN-Interface, das du mitschneiden willst (prüfbar in Wireshark unter <code>Capture -&gt; Options</code>)</li>
+<li>Gib als nächstes den folgenden Befehl ein: <code>sudo nmcli device disconnect wlp3s0</code><ul>
+<li>Dieser Befehl deaktiviert das Interfaces (Bestätigung durch Meldung <code>Gerät "wlp3s0" wurde erfolgreich getrennt</code>)</li>
+</ul>
+</li>
+<li>Nun muss die Lease-Datei gelöscht werden, da sonst die wieder gleiche IP-Adresse beim DHCP-Server angefordert wird (nur <strong>Request und ACK</strong> statt <strong>Discover, Offer, Request und ACK</strong>)<ul>
+<li>Befehl: <code>sudo ls /var/lib/NetworkManager/</code></li>
+</ul>
+</li>
+</ul>
+<div class="admonition example">
+<p class="admonition-title">Beispiel-Ausgabe auf einem der Ubuntu Schulungs-Notebooks</p>
+<div class="language-SHELL highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>ubuntu@t430-1:~$<span class="w"> </span>sudo<span class="w"> </span>ls<span class="w"> </span>/var/lib/NetworkManager/
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>internal-8fe6427d-8255-4205-8175-cc9d6cc6fb92-wlp3s0.lease<span class="w"> </span>NetworkManager.state<span class="w"> </span>seen-bssids
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>NetworkManager-intern.conf<span class="w">  </span>secret_key<span class="w"> </span>timestamps
+</span></code></pre></div>
+</div>
+<ul>
+<li>Löschen der Lease-Datei (hier: <code>internal-8fe6427d-8255-4205-8175-cc9d6cc6fb92-wlp3s0.lease</code>)<ul>
+<li>Befehl: <code>sudo rm /var/lib/NetworkManager/internal-8fe6427d-8255-4205-8175-cc9d6cc6fb92-wlp3s0.lease</code></li>
+<li>Leider ist es nicht möglich, den Dateinamen automatisch über <span class="keys"><kbd class="key-tab">Tab</kbd></span> zu ergänzen, weshalb dieser con Hand korrekt eingetippt werden muss</li>
+</ul>
+</li>
+<li>Starte Wireshark und beginne mit der Aufzeichnung auf dem oben ermittelten Interface (hier: <code>wlp3s0</code>)</li>
+<li>Als nächstes folgt der Befehl: <code>sudo nmcli device connect wlp3s0</code><ul>
+<li>Dieser Befehl reaktiviert das WALN-Interface <code>wlp3s0</code></li>
+</ul>
+</li>
+<li>Warte ein paar Sekunden und stoppe die Wireshark-Aufzeichnung</li>
+</ul>
+<h4 id="variante-2-wenn-dhclient-installiert-ist">Variante 2 (wenn <code>dhclient</code> installiert ist)</h4>
+<ul>
+<li>Öffne ein Terminalfenster und gib ein: <code>ip addr flush eth0</code><ul>
+<li><code>eth0</code> ist auch hier das Interface, das du mitschneiden willst (prüfbar in Wireshark unter <code>Capture -&gt; Options</code>)</li>
+<li>Dieser Befehl entfernt die aktuelle IP-Adresse des Interfaces </li>
+</ul>
+</li>
+<li>Als nächstes folgt der Befehl: <code>dhclient -r</code><ul>
+<li>Dieser Befehl gibt bestehende DHCP-Leases frei</li>
+</ul>
+</li>
+<li>Starte Wireshark und beginne mit der Aufzeichnung auf diesem Interface</li>
+<li>Gib anschließend ein: <code>sudo dhclient eth0</code><ul>
+<li>Damit fordert dein Rechner vom DHCP-Server eine neue IP-Adresse und Konfigurationsdaten an</li>
+</ul>
+</li>
+<li>Warte ein paar Sekunden und stoppe die Wireshark-Aufzeichnung</li>
+</ul>
+<h3 id="auf-einem-windows-pc-bzw-smart-client-nur-wenn-wireshark-installiert-ist">Auf einem Windows-PC bzw. Smart Client (nur wenn Wireshark installiert ist)</h3>
+<ul>
+<li>Öffne die Eingabeaufforderung und gib ein: <code>ipconfig /release</code><ul>
+<li>Damit gibst du deine aktuelle IP-Adresse auf</li>
+</ul>
+</li>
+<li>Starte Wireshark</li>
+<li>Gib in der Eingabeaufforderung ein: <code>ipconfig /renew</code><ul>
+<li>Das startet eine neue DHCP-Anfrage und holt eine neue IP-Adresse samt Konfigurationsdaten vom DHCP-Server</li>
+</ul>
+</li>
+<li>Warte ein paar Sekunden und stoppe dann die Wireshark-Aufzeichnung</li>
+</ul>
+<h3 id="auf-einem-mac">Auf einem Mac</h3>
+<ul>
+<li>Öffne ein Terminalfenster und gib ein: <code>sudo ipconfig set en0 none</code><ul>
+<li><code>en0</code> steht hier beispielhaft für das Interface, auf dem du in Wireshark mitschneiden möchtest</li>
+<li>Die Liste deiner Interfaces kannst du in Wireshark unter <code>Capture -&gt; Options</code> einsehen </li>
+<li>Dieser Befehl entfernt die aktuelle Netzwerkkonfiguration des Interfaces</li>
+</ul>
+</li>
+<li>Starte Wireshark und beginne mit der Aufzeichnung auf diesem Interface</li>
+<li>Gib danach im Terminal ein: <code>sudo ipconfig set en0 dhcp</code><ul>
+<li>Dadurch fordert dein Rechner eine IP-Adresse und andere Netzwerkinformationen vom DHCP-Server an</li>
+</ul>
+</li>
+<li>Warte ein paar Sekunden und stoppe dann die Wireshark-Aufzeichnung</li>
+</ul>
+<h3 id="nach-der-aufzeichnung">Nach der Aufzeichnung</h3>
+<ul>
+<li>Überprüfe dein Wireshark-Fenster, um sicherzustellen, dass du tatsächlich DHCP-Pakete mitgeschnitten hast</li>
+<li>Gib in das Filterfeld ein: <code>dhcp</code></li>
+</ul>
+<p>Dein Bildschirm sollte dann alle relevanten DHCP-Nachrichten anzeigen.</p>
+<div class="admonition warning">
+<p class="admonition-title">Wichtig</p>
+<p>Falls du Wireshark nicht auf einem Live-Netzwerk verwenden kannst, <strong>oder nicht alle vier Nachrichtentypen in der Aufzeichnung enthalten sind</strong>, kannst du stattdessen auch das vorgefertigte Tracefile <code>dhcp-wireshark-trace1-1.pcapng</code> verwenden, das alle vier Nachrichtentypen enthält.</p>
+</div>
+<h2 id="analysefragen">Analysefragen</h2>
+<p>Beantworte die folgenden Fragen zu deinem eigenen Mitschnitt <strong>oder</strong> zum bereitgestellten Tracefile.  </p>
+<h3 id="dhcp-discover">DHCP Discover</h3>
+<ol>
+<li>Wird das DHCP Discover über UDP oder TCP transportiert?</li>
+<li>Welche Quell-IP-Adresse wird im Discover-Datagramm verwendet?  <ul>
+<li>Was ist besonders an dieser Adresse? Erkläre.</li>
+</ul>
+</li>
+<li>Welche Ziel-IP-Adresse wird verwendet?  <ul>
+<li>Was ist besonders an dieser Adresse? Erkläre.</li>
+</ul>
+</li>
+<li>Welchen Wert hat das <strong>Transaction ID</strong>-Feld in der Discover-Nachricht?</li>
+<li>Sieh dir das <strong>Options-Feld</strong> im DHCP Discover an.  <ul>
+<li>Nenne fünf Informationen (außer der IP-Adresse), die der Client darin vorschlägt oder anfordert.</li>
+</ul>
+</li>
+</ol>
+<h3 id="dhcp-offer">DHCP Offer</h3>
+<ol>
+<li>Woran erkennst du, dass diese Offer-Nachricht eine Antwort auf die zuvor untersuchte Discover-Nachricht ist?</li>
+<li>Welche Quell-IP-Adresse wird im Offer-Datagramm verwendet?  <ul>
+<li>Was ist daran besonders? Erkläre.</li>
+</ul>
+</li>
+<li>Welche Ziel-IP-Adresse wird verwendet?  <ul>
+<li>Was ist daran besonders? Erkläre.  </li>
+<li><strong>Hinweis:</strong> Achte hier genau auf deinen Trace. Wenn du tiefer eintauchen willst, schau dir den <a href="https://www.rfc-editor.org/rfc/rfc2131.txt">DHCP RFC 2131</a>, Kapitel 4.3, an.</li>
+</ul>
+</li>
+<li>Sieh dir das Options-Feld im DHCP Offer an.  <ul>
+<li>Welche fünf Infos liefert der DHCP-Server dem Client darin?</li>
+</ul>
+</li>
+</ol>
+<h3 id="dhcp-request">DHCP Request</h3>
+<ol>
+<li>Welche UDP-Quell- und Zielportnummern werden im DHCP Request verwendet?</li>
+<li>Welche Quell-IP-Adresse hat das Request-Datagramm?  <ul>
+<li>Was ist daran besonders? Erkläre.</li>
+</ul>
+</li>
+<li>Welche Ziel-IP-Adresse wird verwendet?  <ul>
+<li>Was ist daran besonders? Erkläre.</li>
+</ul>
+</li>
+<li>Welchen Wert hat das <strong>Transaction ID</strong>-Feld im DHCP Request?  <ul>
+<li>Passt es zu den IDs der vorherigen Discover- und Offer-Nachrichten?</li>
+</ul>
+</li>
+<li>Sieh dir die <strong>Parameter Request List</strong> im Options-Feld an.  <ul>
+<li>Was steht dort?  </li>
+<li>Welche Unterschiede erkennst du gegenüber der gleichen Liste im Discover-Paket?</li>
+</ul>
+</li>
+</ol>
+<h3 id="dhcp-ack">DHCP ACK</h3>
+<ol>
+<li>Welche Quell-IP-Adresse hat das ACK-Datagramm?  <ul>
+<li>Was ist daran besonders? Erkläre.</li>
+</ul>
+</li>
+<li>Welche Ziel-IP-Adresse wird im ACK verwendet?  <ul>
+<li>Was ist daran besonders? Erkläre.</li>
+</ul>
+</li>
+<li>Wie heißt das Feld in der DHCP ACK-Nachricht (im Wireshark-Fenster), das die <strong>zugewiesene Client-IP-Adresse</strong> enthält?</li>
+<li>Für welchen Zeitraum (Lease Time) wird die IP-Adresse dem Client zugewiesen?</li>
+<li>Welche IP-Adresse wird dem Client als <strong>Standard-Gateway</strong> (erste Hop-Adresse auf dem Weg ins Internet) mitgeteilt?</li>
+</ol>
 
 
 

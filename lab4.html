@@ -316,7 +316,7 @@
   
   
   <span class="md-ellipsis">
-    Lab 2: Hubs & Switches
+    Lab 2: Ethernet Frameformate
     
   </span>
   
@@ -338,7 +338,7 @@
   
   
   <span class="md-ellipsis">
-    Lab 3: Ethernet Frameformate
+    Lab 3: Hubs & Switches
     
   </span>
   
@@ -458,7 +458,7 @@
   
   
   <span class="md-ellipsis">
-    Lab 8: Transmission Control Protocol (TCP)
+    Lab 8: Dynamic Host Configuration Protocol (DHCP)
     
   </span>
   
@@ -480,7 +480,7 @@
   
   
   <span class="md-ellipsis">
-    Lab 9: Anwendungsprotokolle & Tools
+    Lab 9: Domain Name System Protokoll (DNS)
     
   </span>
   
@@ -502,7 +502,29 @@
   
   
   <span class="md-ellipsis">
-    Lab 10: Firewalls & Portscanning
+    Lab 10: Network Time Protocol (NTP)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="lab11.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Lab 11: Transmission Control Protocol (TCP)
     
   </span>
   
@@ -550,6 +572,166 @@
 
 
 <h1 id="lab-4-ethernet-arp-ip-adressen">Lab 4: Ethernet, ARP &amp; IP Adressen</h1>
+<figure>
+<p><a class="glightbox" href="img/lankurs-lab2.svg#only-light" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Toplogy Lab-2" src="img/lankurs-lab2.svg#only-light" /></a>
+<a class="glightbox" href="img/lankurs-lab2-dark.svg#only-dark" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Toplogy Lab-2" src="img/lankurs-lab2-dark.svg#only-dark" /></a></p>
+<figcaption>
+<p>Lab Topology</p>
+</figcaption>
+</figure>
+<h1 id="wireshark-lab-ethernet-und-arp">Wireshark-Lab: Ethernet und ARP</h1>
+<p>In dieser Übung analysierst du das <strong>Ethernet-Protokoll</strong> und das <strong>Address Resolution Protocol (ARP, RFC 826)</strong>. Bevor du startest, stelle sicher, dass du die Grundlagen des Ethernet-MAC-Layers und von ARP verstanden hast.</p>
+<p>ARP wird von einem IP-System verwendet, um zu einer bekannten IP-Adresse die passende MAC-Adresse zu ermitteln.</p>
+<h2 id="vorbereitung">Vorbereitung</h2>
+<ul>
+<li>Verbinde VS Code mit dem GitHub Codespace</li>
+<li>Starte das Lab-4 im GitHub Codespace</li>
+<li>Installiere Edgeshark im GitHub Codespace</li>
+</ul>
+<h2 id="erste-aufgabe-ping-test-mit-wireshark-mitschnitt">Erste Aufgabe: Ping-Test mit Wireshark-Mitschnitt</h2>
+<p>Nach dem Lab-4 erfolgreich gestartet wurde:</p>
+<ul>
+<li>Verbinde dich mit der Kommandozeile von PC1 (Attach)</li>
+<li>Starte einen Wireshark-Mitschnitt auf dem Interface <code>eth1</code> von PC1 (damit werden die Pakete auf dem Link zwischen PC1 und SW1 aufgezeichnet)</li>
+<li>Führe auf PC1 folgenden Ping-Befehl aus (Ziel ist die IP-Adresse von PC3 hinter dem Router R1 an SW2):<ul>
+<li><code>ping 192.168.12.11</code></li>
+</ul>
+</li>
+<li>Ping-Befehl nach ca. 5 Pings mit <span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-c">C</kbd></span> stoppen</li>
+<li>Wireshark Aufzeichnung stoppen</li>
+</ul>
+<h2 id="analyse-der-ersten-ping-anfrage">Analyse der ersten Ping-Anfrage</h2>
+<p>Suche in der Wireshark-Paketliste das <strong>erste Ping-Paket (ICMP Echo Request)</strong>. Markiere es und beantworte die folgenden Fragen:</p>
+<div class="admonition question">
+<p class="admonition-title">Fragen</p>
+<ul>
+<li>Welche 48-Bit-Ethernet-Adresse hat der Sender?</li>
+<li>Wie lautet die Ethernet-Adresse des Empfängers?<ul>
+<li>Ist das die Ethernet-Adresse von PC3? Wenn nein: Wessen Ethernet-Adresse ist es?</li>
+</ul>
+</li>
+<li>Welcher hexadezimale Wert steht im Ethernet Frametyp-Feld?<ul>
+<li>Was bedeutet dieser Wert?</li>
+</ul>
+</li>
+</ul>
+</div>
+<h2 id="analyse-der-ping-antwort">Analyse der Ping-Antwort</h2>
+<p>Suche das <strong>erste Ping-Antwortpaket (ICMP Echo Reply)</strong> und beantworte die folgenden Fragen:</p>
+<div class="admonition question">
+<p class="admonition-title">Fragen</p>
+<ul>
+<li>Wie lautet die Ethernet-Adresse des Senders?<ul>
+<li>Gehört die Ethernet-Adresse dem Sender oder dem Empfänger? Wenn nein: Von Welchem Gerät stammt die Ethernet-Adresse?</li>
+</ul>
+</li>
+<li>Welche Ziel-Ethernet-Adresse steht im Paket?<ul>
+<li>Ist das die Adresse von PC1?</li>
+</ul>
+</li>
+<li>Welcher hexadezimale Wert steht im 2-Byte Ethernet Frametyp-Feld?<ul>
+<li>Was bedeutet dieser Wert?</li>
+<li>Welche weiteren Typfeld-Werte kennst du?</li>
+</ul>
+</li>
+</ul>
+</div>
+<h2 id="arp-tabelle-betrachten">ARP-Tabelle betrachten</h2>
+<ul>
+<li>Mit dem Befehl <code>show arp</code> auf PC1 die ARP-Tabelle anzeigen</li>
+<li>Wenn die Tabelle leer ist:<ul>
+<li>Wiederhole den Ping von PC1 nach PC3</li>
+<li>Dann erneut auf PC1 <code>show arp</code> ausführen</li>
+</ul>
+</li>
+</ul>
+<div class="admonition question">
+<p class="admonition-title">Aufgabe</p>
+<p>Notiere die ARP-Tabelle und erkläre:
+- Die Bedeutung der Spalten
+- Die Bedeutung der Einträge</p>
+</div>
+<h2 id="arp-tabelle-loschen">ARP-Tabelle löschen</h2>
+<ul>
+<li>Lösche die ARP-Tabelle durch Eingabe des Befehls <code>clear arp</code> auf PC1</li>
+<li>Kontrolliere den Inhalt der ARP-Tabelle: <code>show arp</code></li>
+<li>Die Tabelle sollte nun leer sein</li>
+</ul>
+<h2 id="erneuter-mitschnitt-mit-wireshark">Erneuter Mitschnitt mit Wireshark</h2>
+<ul>
+<li>Starte Wireshark auf Interface <code>eth1</code> von PC1</li>
+<li>Wiederhole den Ping von PC1 nach PC3</li>
+<li>Stoppe den Ping-Befehl auf PC1 nach 4-5 Pings über ++crtl+c++</li>
+<li>Achte darauf: Du willst diesmal <strong>nur Ethernet- und ARP-Pakete</strong> sehen<ul>
+<li>Hierfür passen wir die Wireshark-Ansicht entsprechend an und schalten die Protkollunterstützung für IPv4 aus</li>
+</ul>
+</li>
+</ul>
+<h2 id="protokollunterstutzung-fur-ipv4-deaktivieren">Protokollunterstützung für IPv4 deaktivieren</h2>
+<ul>
+<li>Gehe im Wireshark-Menü auf: <code>Analyse &gt;&gt; Protokolle aktivieren</code></li>
+<li>Deaktiviere <strong>IPv4</strong> durch Abwählen des entsprechenden Kästchens</li>
+</ul>
+<h2 id="analyse-des-arp-requests">Analyse des ARP-Requests</h2>
+<p>Suche in Wireshark das <strong>ARP-Request-Paket</strong>, markiere es und beantworte die folgenden Fragen:</p>
+<div class="admonition question">
+<p class="admonition-title">Fragen</p>
+<ul>
+<li>Wie lauten die Werte für Quell- und Zieladresse im Ethernet-Frame?</li>
+<li>Welchen hexadezimalen Wert hat das Ethernet Frametyp-Feld und welche Bedeutung hat dieser Wert?</li>
+<li>Nach wie vielen Bytes ab Frame-Beginn beginnt das Opcode-Feld („Operation“)? =&gt; Byteansicht in Wireshark einblenden</li>
+<li>Welcher Wert steht im Opcode/Operation-Feld?<ul>
+<li>Welche Art ARP-Paket ist das?</li>
+</ul>
+</li>
+<li>Enthält das ARP-Request-Paket die IP-Adresse des Senders?</li>
+<li>Wo steht im ARP-Request die IP-Adresse des Systems, dessen MAC-Adresse erfragt wird?</li>
+</ul>
+</div>
+<h2 id="analyse-des-arp-replies">Analyse des ARP-Replies</h2>
+<p>Finde das <strong>ARP-Reply-Paket</strong> und beantworte die folgenden Fragen:</p>
+<div class="admonition question">
+<p class="admonition-title">Fragen</p>
+<ul>
+<li>Nach wie vielen Bytes ab dem Beginn des ARP-Replies beginnt das Opcode-Feld? =&gt; Byteansicht in Wireshark einblenden</li>
+<li>Welcher Wert steht im Opcode/Operation-Feld?</li>
+<li>Wo im ARP-Reply-Paket steht die Antwort auf die im ARP-Request gestellte Frage?<ul>
+<li>Wo im Paket findet man die IP-Adresse, die zur MAC-Adresse gehört?</li>
+</ul>
+</li>
+<li>Welches sind die hexadezimale Werte der Quell- und Zieladressen des ARP-Replies?<ul>
+<li>Welchen Systemen gehören diese Adressen?</li>
+</ul>
+</li>
+</ul>
+</div>
+<h2 id="wireshark-ansicht-zurucksetzen">Wireshark-Ansicht zurücksetzen</h2>
+<ul>
+<li>Gehe im Wireshark-Menü wieder auf: <code>Analyse &gt;&gt; Protokolle aktivieren</code></li>
+<li>Aktiviere Protokollunterstützung für IPv4 wieder durch Anwahl des entsprechenden Kästchens</li>
+</ul>
+<h2 id="bonus-aufgabe-tracefile-analyse">Bonus-Aufgabe: Tracefile-Analyse</h2>
+<ul>
+<li>Öffne in Wireshark das Tracefile: <code>ethernet-wireshark-trace-1.pcapng</code></li>
+<li>Betrachte die ersten beiden ARP-Pakete:<ul>
+<li>ARP-Request deines Rechners mit Wireshark</li>
+<li>ARP-Reply des PCs, nach dessen MAC-Adresse im ARP-Request gefragt wurde </li>
+</ul>
+</li>
+</ul>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>In diesem Szenario läuft Wireshark auf dem Rechner, welcher den ARP-Request gesendet hat.</p>
+</div>
+<div class="admonition question">
+<p class="admonition-title">Frage</p>
+<p>In diesem Netzwerk hat ein weiterer Rechner einen ARP-Request (siehe Paket Nr. 6) gesendet. Warum ist dazu kein passender ARP-Reply im Tracefile enthalten?</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Diese Aufgabe ist unabhängig von den vorherigen Übungen.
+Der PC mit Wireshark war an einem <strong>Standard-Switchport</strong> und nicht an einem Mirror-Port angeschlossen.</p>
+</div>
 
 
 

@@ -22,7 +22,7 @@
     
     
       
-        <title>Lab 9: Anwendungsprotokolle & Tools - Kurs Netzwerk Grundlagen</title>
+        <title>Lab 9: Domain Name System Protokoll (DNS) - Kurs Netzwerk Grundlagen</title>
       
     
     
@@ -83,7 +83,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#lab-9-anwendungsprotokolle-tools" class="md-skip">
+        <a href="#lab-9-domain-name-system-protokol-dns" class="md-skip">
           Skip to content
         </a>
       
@@ -118,7 +118,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Lab 9: Anwendungsprotokolle & Tools
+              Lab 9: Domain Name System Protokoll (DNS)
             
           </span>
         </div>
@@ -316,7 +316,7 @@
   
   
   <span class="md-ellipsis">
-    Lab 2: Hubs & Switches
+    Lab 2: Ethernet Frameformate
     
   </span>
   
@@ -338,7 +338,7 @@
   
   
   <span class="md-ellipsis">
-    Lab 3: Ethernet Frameformate
+    Lab 3: Hubs & Switches
     
   </span>
   
@@ -448,7 +448,7 @@
   
   
   <span class="md-ellipsis">
-    Lab 8: Transmission Control Protocol (TCP)
+    Lab 8: Dynamic Host Configuration Protocol (DHCP)
     
   </span>
   
@@ -474,17 +474,280 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Lab 9: Domain Name System Protokoll (DNS)
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="lab9.html" class="md-nav__link md-nav__link--active">
         
   
   
   <span class="md-ellipsis">
-    Lab 9: Anwendungsprotokolle & Tools
+    Lab 9: Domain Name System Protokoll (DNS)
     
   </span>
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#einfuhrung" class="md-nav__link">
+    <span class="md-ellipsis">
+      Einführung
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-nslookup" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. nslookup
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. nslookup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#grundlegende-funktion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Grundlegende Funktion
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#beispiel-1-einfachste-verwendung" class="md-nav__link">
+    <span class="md-ellipsis">
+      Beispiel 1: Einfachste Verwendung
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#beispiel-2-typens-abfrage" class="md-nav__link">
+    <span class="md-ellipsis">
+      Beispiel 2: TYPE=NS-Abfrage
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#beispiel-3-reverse-dns-lookup" class="md-nav__link">
+    <span class="md-ellipsis">
+      Beispiel 3: Reverse DNS Lookup
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#weitere-optionen" class="md-nav__link">
+    <span class="md-ellipsis">
+      Weitere Optionen
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-der-dns-cache-auf-deinem-rechner" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Der DNS-Cache auf deinem Rechner
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Der DNS-Cache auf deinem Rechner">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ablauf" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ablauf
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dns-cache-loschen" class="md-nav__link">
+    <span class="md-ellipsis">
+      DNS-Cache löschen
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="DNS-Cache löschen">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#befehle-zum-loschen-des-dns-caches" class="md-nav__link">
+    <span class="md-ellipsis">
+      Befehle zum Löschen des DNS-Caches
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-dns-verkehr-mit-wireshark-untersuchen" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. DNS-Verkehr mit Wireshark untersuchen
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. DNS-Verkehr mit Wireshark untersuchen">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#vorbereitung" class="md-nav__link">
+    <span class="md-ellipsis">
+      Vorbereitung
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ablauf_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ablauf
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#analysefragen" class="md-nav__link">
+    <span class="md-ellipsis">
+      Analysefragen
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#erweiterte-frage-zur-http-nutzung-und-dns" class="md-nav__link">
+    <span class="md-ellipsis">
+      Erweiterte Frage zur HTTP-Nutzung und DNS
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-mit-nslookup-und-wireshark-experimentieren" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Mit nslookup und Wireshark experimentieren
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Mit nslookup und Wireshark experimentieren">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#experiment-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Experiment 1
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Experiment 1">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#analysefragen_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Analysefragen
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#experiment-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Experiment 2
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Experiment 2">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#analysefragen_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Analysefragen
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -502,7 +765,29 @@
   
   
   <span class="md-ellipsis">
-    Lab 10: Firewalls & Portscanning
+    Lab 10: Network Time Protocol (NTP)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="lab11.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Lab 11: Transmission Control Protocol (TCP)
     
   </span>
   
@@ -532,6 +817,245 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#einfuhrung" class="md-nav__link">
+    <span class="md-ellipsis">
+      Einführung
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-nslookup" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. nslookup
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. nslookup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#grundlegende-funktion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Grundlegende Funktion
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#beispiel-1-einfachste-verwendung" class="md-nav__link">
+    <span class="md-ellipsis">
+      Beispiel 1: Einfachste Verwendung
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#beispiel-2-typens-abfrage" class="md-nav__link">
+    <span class="md-ellipsis">
+      Beispiel 2: TYPE=NS-Abfrage
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#beispiel-3-reverse-dns-lookup" class="md-nav__link">
+    <span class="md-ellipsis">
+      Beispiel 3: Reverse DNS Lookup
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#weitere-optionen" class="md-nav__link">
+    <span class="md-ellipsis">
+      Weitere Optionen
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-der-dns-cache-auf-deinem-rechner" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Der DNS-Cache auf deinem Rechner
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Der DNS-Cache auf deinem Rechner">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ablauf" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ablauf
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dns-cache-loschen" class="md-nav__link">
+    <span class="md-ellipsis">
+      DNS-Cache löschen
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="DNS-Cache löschen">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#befehle-zum-loschen-des-dns-caches" class="md-nav__link">
+    <span class="md-ellipsis">
+      Befehle zum Löschen des DNS-Caches
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-dns-verkehr-mit-wireshark-untersuchen" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. DNS-Verkehr mit Wireshark untersuchen
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. DNS-Verkehr mit Wireshark untersuchen">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#vorbereitung" class="md-nav__link">
+    <span class="md-ellipsis">
+      Vorbereitung
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ablauf_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ablauf
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#analysefragen" class="md-nav__link">
+    <span class="md-ellipsis">
+      Analysefragen
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#erweiterte-frage-zur-http-nutzung-und-dns" class="md-nav__link">
+    <span class="md-ellipsis">
+      Erweiterte Frage zur HTTP-Nutzung und DNS
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-mit-nslookup-und-wireshark-experimentieren" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Mit nslookup und Wireshark experimentieren
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Mit nslookup und Wireshark experimentieren">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#experiment-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Experiment 1
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Experiment 1">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#analysefragen_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Analysefragen
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#experiment-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Experiment 2
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Experiment 2">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#analysefragen_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Analysefragen
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -549,7 +1073,355 @@
   
 
 
-<h1 id="lab-9-anwendungsprotokolle-tools">Lab 9: Anwendungsprotokolle &amp; Tools</h1>
+<h1 id="lab-9-domain-name-system-protokol-dns">Lab 9: Domain Name System Protokol (DNS)</h1>
+<p>Quelle: Orginalaufgabe als Ergänzung zu „Computer Networking: A Top-Down Approach“, 8. Auflage von J.F. Kurose und K.W. Ross (ins Deutsche übersetzt mit Hilfe von ChatGPT).</p>
+<p>© 2005–2021, J.F. Kurose und K.W. Ross. Alle Rechte vorbehalten.</p>
+<h2 id="einfuhrung">Einführung</h2>
+<p>Das Domain Name System (DNS) Hostnamen in IP-Adressen und übernimmt so eine entscheidende Rolle in der Internet-Infrastruktur.</p>
+<p>In diesem Labor betrachten wir die Client-Seite von DNS. Die Rolle des Clients ist dabei relativ einfach: Der Client stellt eine Anfrage an seinen lokalen DNS-Server und erhält eine Antwort zurück.</p>
+<figure>
+<p><a class="glightbox" href="img/dns-nslookup.svg#only-light" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Toplogy Lab-7" src="img/dns-nslookup.svg#only-light" /></a>
+<a class="glightbox" href="img/dns-nslookup-dark.svg#only-dark" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Toplogy Lab-7" src="img/dns-nslookup-dark.svg#only-dark" /></a></p>
+<figcaption>
+<p>Lab Topology</p>
+</figcaption>
+</figure>
+<p>Wie im Kurs gezeigt, kann im Hintergrund viel passieren, wenn die hierarchischen DNS-Server untereinander kommunizieren (rekursiv oder iterativ), um die Anfrage aufzulösen. Für den DNS-Client selbst bleibt das Protokoll jedoch sehr einfach – er stellt eine Anfrage an den lokalen Server und erhält eine Antwort.</p>
+<figure>
+<p><a class="glightbox" href="img/dns-iterative-light.svg#only-light" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Toplogy Lab-7" src="img/dns-iterative-light.svg#only-light" /></a>
+<a class="glightbox" href="img/dns-iterative-dark.svg#only-dark" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Toplogy Lab-7" src="img/dns-iterative-dark.svg#only-dark" /></a></p>
+<figcaption>
+<p>Iteratives Vorgehen</p>
+</figcaption>
+</figure>
+<figure>
+<p><a class="glightbox" href="img/dns-recursive-light.svg#only-light" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Toplogy Lab-7" src="img/dns-recursive-light.svg#only-light" /></a>
+<a class="glightbox" href="img/dns-recursive-dark.svg#only-dark" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Toplogy Lab-7" src="img/dns-recursive-dark.svg#only-dark" /></a></p>
+<figcaption>
+<p>Rekursives Vorgehen</p>
+</figcaption>
+</figure>
+<p>Bevor du dieses Labor startest, sollten im Unterricht vor allem die Themen lokale DNS-Server, DNS-Caching, DNS-Records und Nachrichtenformate sowie das TYPE-Feld im DNS-Record behandelt worden sein. </p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p><strong>Beispiel-Tracedateien:</strong>
+Falls du keine Live-Aufzeichnungen machen möchtest oder kannst, findest du Beispiel-Traces herunterladen:
+<a href="http://gaia.cs.umass.edu/wireshark-labs/wireshark-traces-8.1.zip">http://gaia.cs.umass.edu/wireshark-labs/wireshark-traces-8.1.zip</a></p>
+<p>Dort findest du fertige .pcap/.pcapng-Dateien, die genau diese Experimente enthalten.</p>
+<p>Alternativ kann dir dein Kursleiter auch sagen, wo diese Dateinen auf dem Schulungsnotebook abgelegt sind bzw. wo sie im Firmennetzwerk zu finden sind.</p>
+</div>
+<h2 id="1-nslookup">1. nslookup</h2>
+<p>Wir beginnen unsere Untersuchung des DNS mit dem Befehl <strong>nslookup</strong>, der die darunterliegenden DNS-Dienste nutzt. Der Befehl <strong>nslookup</strong> ist auf den meisten Microsoft-, Apple- und Linux-Betriebssystemen verfügbar.</p>
+<p>Um <strong>nslookup</strong> zu starten, gibt man einfach den Befehl in ein Terminal- oder Eingabefenster ein: <code>nslookup</code></p>
+<p>Das funktioniert in der DOS-Eingabeaufforderung (Windows), im MacOS-Terminal oder in der Linux-Shell.</p>
+<h3 id="grundlegende-funktion">Grundlegende Funktion</h3>
+<p>In seiner einfachsten Form erlaubt <strong>nslookup</strong> dem Host, auf dem es ausgeführt wird, eine DNS-Anfrage an einen beliebigen DNS-Server zu schicken. Der befragte DNS-Server kann dabei ein Root-Server, ein Top-Level-Domain-Server (TLD), ein autoritativer Server oder ein zwischengeschalteter DNS-Server sein. Ein Beispiel ist das Abrufen eines „Type=A“-Records, der einen Hostnamen (z. B. www.nyu.edu) in eine IP-Adresse übersetzt.</p>
+<p><strong>Ablauf:</strong></p>
+<ul>
+<li>nslookup sendet eine DNS-Anfrage an den spezifizierten Server (oder, falls keiner angegeben ist, an den lokalen Standard-DNS-Server)</li>
+<li>Es erhält eine Antwort</li>
+<li>Und zeigt das Ergebnis an.</li>
+</ul>
+<h3 id="beispiel-1-einfachste-verwendung">Beispiel 1: Einfachste Verwendung</h3>
+<p>Auf einem Linux-Host im lokalen Netzwerk des Kursleiters (X1.fritz.box) an seinem Wohnort, mit dem lokalen DNS-Server 10.10.10.1 (lokaler DSL-Router):</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>tom@X1:~$ nslookup www.enbw.de
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>Server:     10.10.10.1
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>Address:    10.10.10.1#53
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>Non-authoritative answer:
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>www.enbw.de canonical name = enbw.de.
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>Name:   enbw.de
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>Address: 195.35.76.193
+</span></code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Obwohl die Antwort vom lokalen DNS-Server kam, kann dieser Server im Hintergrund andere DNS-Server kontaktiert haben (rekursiv oder iterativ), um die Antwort zu ermitteln.</p>
+</div>
+<div class="admonition abstract">
+<p class="admonition-title">Erklärung</p>
+<ul>
+<li>Der Befehl fragt „Bitte gib mir die IP-Adresse für www.enbw.de.“</li>
+<li>Die Antwort zeigt:<ol>
+<li>Den Namen und die IP-Adresse des antwortenden DNS-Servers (hier der lokale DNS-Server auf dem DSL-Router)</li>
+<li>Den kanonischen Hostnamen und die IP-Adressen für www.enbw.de</li>
+</ol>
+</li>
+</ul>
+</div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>tom@X1:~$ nslookup www.heise.de
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>Server:     10.10.10.1
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>Address:    10.10.10.1#53
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>Non-authoritative answer:
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>Name:   www.heise.de
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>Address: 193.99.144.85
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>Name:   www.heise.de
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>Address: 2a02:2e0:3fe:1001:7777:772e:2:85
+</span></code></pre></div>
+<p>Im zweiten Beispiel gibt es für für <code>www.heise.de</code> zwei IP-Adressen:</p>
+<ul>
+<li>eine <strong>IPv4-Adresse</strong>: 193.99.144.85</li>
+<li>eine <strong>IPv6-Adresse</strong>: 2a02:2e0:3fe:1001:7777:772e:2:85 </li>
+</ul>
+<h3 id="beispiel-2-typens-abfrage">Beispiel 2: TYPE=NS-Abfrage</h3>
+<p>Neben Type=A-Abfragen kann nslookup auch nach NS-Records fragen, also den autoritativen Nameservern für eine Domain:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>tom@X1:~$ nslookup -type=NS netze-bw.de
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>Server:     10.10.10.1
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>Address:    10.10.10.1#53
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>Non-authoritative answer:
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>netze-bw.de nameserver = nss01.enbw.com.
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>netze-bw.de nameserver = nss02.enbw.com.
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>Authoritative answers can be found from:
+</span></code></pre></div>
+<div class="admonition abstract">
+<p class="admonition-title">Erklärung</p>
+<ul>
+<li>Mit <code>-type=NS</code> fragt nslookup nach den Nameservern der Domain netze-bw.de.</li>
+<li>Die Antwort enthält:<ul>
+<li>Den antwortenden DNS-Server (lokaler DSL-Router)</li>
+<li>Die autoritativen Nameserver für netze-bw.de</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Die Antwort wird hier als „non-authoritative“ gekennzeichnet. Das bedeutet, sie stammt aus dem Cache eines Servers und nicht direkt von einem autoritativen Server für netze-bw.de.</p>
+</div>
+<p>Die IP-Adressen der ermittelten authoritativen Nameserver erhält man z.B. wie folgt:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>tom@X1:~$ nslookup nss01.enbw.com
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>Server:     10.10.10.1
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>Address:    10.10.10.1#53
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>Non-authoritative answer:
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>Name:   nss01.enbw.com
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>Address: 195.35.72.246
+</span></code></pre></div>
+<p>Die IP-Adresse von <code>nss01.enbw.com</code> lautet 195.35.72.246.</p>
+<h3 id="beispiel-3-reverse-dns-lookup">Beispiel 3: Reverse DNS Lookup</h3>
+<p>Manchmal will man den Hostnamen zu einer IP-Adresse herausfinden – also umgekehrt. Auch das geht mit nslookup:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>tom@X1:~$ nslookup 195.35.76.193
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>193.76.35.195.in-addr.arpa  name = www.enbw.de.
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>Authoritative answers can be found from:
+</span></code></pre></div>
+<div class="admonition abstract">
+<p class="admonition-title">Erklärung</p>
+<p>Hier liefert nslookup den Hostnamen (www.enbw.de) für die gegebene IP-Adresse.</p>
+</div>
+<h3 id="weitere-optionen">Weitere Optionen</h3>
+<p>nslookup bietet noch viele weitere Optionen außer „-type=NS“. Ein paar Ressourcen:</p>
+<ul>
+<li>Beispiele: <a href="https://www.cloudns.net/blog/10-most-used-nslookup-commands/">10 beliebte nslookup-Befehle</a></li>
+<li>Man-Pages: <a href="https://linux.die.net/man/1/nslookup">https://linux.die.net/man/1/nslookup</a></li>
+</ul>
+<h2 id="2-der-dns-cache-auf-deinem-rechner">2. Der DNS-Cache auf deinem Rechner</h2>
+<p>Wenn du im Lehrbuch die Abbildungen 2.19 und 2.20 zu rekursiver und iterativer DNS-Auflösung anschaust, könnte man denken, dass der lokale DNS-Server jedes Mal kontaktiert werden muss, wenn eine Anwendung einen Hostnamen in eine IP-Adresse übersetzen will.</p>
+<p>Das ist in der Praxis aber nicht immer so!</p>
+<p>Die meisten Hosts (z. B. dein eigener Rechner) speichern kürzlich abgerufene DNS-Einträge in einem lokalen Cache (oft <strong>DNS Resolver Cache</strong> genannt), ähnlich wie Webbrowser kürzlich geladene Objekte lokal zwischenspeichern.</p>
+<h3 id="ablauf">Ablauf</h3>
+<ul>
+<li>Wenn ein DNS-Service auf deinem Rechner gebraucht wird, schaut das System zuerst in diesen Cache</li>
+<li>Wenn der gesuchte Eintrag gefunden wird, wird der lokale DNS-Server gar nicht kontaktiert</li>
+<li>Ein Cache-Eintrag verfällt irgendwann (TTL: Time To Live) und wird entfernt, genau wie im Cache eines lokalen DNS-Servers</li>
+</ul>
+<p>So kann DNS-Cache-Nutzung die Netzwerklast reduzieren und Antworten beschleunigen.</p>
+<h3 id="dns-cache-loschen">DNS-Cache löschen</h3>
+<p>Du kannst den DNS-Cache deines Rechners auch gezielt leeren. Das ist völlig unproblematisch – danach muss dein Rechner beim nächsten Mal einfach den vollständigen DNS-Auflösungsprozess durchlaufen.</p>
+<h4 id="befehle-zum-loschen-des-dns-caches">Befehle zum Löschen des DNS-Caches</h4>
+<p><strong>Windows:</strong>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>ipconfig /flushdns
+</span></code></pre></div></p>
+<p><strong>Linux:</strong>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>sudo resolvectl flush-caches
+</span></code></pre></div></p>
+<p><strong>MacOS:</strong>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>sudo killall -HUP mDNSResponder
+</span></code></pre></div></p>
+<h2 id="3-dns-verkehr-mit-wireshark-untersuchen">3. DNS-Verkehr mit Wireshark untersuchen</h2>
+<p>Jetzt, wo du nslookup kennst und weißt, wie du den DNS-Cache leerst, geht es ans Eingemachte:<br />
+Wir wollen die DNS-Nachrichten mitschneiden, die beim normalen Surfen entstehen.</p>
+<h3 id="vorbereitung">Vorbereitung</h3>
+<ul>
+<li>Leere zuerst den DNS-Cache auf deinem Rechner (siehe vorherige Befehle)</li>
+<li>Öffne deinen Webbrowser und leere den Browser-Cache</li>
+<li>Starte <strong>Wireshark</strong> und setze den folgenden Filter: <code>ip.addr == &lt;deine_IP_Adresse&gt;</code>, <code>&lt;deine_IP_Adresse&gt;</code> ist dabei die IPv4-Adresse deines Rechners</li>
+</ul>
+<details class="info">
+<summary>Screenshots: <em>Firefox Browser-Cache löschen</em></summary>
+<p><a class="glightbox" href="img/firefox-browser-cache-l%C3%B6schen-1.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Firefox Browser-Cache löschen #1" src="img/firefox-browser-cache-l%C3%B6schen-1.png" /></a>
+<a class="glightbox" href="img/firefox-browser-cache-l%C3%B6schen-2.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Firefox Browser-Cache löschen #1" src="img/firefox-browser-cache-l%C3%B6schen-2.png" /></a>
+<a class="glightbox" href="img/firefox-browser-cache-l%C3%B6schen-3.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Firefox Browser-Cache löschen #1" src="img/firefox-browser-cache-l%C3%B6schen-3.png" /></a>
+<a class="glightbox" href="img/firefox-browser-cache-l%C3%B6schen-4.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Firefox Browser-Cache löschen #1" src="img/firefox-browser-cache-l%C3%B6schen-4.png" /></a>
+<a class="glightbox" href="img/firefox-browser-cache-l%C3%B6schen-5.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Firefox Browser-Cache löschen #1" src="img/firefox-browser-cache-l%C3%B6schen-5.png" /></a>
+<a class="glightbox" href="img/firefox-browser-cache-l%C3%B6schen-6.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Firefox Browser-Cache löschen #1" src="img/firefox-browser-cache-l%C3%B6schen-6.png" /></a></p>
+</details>
+<p>Mit diesem Filter zeigt Wireshark nur Pakete an, die von deinem Rechner kommen oder an ihn gerichtet sind.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Keine Ahnung, wie die IP-Adresse des eigenen Rechners ermittelt werden soll? Hilfe kann über eine Webrecherche gefunden werden bzw. hier:</p>
+<ul>
+<li><a href="https://support.microsoft.com/en-us/windows/essential-network-settings-and-tasks-in-windows-f21a9bbc-c582-55cd-35e0-73431160a1b9">Windows</a></li>
+<li><a href="https://www.linuxtrainingacademy.com/determine-public-ip-address-command-line-curl/">Linux</a></li>
+<li><a href="https://www.hellotech.com/guide/for/how-to-find-ip-address-on-mac">Mac</a></li>
+</ul>
+<p>Alternativ kann man natürlich auch seinen Tischnachbarn oder den - hoffentlich - gut gelaunten Kursleiter fragen...</p>
+</div>
+<h3 id="ablauf_1">Ablauf</h3>
+<ul>
+<li>Starte die Paketerfassung in Wireshark.  </li>
+<li>Öffne deinen Browser und rufe die Seite auf: (Kurose-Ross Homepage)<code>http://gaia.cs.umass.edu/kurose_ross/</code>)</li>
+<li>Stoppe anschließend die Aufzeichnung.</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Wenn du Wireshark nicht selbst auf einem Live-Netzwerk nutzen kannst, kannst du eine vorgefertigte Aufzeichnung herunterladen:
+<a href="http://gaia.cs.umass.edu/wireshark-labs/wireshark-traces-8.1.zip">Download-Link für Beispiel-Traces</a></p>
+<p>Für diese Aufgabe nutzt du dann bitte die Datei <code>dns-wireshark-trace1-1.pcapng</code>.</p>
+</div>
+<h3 id="analysefragen">Analysefragen</h3>
+<ol>
+<li>Finde das erste DNS-Query-Paket für die Auflösung von <strong>gaia.cs.umass.edu</strong>.  </li>
+<li>Welche Paketnummer hat es im Trace?  </li>
+<li>
+<p>Wurde die Anfrage über UDP oder TCP geschickt?</p>
+</li>
+<li>
+<p>Finde die passende DNS-Antwort.  </p>
+</li>
+<li>Welche Paketnummer hat die Antwort?  </li>
+<li>
+<p>Kam sie über UDP oder TCP?</p>
+</li>
+<li>
+<p>Welcher Zielport wird in der DNS-Anfrage verwendet?  </p>
+</li>
+<li>
+<p>Welcher Quellport in der DNS-Antwort?</p>
+</li>
+<li>
+<p>An welche IP-Adresse wird die DNS-Anfrage geschickt?</p>
+</li>
+<li>
+<p>Untersuche die DNS-Query-Nachricht.  </p>
+</li>
+<li>Wie viele „Questions“ enthält sie?  </li>
+<li>
+<p>Wie viele „Answers“ enthält sie?</p>
+</li>
+<li>
+<p>Untersuche die DNS-Response-Nachricht.  </p>
+<ul>
+<li>Wie viele „Questions“ sind enthalten?  </li>
+<li>Wie viele „Answers“ enthält sie?</li>
+</ul>
+</li>
+</ol>
+<h3 id="erweiterte-frage-zur-http-nutzung-und-dns">Erweiterte Frage zur HTTP-Nutzung und DNS</h3>
+<ol>
+<li>
+<p>Die aufgerufene Webseite (http://gaia.cs.umass.edu/kurose_ross/) verweist auf ein Bild: <code>http://gaia.cs.umass.edu/kurose_ross/header_graphic_book_8E_2.jpg</code> bzw. <code>http://gaia.cs.umass.edu/kurose_ross/header_graphic_book_8E_3.jpg</code> (Bitte Hinweis-Box unten beachten.)</p>
+</li>
+<li>
+<p>Was ist die Paketnummer für die initiale HTTP GET-Anfrage an die Basis-URL?  </p>
+</li>
+<li>Welche Paketnummer hat die DNS-Query, um gaia.cs.umass.edu aufzulösen, damit diese erste HTTP-Anfrage gesendet werden kann?  </li>
+<li>Welche Paketnummer hat die empfangene DNS-Response?  </li>
+<li>Welche Paketnummer hat die HTTP GET-Anfrage für das Bild?  </li>
+<li>Welche Paketnummer hat die DNS-Query für gaia.cs.umass.edu, damit diese zweite HTTP-Anfrage gesendet werden kann?  </li>
+<li>Diskutiere, wie DNS-Caching die Antwort auf diese letzte Frage beeinflusst.</li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Der Verweis auf das Bild ist wie folgt zu verwenden:</p>
+<ul>
+<li><code>http://gaia.cs.umass.edu/kurose_ross/header_graphic_book_8E_2.jpg</code>: Bei Offline-Nutzung des Tracefiles <code>dns-wireshark-trace1-1.pcapng</code></li>
+<li><code>http://gaia.cs.umass.edu/kurose_ross/header_graphic_book_8E_3.jpg</code>: Bei Online-Nutzung mit Aufruf der Seite <code>http://gaia.cs.umass.edu</code></li>
+</ul>
+</div>
+<h2 id="4-mit-nslookup-und-wireshark-experimentieren">4. Mit nslookup und Wireshark experimentieren</h2>
+<p>Nachdem du die Grundlagen kennst, wollen wir gezielt <strong>nslookup</strong>-Abfragen starten und die Pakete dabei in Wireshark mitschneiden.</p>
+<h3 id="experiment-1">Experiment 1</h3>
+<ul>
+<li>Starte Wireshark.  </li>
+<li>Führe aus: <code>nslookup www.cs.umass.edu</code></li>
+<li>Stoppe die Aufzeichnung.</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Wenn du Wireshark nicht selbst auf einem Live-Netzwerk nutzen kannst, kannst du eine vorgefertigte Aufzeichnung herunterladen:
+<a href="http://gaia.cs.umass.edu/wireshark-labs/wireshark-traces-8.1.zip">Download-Link für Beispiel-Traces</a></p>
+<p>Für diese Aufgabe nutzt du dann bitte die Datei <code>dns-wireshark-trace1-2.pcapng</code>.</p>
+</div>
+<blockquote>
+<p>In Wireshark siehst du gff. mehrere DNS-Anfragen und -Antworten.<br />
+Achte auf die erste Type A-Anfrage für ẁww.cs.umass.edu` (im Beispiel-Pakettrace ist das z. B. Paketnummer 19).</p>
+</blockquote>
+<p><a class="glightbox" href="img/wireshark-nslookup-trace-screenshot.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Wireshark nslookup Capture mit gesetztem DNS Filter" src="img/wireshark-nslookup-trace-screenshot.png" /></a></p>
+<h4 id="analysefragen_1">Analysefragen</h4>
+<ol>
+<li>
+<p>Welcher Zielport wird in der DNS-Anfrage verwendet?  </p>
+<ul>
+<li>Welcher Quellport in der DNS-Antwort?</li>
+</ul>
+</li>
+<li>
+<p>An welche IP-Adresse wurde die Anfrage geschickt?  </p>
+<ul>
+<li>Ist das deine Standardadresse für den lokalen DNS-Server?</li>
+</ul>
+</li>
+<li>
+<p>Untersuche die DNS-Anfrage:  </p>
+<ul>
+<li>Welcher „Type“ wird abgefragt?  </li>
+<li>Enthält die Anfrage bereits „Answers“?</li>
+</ul>
+</li>
+<li>
+<p>Untersuche die DNS-Antwort:  </p>
+<ul>
+<li>Wie viele „Questions“ sind enthalten?  </li>
+<li>Wie viele „Answers“ enthält sie?</li>
+</ul>
+</li>
+</ol>
+<h3 id="experiment-2">Experiment 2</h3>
+<p>Jetzt nutzen wir eine NS-Abfrage. Führe aus: <code>nslookup -type=NS umass.edu</code></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Wenn du Wireshark nicht selbst auf einem Live-Netzwerk nutzen kannst, kannst du eine vorgefertigte Aufzeichnung herunterladen:
+<a href="http://gaia.cs.umass.edu/wireshark-labs/wireshark-traces-8.1.zip">Download-Link für Beispiel-Traces</a></p>
+<p>Für diese Aufgabe nutzt du dann bitte die Datei <code>dns-wireshark-trace1-3.pcapng</code>.</p>
+</div>
+<h4 id="analysefragen_2">Analysefragen</h4>
+<ol>
+<li>
+<p>An welche IP-Adresse wurde die Anfrage geschickt?  </p>
+<ul>
+<li>Ist das dein lokaler DNS-Server?</li>
+</ul>
+</li>
+<li>
+<p>Untersuche die DNS-Query-Nachricht:  </p>
+<ul>
+<li>Wie viele „Questions“ enthält sie?  </li>
+<li>Enthält sie „Answers“?</li>
+</ul>
+</li>
+<li>
+<p>Untersuche die DNS-Response-Nachricht (vor allem die mit Type=NS):  </p>
+<ul>
+<li>Wie viele „Answers“ enthält sie?  </li>
+<li>Welche Informationen stehen in den „Answers“?  </li>
+<li>Wie viele zusätzliche Resource Records werden mitgeliefert?  </li>
+<li>Welche zusätzlichen Infos stehen in diesen Records (falls vorhanden)?</li>
+</ul>
+</li>
+</ol>
 
 
 

@@ -14,13 +14,15 @@
         <link rel="prev" href="lab9.html">
       
       
+        <link rel="next" href="lab11.html">
+      
       
       <link rel="icon" href="img/favicon.ico">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
     
     
       
-        <title>Lab 10: Firewalls & Portscanning - Kurs Netzwerk Grundlagen</title>
+        <title>Lab 10: Network Time Protocol (NTP) - Kurs Netzwerk Grundlagen</title>
       
     
     
@@ -81,7 +83,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#lab-10-firewalls-portscanning" class="md-skip">
+        <a href="#lab-10-network-time-protokoll-ntp" class="md-skip">
           Skip to content
         </a>
       
@@ -116,7 +118,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Lab 10: Firewalls & Portscanning
+              Lab 10: Network Time Protocol (NTP)
             
           </span>
         </div>
@@ -314,7 +316,7 @@
   
   
   <span class="md-ellipsis">
-    Lab 2: Hubs & Switches
+    Lab 2: Ethernet Frameformate
     
   </span>
   
@@ -336,7 +338,7 @@
   
   
   <span class="md-ellipsis">
-    Lab 3: Ethernet Frameformate
+    Lab 3: Hubs & Switches
     
   </span>
   
@@ -446,7 +448,7 @@
   
   
   <span class="md-ellipsis">
-    Lab 8: Transmission Control Protocol (TCP)
+    Lab 8: Dynamic Host Configuration Protocol (DHCP)
     
   </span>
   
@@ -468,7 +470,7 @@
   
   
   <span class="md-ellipsis">
-    Lab 9: Anwendungsprotokolle & Tools
+    Lab 9: Domain Name System Protokoll (DNS)
     
   </span>
   
@@ -494,18 +496,108 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Lab 10: Network Time Protocol (NTP)
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="lab10.html" class="md-nav__link md-nav__link--active">
         
   
   
   <span class="md-ellipsis">
-    Lab 10: Firewalls & Portscanning
+    Lab 10: Network Time Protocol (NTP)
     
   </span>
   
 
       </a>
       
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#ziel-der-ubung" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ziel der Übung
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#aufgabenbeschreibung" class="md-nav__link">
+    <span class="md-ellipsis">
+      Aufgabenbeschreibung
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#analysefragen" class="md-nav__link">
+    <span class="md-ellipsis">
+      Analysefragen
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bonus-aufgabe" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bonus-Aufgabe
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="lab11.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Lab 11: Transmission Control Protocol (TCP)
+    
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -530,6 +622,50 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#ziel-der-ubung" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ziel der Übung
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#aufgabenbeschreibung" class="md-nav__link">
+    <span class="md-ellipsis">
+      Aufgabenbeschreibung
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#analysefragen" class="md-nav__link">
+    <span class="md-ellipsis">
+      Analysefragen
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bonus-aufgabe" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bonus-Aufgabe
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -547,7 +683,41 @@
   
 
 
-<h1 id="lab-10-firewalls-portscanning">Lab 10: Firewalls &amp; Portscanning</h1>
+<h1 id="lab-10-network-time-protokoll-ntp">Lab 10: Network Time Protokoll (NTP)</h1>
+<p>Quelle: Erstellt mit Hilfe von ChatGPT.</p>
+<p>In dieser Übung wirst du <strong>NTP-Pakete mit Wireshark aufzeichnen und analysieren</strong>.</p>
+<p>Das Ziel ist es, ein Gefühl dafür zu bekommen, <strong>wie NTP-Clients und -Server miteinander kommunizieren</strong> und welche Informationen in den Paketen enthalten sind.</p>
+<h2 id="ziel-der-ubung">Ziel der Übung</h2>
+<ul>
+<li>Verstehen, wie ein NTP-Client mit einem Server kommuniziert</li>
+<li>NTP-Pakete identifizieren und analysieren können</li>
+<li>Die Bedeutung der wichtigsten Felder (Stratum, Mode, Timestamps) nachvollziehen</li>
+<li>Weitere Sicherheit im Umgang mit Wireshark gewinnen</li>
+</ul>
+<h2 id="aufgabenbeschreibung">Aufgabenbeschreibung</h2>
+<ul>
+<li>Starte Wireshark auf deinem Rechner</li>
+<li>Verwende einen NTP-Client oder einfach den Systembefehl, um deinen Rechner mit einem öffentlichen NTP-Server zu synchronisieren. Zum Beispiel: <code>ntpdate -q pool.ntp.org</code> oder <code>sudo ntpdate pool.ntp.org</code></li>
+<li>Zeichnet währenddessen den Netzwerkverkehr mit Wireshark auf.  </li>
+<li>Nutzt den Filter, um nur NTP-Pakete zu sehen: <code>udp.port == 123</code></li>
+<li>Stoppt die Aufzeichnung, sobald der Austausch abgeschlossen ist.</li>
+</ul>
+<h2 id="analysefragen">Analysefragen</h2>
+<p>Beantwortet die folgenden Fragen anhand eurer Aufzeichnung. Diskutiert die Antworten gerne im Team:</p>
+<ol>
+<li>Wie viele NTP-Anfragen und -Antworten wurden insgesamt aufgezeichnet?  </li>
+<li>Welche IP-Adresse hatte der angefragte NTP-Server?  </li>
+<li>Über welches Transportprotokoll (UDP/TCP) wurde NTP übertragen?  </li>
+<li>Welcher Port wird für NTP verwendet?  </li>
+<li>Welche „Mode“-Werte (im NTP-Paket) siehst du? Was bedeuten diese?  </li>
+<li>Wie sieht das Stratum-Feld in der Antwort aus? Was bedeutet der angezeigte Wert?  </li>
+<li>Welche Zeitinformationen (z. B. Transmit Timestamp) liefert dir das NTP-Paket?  </li>
+<li>Wie kannst du erkennen, welche der Pakete Anfragen und welche Antworten sind?  </li>
+<li>Gibt es Hinweise auf Verzögerung (Delay) oder Abweichung (Offset), die Wireshark berechnet?  </li>
+<li>Inwiefern hilft dir diese Analyse, die NTP-Grundlagen besser zu verstehen?</li>
+</ol>
+<h2 id="bonus-aufgabe">Bonus-Aufgabe</h2>
+<p>Finde in der Wireshark-Analyse heraus, ob dein Rechner mehrere Server kontaktiert hat (z. B. weil ein Pool verwendet wurde). Welche Unterschiede erkennst du zwischen den Antworten?</p>
 
 
 

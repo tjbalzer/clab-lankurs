@@ -11,10 +11,8 @@
       
       
       
-        <link rel="prev" href="lab4.html">
+        <link rel="prev" href="lab10.html">
       
-      
-        <link rel="next" href="lab6.html">
       
       
       <link rel="icon" href="img/favicon.ico">
@@ -22,7 +20,7 @@
     
     
       
-        <title>Lab 5: VLANs & statisches Routing - Kurs Netzwerk Grundlagen</title>
+        <title>Lab 11: Transmission Control Protocol (TCP) - Kurs Netzwerk Grundlagen</title>
       
     
     
@@ -83,7 +81,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#lab-5-vlans-statisches-routing" class="md-skip">
+        <a href="#lab-11-transmission-control-protocol-tcp" class="md-skip">
           Skip to content
         </a>
       
@@ -118,7 +116,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Lab 5: VLANs & statisches Routing
+              Lab 11: Transmission Control Protocol (TCP)
             
           </span>
         </div>
@@ -374,19 +372,10 @@
       
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-      <a href="lab5.html" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="lab5.html" class="md-nav__link">
         
   
   
@@ -397,7 +386,6 @@
   
 
       </a>
-      
     </li>
   
 
@@ -516,10 +504,32 @@
       
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="lab11.html" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Lab 11: Transmission Control Protocol (TCP)
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="lab11.html" class="md-nav__link md-nav__link--active">
         
   
   
@@ -530,6 +540,92 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#einfuhrung" class="md-nav__link">
+    <span class="md-ellipsis">
+      Einführung
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-aufzeichnen-eines-groen-tcp-transfers" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Aufzeichnen eines großen TCP-Transfers
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Aufzeichnen eines großen TCP-Transfers">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#schritte" class="md-nav__link">
+    <span class="md-ellipsis">
+      Schritte
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-erster-blick-auf-den-mitschnitt" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Erster Blick auf den Mitschnitt
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Erster Blick auf den Mitschnitt">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#analysefragen" class="md-nav__link">
+    <span class="md-ellipsis">
+      Analysefragen
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-tcp-congestion-control-in-aktion-fur-fortgeschrittene" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. TCP Congestion Control in Aktion (für Fortgeschrittene)
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -554,6 +650,80 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#einfuhrung" class="md-nav__link">
+    <span class="md-ellipsis">
+      Einführung
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-aufzeichnen-eines-groen-tcp-transfers" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Aufzeichnen eines großen TCP-Transfers
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Aufzeichnen eines großen TCP-Transfers">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#schritte" class="md-nav__link">
+    <span class="md-ellipsis">
+      Schritte
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-erster-blick-auf-den-mitschnitt" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Erster Blick auf den Mitschnitt
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Erster Blick auf den Mitschnitt">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#analysefragen" class="md-nav__link">
+    <span class="md-ellipsis">
+      Analysefragen
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-tcp-congestion-control-in-aktion-fur-fortgeschrittene" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. TCP Congestion Control in Aktion (für Fortgeschrittene)
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -571,14 +741,145 @@
   
 
 
-<h1 id="lab-5-vlans-statisches-routing">Lab 5: VLANs &amp; statisches Routing</h1>
-<figure>
-<p><a class="glightbox" href="img/lankurs-lab2.svg#only-light" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Toplogy Lab-2" src="img/lankurs-lab2.svg#only-light" /></a>
-<a class="glightbox" href="img/lankurs-lab2-dark.svg#only-dark" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Toplogy Lab-2" src="img/lankurs-lab2-dark.svg#only-dark" /></a></p>
-<figcaption>
-<p>Lab Topology</p>
-</figcaption>
-</figure>
+<h1 id="lab-11-transmission-control-protocol-tcp">Lab 11: Transmission Control Protocol (TCP)</h1>
+<p>Quelle: Orginalaufgabe als Ergänzung zu „Computer Networking: A Top-Down Approach“, 8. Auflage von J.F. Kurose und K.W. Ross (ins Deutsche übersetzt mit Hilfe von ChatGPT).</p>
+<p>© 2005–2021, J.F. Kurose und K.W. Ross. Alle Rechte vorbehalten.</p>
+<h2 id="einfuhrung">Einführung</h2>
+<p>In diesem Lab werden wir das Verhalten des bekannten <strong>TCP-Protokolls</strong> im Detail untersuchen. Wir analysieren dabei einen <strong>Mitschnitt von TCP-Segmenten</strong>, die beim Übertragen einer 150 KB großen Datei (Alice's Adventures in Wonderland) von deinem Rechner zu einem entfernten Server gesendet und empfangen werden.</p>
+<p>Wir betrachten:<br />
+- TCPs Nutzung von Sequenz- und Acknowledgement-Nummern für zuverlässige Übertragung<br />
+- TCPs Staukontrollalgorithmus (Slow Start und Congestion Avoidance)<br />
+- Das Flow-Control-Mechanismus des Empfängers (Window Size)<br />
+- Kurz den Verbindungsaufbau<br />
+- Die Leistung (Durchsatz und RTT) der TCP-Verbindung</p>
+<h2 id="1-aufzeichnen-eines-groen-tcp-transfers">1. Aufzeichnen eines großen TCP-Transfers</h2>
+<p>Bevor wir TCP im Detail analysieren, musst du einen <strong>Mitschnitt</strong> eines TCP-Transfers aufnehmen, bei dem eine Datei von deinem Rechner auf einen entfernten Server hochgeladen wird.</p>
+<p>Das machen wir über eine Webseite, auf der du die Datei auswählen und via HTTP POST hochladen kannst. Der HTTP POST wird dabei über eine TCP-Verbindung übertragen.</p>
+<h3 id="schritte">Schritte</h3>
+<ul>
+<li>Öffne deinen Webbrowser und lade eine Textversion von <a href="http://gaia.cs.umass.edu/wireshark-labs/alice.txt">Alice in Wonderland</a> herunter und speichere die Datei als <code>.txt</code> auf deinem Rechner</li>
+<li>Gehe anschließend auf die <a href="http://gaia.cs.umass.edu/wireshark-labs/TCP-wireshark-file1.html">Upload-Seite</a> -- auf dieser Seite kannst du die Datei hochladen</li>
+</ul>
+<p><a class="glightbox" href="img/gaia-upload-page-alice.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Gaia upload page" src="img/gaia-upload-page-alice.png" /></a></p>
+<ul>
+<li>Klicke auf <strong>Browse</strong> bzw. <strong>Datei auswählen</strong> und wähle deine gespeicherte Datei aus (<strong>Wichtig:</strong> Drücke <strong>noch nicht</strong> auf „Upload alice.txt file“!)</li>
+<li>Starte jetzt <strong>Wireshark</strong> und beginne die Paketerfassung</li>
+<li>Wechsle zurück zum Browser und klicke auf <strong>Upload alice.txt file</strong></li>
+<li>Die Datei wird via <strong>HTTP POST</strong> (und damit über TCP) an den Server <code>gaia.cs.umass.edu</code> gesendet</li>
+<li>Warte, bis eine Bestätigungsmeldung erscheint</li>
+<li>Stoppe danach die Aufzeichnung in Wireshark</li>
+</ul>
+<p><a class="glightbox" href="img/gaia-upload-finished-alice.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Gaia upload finished page" src="img/gaia-upload-finished-alice.png" /></a></p>
+<p>Dein Wireshark-Fenster sollte jetzt die TCP-Segmente der Übertragung enthalten.</p>
+<blockquote>
+<p>Falls du keinen eigenen Mitschnitt machen kannst, kannst du auch ein Beispiel-Tracefile herunterladen:
+<a href="http://gaia.cs.umass.edu/wireshark-labs/wireshark-traces-8.1.zip">http://gaia.cs.umass.edu/wireshark-labs/wireshark-traces-8.1.zip</a></p>
+</blockquote>
+<h2 id="2-erster-blick-auf-den-mitschnitt">2. Erster Blick auf den Mitschnitt</h2>
+<p>Bevor wir tief ins Detail gehen, werfen wir einen groben Blick auf den Mitschnitt.</p>
+<ul>
+<li>Finde die <strong>HTTP POST</strong>-Nachricht in deinem Trace, mit der die Datei hochgeladen wurde</li>
+<li>Klappe in Wireshark die Details der HTTP-Nachricht auf, um den POST genau zu untersuchen</li>
+</ul>
+<p><a class="glightbox" href="img/tcp-http-post-alice.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="HTTP POST" src="img/tcp-http-post-alice.png" /></a></p>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>Als Beispiel dient hier das vorbereitete Tracefile <code>tcp-wireshark-trace1-1.pcapng</code>. Hier sehen wir: </p>
+<ul>
+<li>Paket #153 enthält die HTTP POST-Nachricht</li>
+<li>Der Body der HTTP POST-Nachricht enthält die gesamte Datei alice.txt (über 152 KB)</li>
+<li>Die Datei passt nicht in ein einzelnes TCP-Segment</li>
+<li>Stattdessen wird sie über viele Segmente verteilt (z. B. über 100 Segmente im Beispieltrace)</li>
+<li>Wireshark zeigt auch an, dass das erste TCP-Segment, welches die POST-Message enthält, Paket #4 ist, das zweite TCP-Segment Paket #5, etc.</li>
+</ul>
+</div>
+<ul>
+<li>Filtere die Anzeige in Wireshark auf TCP-Segmente mit dem Filter <code>tcp</code>, damit siehst du alle TCP-Segmente zwischen deinem Rechner und dem Server</li>
+</ul>
+<p><a class="glightbox" href="img/tcp-segments-allice-start.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="TCP-Segmente Übertragung alice.txt" src="img/tcp-segments-allice-start.png" /></a></p>
+<h3 id="analysefragen">Analysefragen</h3>
+<p>Die folgenden Fragen können entweder mit Hilfe einer eigenen Messung beantwortet werden oder mit Hilfe des fertigen Wireshark Tracefiles <code>tcp-wireshark-trace1-1.pcapng</code></p>
+<ol>
+<li>Welche IP-Adresse und welchen TCP-Port nutzt dein Rechner als <strong>Quelle</strong> beim Hochladen?  <ul>
+<li>Tipp: Wähle ein HTTP-Paket und schaue dir den TCP-Header in den Details an.</li>
+</ul>
+</li>
+<li>Welche IP-Adresse hat <strong>gaia.cs.umass.edu</strong>?  <ul>
+<li>Auf welchem Port empfängt und sendet er TCP-Segmente für diese Verbindung?</li>
+</ul>
+</li>
+<li>Was ist die <strong>Sequenznummer</strong> des TCP-SYN-Segments, das die Verbindung aufbaut?<ul>
+<li>Woran erkennst du in diesem Segment, dass es ein <strong>SYN</strong> ist?</li>
+<li>Unterstützt der Empfänger in dieser Sitzung <strong>Selective Acknowledgments</strong>?</li>
+</ul>
+</li>
+<li>Was ist die <strong>Sequenznummer</strong> des <strong>SYNACK</strong>-Segments, das vom Server zurückkommt?<ul>
+<li>Woran erkennst du das SYNACK?</li>
+<li>Welchen Wert hat das Acknowledgement-Feld im SYNACK?</li>
+<li>Wie wurde dieser Wert bestimmt?</li>
+</ul>
+</li>
+<li>Was ist die Sequenznummer des TCP-Segments, das den <strong>HTTP POST</strong>-Header enthält?<ul>
+<li>Wieviele Bytes enthält das <strong>Payload/Data-Feld</strong> dieses Segments?</li>
+<li>Passte die gesamte Datei alice.txt in dieses eine Segment?</li>
+</ul>
+</li>
+<li>Betrachte dieses erste Segment als Start der <strong>Datenübertragung</strong>:<ul>
+<li>Zu welcher Zeit wurde es gesendet?</li>
+<li>Wann kam das ACK dafür zurück?</li>
+<li>Wie groß ist das <strong>RTT</strong> für dieses Segment?</li>
+<li>Wie groß ist das RTT für das zweite Daten-segment und dessen ACK?</li>
+<li>Was ist der <strong>EstimatedRTT</strong>-Wert nach Empfang des ACKs für das zweite Segment?<ul>
+<li>Verwende die Formel im Buch (Kapitel 3.5.3) mit <code>α = 0.125</code> und als Anfangswert den gemessenen RTT des ersten Segments</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Wie lang (Header + Payload) sind die <strong>ersten vier Daten-Segmente</strong>?</li>
+<li>Welchen kleinsten <strong>Buffer-Wert (Window Size)</strong> hat der Server in diesen vier ersten Daten-Segmenten dem Client angeboten?<ul>
+<li>Hat der Mangel an Buffer-Space den Sender gedrosselt?</li>
+</ul>
+</li>
+<li>Gibt es <strong>Retransmissions</strong> im Trace?<ul>
+<li>Woran erkennst du das in Wireshark?</li>
+</ul>
+</li>
+<li>Wie viel Daten werden typischerweise in einem <strong>ACK</strong> bestätigt (bei den ersten zehn Daten-Segmenten)?<ul>
+<li>Gibt es Fälle, wo der Empfänger <strong>nur jedes zweite Segment</strong> bestätigt?</li>
+</ul>
+</li>
+<li>Wie groß ist der <strong>Durchsatz</strong> (Bytes pro Zeit)?  <ul>
+<li>Erkläre, wie du diesen Wert berechnet hast.</li>
+</ul>
+</li>
+</ol>
+<blockquote>
+<p>Tipp:<br />
+Wireshark hat eine schöne Funktion, um RTTs zu plotten:<br />
+Menü: <code>Statistics -&gt; TCP Stream Graph -&gt; Round Trip Time Graph</code></p>
+</blockquote>
+<h2 id="4-tcp-congestion-control-in-aktion-fur-fortgeschrittene">4. <em>TCP Congestion Control</em> in Aktion (für Fortgeschrittene)</h2>
+<p>Betrachte, wie viel Daten pro Zeiteinheit vom Client zum Server gesendet werden.  </p>
+<ul>
+<li>Wireshark bietet dafür ein praktisches Tool: <code>Statistics -&gt; TCP Stream Graph -&gt; Time-Sequence-Graph (Stevens)</code></li>
+<li>Wähle ein vom Client gesendetes TCP-Segment (im Upload) aus und rufe das Diagramm auf</li>
+<li>Im Graphen siehst du, wie die Sequenznummern über die Zeit verlaufen</li>
+</ul>
+<p><a class="glightbox" href="img/tcp-sequence-number-versus-time-plot-1.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="TCP Sequence Number vs. Time Graph" src="img/tcp-sequence-number-versus-time-plot-1.png" /></a></p>
+<ol>
+<li>Schau dir die <strong><em>Paketschübe</em></strong> um folgende Zeitpunkte an (z. B. t = 0.025, t = 0.053, t = 0.082, t = 0.1):  <ul>
+<li>Sieht das aus wie <strong>Slow Start</strong>, <strong>Congestion Avoidance</strong> oder etwas anderes?  </li>
+<li>Beschreibe deine Beobachtung</li>
+</ul>
+</li>
+<li>Diese Paketschübe scheinen eine gewisse <strong>Periodizität</strong> zu haben.  <ul>
+<li>Was kannst du dazu sagen?</li>
+</ul>
+</li>
+<li>Beantworte Fragen 12 und 13 auch für <strong>deinen eigenen Mitschnitt</strong>, falls du einen gemacht hast.</li>
+</ol>
+<p>Andere Ansicht der selben Daten:</p>
+<p><a class="glightbox" href="img/tcp-sequence-number-versus-time-plot-2.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="TCP Sequence Number vs. Time Graph" src="img/tcp-sequence-number-versus-time-plot-2.png" /></a></p>
 
 
 
