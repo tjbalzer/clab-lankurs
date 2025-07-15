@@ -299,7 +299,7 @@ Nachdem du die Grundlagen kennst, wollen wir gezielt **nslookup**-Abfragen start
     Wenn du Wireshark nicht selbst auf einem Live-Netzwerk nutzen kannst, kannst du eine vorgefertigte Aufzeichnung herunterladen:
     [Download-Link für Beispiel-Traces](http://gaia.cs.umass.edu/wireshark-labs/wireshark-traces-8.1.zip)
     
-    Für diese Aufgabe nutzt du dann bitte die Datei `dns-wireshark-trace1-2.pcapng`.
+    Für diese Aufgabe nutzt du dann bitte die Datei `dns-wireshark-trace2-1.pcap`.
 
 > In Wireshark siehst du gff. mehrere DNS-Anfragen und -Antworten.  
 > Achte auf die erste Type A-Anfrage für ẁww.cs.umass.edu` (im Beispiel-Pakettrace ist das z. B. Paketnummer 19).
@@ -330,7 +330,7 @@ Jetzt nutzen wir eine NS-Abfrage. Führe aus: `nslookup -type=NS umass.edu`
     Wenn du Wireshark nicht selbst auf einem Live-Netzwerk nutzen kannst, kannst du eine vorgefertigte Aufzeichnung herunterladen:
     [Download-Link für Beispiel-Traces](http://gaia.cs.umass.edu/wireshark-labs/wireshark-traces-8.1.zip)
     
-    Für diese Aufgabe nutzt du dann bitte die Datei `dns-wireshark-trace1-3.pcapng`.
+    Für diese Aufgabe nutzt du dann bitte die Datei `dns-wireshark-trace3-1.pcapng`.
 
 #### Analysefragen
 
