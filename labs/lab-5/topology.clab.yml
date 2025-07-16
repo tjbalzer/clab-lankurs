@@ -1,0 +1,55 @@
+name: lab5
+
+mgmt:
+  network: lankurs
+  ipv4-subnet: auto
+
+topology:
+  nodes:
+    SW1:
+      kind: cisco_iol
+      image: ghcr.io/tjbalzer/cisco_iol:L2-17.15.01
+      type: L2
+      startup-config: configs/sw1.cfg.partial
+    SW2:
+      kind: cisco_iol
+      image: ghcr.io/tjbalzer/cisco_iol:L2-17.15.01
+      type: L2
+      startup-config: configs/sw2.cfg.partial
+    R1:
+      kind: cisco_iol
+      image: ghcr.io/tjbalzer/cisco_iol:L2-17.15.01
+      type: L2
+      startup-config: configs/r1.cfg.partial
+    PC1:
+      kind: linux
+      image: ghcr.io/srl-labs/network-multitool
+      exec:
+        - ip address add 192.168.11.11/24 dev eth1
+        - ip route add 192.168.0.0/16 via 192.168.11.1 dev eth1
+    PC2:
+      kind: linux
+      image: ghcr.io/srl-labs/network-multitool
+      exec:
+        - ip address add 192.168.12.11/24 dev eth1
+        - ip route add 192.168.0.0/16 via 192.168.12.1 dev eth1
+    PC3:
+      kind: linux
+      image: ghcr.io/srl-labs/network-multitool
+      exec:
+        - ip address add 192.168.11.12/24 dev eth1
+        - ip route add 192.168.0.0/16 via 192.168.11.1 dev eth1
+    PC4:
+      kind: linux
+      image: ghcr.io/srl-labs/network-multitool
+      exec:
+        - ip address add 192.168.12.12/24 dev eth1
+        - ip route add 192.168.0.0/16 via 192.168.12.1 dev eth1
+
+  links:
+    - endpoints: ["SW1:e0/1", "R1:e0/1"]
+    - endpoints: ["SW2:e0/1", "R1:e0/2"]
+    - endpoints: ["SW1:e0/2", "PC1:eth1"]
+    - endpoints: ["SW1:e0/3", "PC2:eth1"]
+    - endpoints: ["SW2:e0/2", "PC3:eth1"]
+    - endpoints: ["SW2:e0/3", "PC4:eth1"]
