@@ -348,9 +348,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#containerlab-lab-2-starten-deploy" class="md-nav__link">
+  <a href="#containerlab-lab-1-starten-deploy" class="md-nav__link">
     <span class="md-ellipsis">
-      Containerlab Lab-2 starten (Deploy)
+      Containerlab Lab-1 starten (Deploy)
     </span>
   </a>
   
@@ -411,9 +411,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#containerlab-lab-2-stoppen-destroy" class="md-nav__link">
+  <a href="#containerlab-lab-1-stoppen-destroy" class="md-nav__link">
     <span class="md-ellipsis">
-      Containerlab Lab-2 stoppen (Destroy)
+      Containerlab Lab-1 stoppen (Destroy)
     </span>
   </a>
   
@@ -701,9 +701,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#containerlab-lab-2-starten-deploy" class="md-nav__link">
+  <a href="#containerlab-lab-1-starten-deploy" class="md-nav__link">
     <span class="md-ellipsis">
-      Containerlab Lab-2 starten (Deploy)
+      Containerlab Lab-1 starten (Deploy)
     </span>
   </a>
   
@@ -764,9 +764,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#containerlab-lab-2-stoppen-destroy" class="md-nav__link">
+  <a href="#containerlab-lab-1-stoppen-destroy" class="md-nav__link">
     <span class="md-ellipsis">
-      Containerlab Lab-2 stoppen (Destroy)
+      Containerlab Lab-1 stoppen (Destroy)
     </span>
   </a>
   
@@ -818,8 +818,8 @@
 <p>Ein Ping, z.B. von PC1 nach PC3 wird auf der Kommandozeile von PC1 durch die Eingabe des Befehls <code>ping 192.168.12.11</code> gestartet, wobei <code>192.168.12.11</code> die IP-Adresse von PC3 darstellt, über welche PC3 für andere Endgeräte im Netzwerk erreichbar ist.</p>
 </div>
 <figure>
-<p><a class="glightbox" href="img/lankurs-lab2.svg#only-light" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Toplogy Lab-2" src="img/lankurs-lab2.svg#only-light" /></a>
-<a class="glightbox" href="img/lankurs-lab2-dark.svg#only-dark" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Toplogy Lab-2" src="img/lankurs-lab2-dark.svg#only-dark" /></a></p>
+<p><a class="glightbox" href="img/lankurs-lab2.svg#only-light" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Toplogy Lab-1" src="img/lankurs-lab2.svg#only-light" /></a>
+<a class="glightbox" href="img/lankurs-lab2-dark.svg#only-dark" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Toplogy Lab-1" src="img/lankurs-lab2-dark.svg#only-dark" /></a></p>
 <figcaption>
 <p>Lab Topology</p>
 </figcaption>
@@ -827,7 +827,7 @@
 <p>Die dafür notwendigen Schritte sind:</p>
 <ul>
 <li>VS Code mit GitHub Codespace verbinden</li>
-<li>Containerlab <em>Lab-2</em> starten (Deploy)</li>
+<li>Containerlab <em>Lab-1</em> starten (Deploy)</li>
 <li>Mit Kommandozeile von PC1 verbinden</li>
 <li><em>Edgeshark</em> im GitHub Codespace starten</li>
 <li>Ping-Befehl zwischen PC1 und PC3 starten</li>
@@ -835,16 +835,16 @@
 <li>Ping-Befehl und Wireshark-Aufzeichnung stoppen</li>
 <li>Paketaufbau Ping Request Paket</li>
 <li>Paketaufbau Ping Response Paket</li>
-<li>Containerlab <em>Lab-2</em> stoppen (Destroy)</li>
+<li>Containerlab <em>Lab-1</em> stoppen (Destroy)</li>
 <li><em>Edgeshark</em> stoppen</li>
 <li><em>GitHub Codespace</em> stoppen</li>
 </ul>
 <h2 id="vs-code-mit-github-codespace-verbinden">VS Code mit GitHub Codespace verbinden</h2>
 <p>VS Code starten und Verbindung zum GitHub Codespace des clab-lankurs Repositories herstellen, analog zur Vorgehensweise in der <a href="lab0.html#lab-0-laborumgebung-mit-containerlab">Übung Lab 0</a></p>
-<h2 id="containerlab-lab-2-starten-deploy">Containerlab <em>Lab-2</em> starten (Deploy)</h2>
+<h2 id="containerlab-lab-1-starten-deploy">Containerlab <em>Lab-1</em> starten (Deploy)</h2>
 <ul>
 <li>Containerlab-Bereich auswählen (über Containerlab Symbol im linken Randmenü)</li>
-<li>Im Bereich <code>UNDEPLOYED LOCAL LABS</code> das Verzeichnis <code>student/lab-2</code> öffnen</li>
+<li>Im Bereich <code>UNDEPLOYED LOCAL LABS</code> das Verzeichnis <code>labs/Lab-1</code> öffnen</li>
 <li>Rechtsklick auf Datei <code>topology.clab.yml</code> und Start des Labors über Menüeintrag <code>Deploy</code></li>
 <li>Optional: Im Informations-Dialog unten rechts <code>View Logs</code> klicken, danach kann man die Logmeldungen während des Starts im Bereich <code>OUTPUT</code> beobachten:<ul>
 <li>Fehlende Conatainer-Images werden aus der GitHub Docker Registry <code>ghcr.io</code> heruntergeladen und gespeichert</li>
@@ -872,7 +872,7 @@
 </details>
 <h2 id="edgeshark-im-github-codespace-starten"><em>Edgeshark</em> im GitHub Codespace starten</h2>
 <p>Wireshark läuft im Rahmen dieses Kurses auf lokalen Notebooks im Schulungsraum. Da unsere Labornetzwerke entfernt in einem GitHub Codespace in der Microsoft Azure Cloud laufen, müssen wir dafür sorgen, dass die entfernten Netzwerkpakete an die lokale Wireshark-Instanz geschickt werden. Hierzu wird auf der entfernten virtuellen Maschine (der GitHub Codespace) die Open Source Software <a href="https://edgeshark.siemens.io">Edgeshark</a> in Form eines Docker Containers gestartet.</p>
-<p>Edgeshark liest die Netzwerkpakete auf den Verbindungen der einzelnen Netzwerkcontainer in unserer Lab-2 Containerlab Topolology und überträgt die Pakete an das <code>cshargextcap</code>-Plugin von Wireshark auf dem lokalen Schulungs-PC oder Smart Client (auf den SmartClients wurde das <code>cshargextcap</code>-Plugin während der Durchführung der Maßnahmen in der Sektion <a href="vorbereitungen.html">Vorbereitungen</a> installiert.</p>
+<p>Edgeshark liest die Netzwerkpakete auf den Verbindungen der einzelnen Netzwerkcontainer in unserer Lab-1 Containerlab Topolology und überträgt die Pakete an das <code>cshargextcap</code>-Plugin von Wireshark auf dem lokalen Schulungs-PC oder Smart Client (auf den SmartClients wurde das <code>cshargextcap</code>-Plugin während der Durchführung der Maßnahmen in der Sektion <a href="vorbereitungen.html">Vorbereitungen</a> installiert.</p>
 <p><em>Edgeshark</em> wird über die <a href="https://code.visualstudio.com/"><em>VS Code</em></a> <em>Command Palette</em> wie folgt im GitHub Codespace gestartet:</p>
 <ul>
 <li><em>VS Code Command Palette</em> über <span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-shift">Shift</kbd><span>+</span><kbd class="key-p">P</kbd></span> aufrufen</li>
@@ -957,10 +957,10 @@
 <summary>Screenshots: <em>Paket-Details ping Reply</em></summary>
 <p><a class="glightbox" href="img/ping-reply-paket.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="start-codespace-1" src="img/ping-reply-paket.png" /></a></p>
 </details>
-<h2 id="containerlab-lab-2-stoppen-destroy">Containerlab <em>Lab-2</em> stoppen (Destroy)</h2>
-<p>Das gestartete Labor kann über die Auswahl des Befehls <code>Destroy</code> im Kontextmenü von Lab-2 im Bereich <code>RUNNING LABS</code> beendet werden.</p>
+<h2 id="containerlab-lab-1-stoppen-destroy">Containerlab <em>Lab-1</em> stoppen (Destroy)</h2>
+<p>Das gestartete Labor kann über die Auswahl des Befehls <code>Destroy</code> im Kontextmenü von Lab-1 im Bereich <code>RUNNING LABS</code> beendet werden.</p>
 <details class="info">
-<summary>Screenshot: <em>Stopp (Desroy) Lab-2</em></summary>
+<summary>Screenshot: <em>Stopp (Desroy) Lab-1</em></summary>
 <p><a class="glightbox" href="img/destroy-containerlab-lab-2-1.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="start-codespace-1" src="img/destroy-containerlab-lab-2-1.png" /></a>
 <a class="glightbox" href="img/destroy-containerlab-lab-2-2.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="start-codespace-1" src="img/destroy-containerlab-lab-2-2.png" /></a></p>
 </details>

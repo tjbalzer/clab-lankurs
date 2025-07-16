@@ -895,8 +895,8 @@ aus einer zentralen GitHub Docker-Registry geladen werden. Um dies zu ermöglich
 <h2 id="containerlab-topology-dateien-anzeigen-und-andern">Containerlab Topology Dateien anzeigen und ändern</h2>
 <ul>
 <li><code>EXPLORER</code>-Ansicht auswählen (Dateistruktur wird angezeigt)</li>
-<li>Die Dateien zu den einzelnen Übungen liegen im Verzeichnis <code>student</code> (Lab 1 bis 10)</li>
-<li>Bitte Verzeichnis <code>student/lab-2/</code> die Datei <code>topology.clab.yml</code> auswählen (Datei wird als Reiter <code>topology.clab.yml</code> im Editor-Bereich geöffnet)</li>
+<li>Die Dateien zu den einzelnen Übungen liegen im Verzeichnis <code>labs</code> (Lab 1 bis 10)</li>
+<li>Bitte Verzeichnis <code>labs/lab-2/</code> die Datei <code>topology.clab.yml</code> auswählen (Datei wird als Reiter <code>topology.clab.yml</code> im Editor-Bereich geöffnet)</li>
 <li>Bei Bedarf kann das Labornetzwerk über diese Datei konfiguriert werden (wird ggf. in künftigen Labs benötigt)</li>
 <li>Erklärungstexte für die einzelnen Bereiche können im folgenden Listing durch einen Klick auf die <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 13h-4v4h-2v-4H7v-2h4V7h2v4h4m-5-9A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2"/></svg></span>-Symbole angezeigt werden</li>
 </ul>
@@ -904,7 +904,7 @@ aus einer zentralen GitHub Docker-Registry geladen werden. Um dies zu ermöglich
 <summary>Screenshot: <em>Containerlab Toplogy Dateien anzeigen</em></summary>
 <p><a class="glightbox" href="img/edit-clab-topology-file.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="login-docker-registry" src="img/edit-clab-topology-file.png" /></a></p>
 </details>
-<div class="language-yaml highlight"><span class="filename">student/lab-2/topology.clab.yml</span><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">lab2</span><span class="w"> </span><span class="c1"># (1) </span>
+<div class="language-yaml highlight"><span class="filename">labs/lab-2/topology.clab.yml</span><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">lab2</span><span class="w"> </span><span class="c1"># (1) </span>
 </span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
 </span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="nt">mgmt</span><span class="p">:</span><span class="w"> </span><span class="c1"># (2)</span>
 </span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">  </span><span class="nt">network</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">lankurs</span><span class="w"> </span><span class="c1"># (3)</span>
@@ -986,7 +986,7 @@ aus einer zentralen GitHub Docker-Registry geladen werden. Um dies zu ermöglich
 <h2 id="labornetzwerk-starten-deploy">Labornetzwerk starten (Deploy)</h2>
 <ul>
 <li>Containerlab-Bereich auswählen (über Containerlab Symbol im linken Randmenü)</li>
-<li>Im Bereich <code>UNDEPLOYED LOCAL LABS</code> das Verzeichnis <code>student/lab-2</code> öffnen</li>
+<li>Im Bereich <code>UNDEPLOYED LOCAL LABS</code> das Verzeichnis <code>labs/lab-2</code> öffnen</li>
 <li>Rechtsklick auf Datei <code>topology.clab.yml</code> und Start des Labors über Menüeintrag <code>Deploy</code></li>
 <li>Optional: Im Informations-Dialog unten rechts <code>View Logs</code> klicken, danach kann man die Logmeldungen während des Starts im Bereich <code>OUTPUT</code> beobachten:<ul>
 <li>Fehlende Conatainer-Images werden aus der GitHub Docker Registry <code>ghcr.io</code> heruntergeladen und gespeichert</li>
