@@ -1,3 +1,0 @@
-mac address-table aging-time 0
-no spanning-tree vlan 1
-no ipv6 unicast-routing

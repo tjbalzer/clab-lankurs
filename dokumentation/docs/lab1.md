@@ -9,8 +9,8 @@ In dieser Übung gehen wir die ersten Schritte mit Wireshark. Hierzu arbeiten wi
 
     Ein Ping, z.B. von PC1 nach PC3 wird auf der Kommandozeile von PC1 durch die Eingabe des Befehls `ping 192.168.12.11` gestartet, wobei `192.168.12.11` die IP-Adresse von PC3 darstellt, über welche PC3 für andere Endgeräte im Netzwerk erreichbar ist.
 
-![Toplogy Lab-2](img/lankurs-lab2.svg#only-light)
-![Toplogy Lab-2](img/lankurs-lab2-dark.svg#only-dark)
+![Toplogy Lab-1](img/lankurs-lab2.svg#only-light)
+![Toplogy Lab-1](img/lankurs-lab2-dark.svg#only-dark)
 
 /// caption
 Lab Topology
@@ -19,7 +19,7 @@ Lab Topology
 Die dafür notwendigen Schritte sind:
 
 - VS Code mit GitHub Codespace verbinden
-- Containerlab _Lab-2_ starten (Deploy)
+- Containerlab _Lab-1_ starten (Deploy)
 - Mit Kommandozeile von PC1 verbinden
 - _Edgeshark_ im GitHub Codespace starten
 - Ping-Befehl zwischen PC1 und PC3 starten
@@ -27,7 +27,7 @@ Die dafür notwendigen Schritte sind:
 - Ping-Befehl und Wireshark-Aufzeichnung stoppen
 - Paketaufbau Ping Request Paket
 - Paketaufbau Ping Response Paket
-- Containerlab _Lab-2_ stoppen (Destroy)
+- Containerlab _Lab-1_ stoppen (Destroy)
 - _Edgeshark_ stoppen
 - _GitHub Codespace_ stoppen
 
@@ -35,10 +35,10 @@ Die dafür notwendigen Schritte sind:
 
 VS Code starten und Verbindung zum GitHub Codespace des clab-lankurs Repositories herstellen, analog zur Vorgehensweise in der [Übung Lab 0](lab0.md#lab-0-laborumgebung-mit-containerlab)
 
-## Containerlab _Lab-2_ starten (Deploy)
+## Containerlab _Lab-1_ starten (Deploy)
 
 - Containerlab-Bereich auswählen (über Containerlab Symbol im linken Randmenü)
-- Im Bereich `UNDEPLOYED LOCAL LABS` das Verzeichnis `student/lab-2` öffnen
+- Im Bereich `UNDEPLOYED LOCAL LABS` das Verzeichnis `labs/Lab-1` öffnen
 - Rechtsklick auf Datei `topology.clab.yml` und Start des Labors über Menüeintrag `Deploy`
 - Optional: Im Informations-Dialog unten rechts `View Logs` klicken, danach kann man die Logmeldungen während des Starts im Bereich `OUTPUT` beobachten:
     * Fehlende Conatainer-Images werden aus der GitHub Docker Registry `ghcr.io` heruntergeladen und gespeichert
@@ -63,7 +63,7 @@ VS Code starten und Verbindung zum GitHub Codespace des clab-lankurs Repositorie
 
 Wireshark läuft im Rahmen dieses Kurses auf lokalen Notebooks im Schulungsraum. Da unsere Labornetzwerke entfernt in einem GitHub Codespace in der Microsoft Azure Cloud laufen, müssen wir dafür sorgen, dass die entfernten Netzwerkpakete an die lokale Wireshark-Instanz geschickt werden. Hierzu wird auf der entfernten virtuellen Maschine (der GitHub Codespace) die Open Source Software [Edgeshark](https://edgeshark.siemens.io) in Form eines Docker Containers gestartet.
 
-Edgeshark liest die Netzwerkpakete auf den Verbindungen der einzelnen Netzwerkcontainer in unserer Lab-2 Containerlab Topolology und überträgt die Pakete an das `cshargextcap`-Plugin von Wireshark auf dem lokalen Schulungs-PC oder Smart Client (auf den SmartClients wurde das `cshargextcap`-Plugin während der Durchführung der Maßnahmen in der Sektion [Vorbereitungen](vorbereitungen.md) installiert.
+Edgeshark liest die Netzwerkpakete auf den Verbindungen der einzelnen Netzwerkcontainer in unserer Lab-1 Containerlab Topolology und überträgt die Pakete an das `cshargextcap`-Plugin von Wireshark auf dem lokalen Schulungs-PC oder Smart Client (auf den SmartClients wurde das `cshargextcap`-Plugin während der Durchführung der Maßnahmen in der Sektion [Vorbereitungen](vorbereitungen.md) installiert.
 
 _Edgeshark_ wird über die [_VS Code_](https://code.visualstudio.com/) _Command Palette_ wie folgt im GitHub Codespace gestartet:
 
@@ -146,11 +146,11 @@ Die Details der Anwort der Gegenstelle auf das Ping-Paket (Ping-Reply in Paket-N
 ??? info "Screenshots: _Paket-Details ping Reply_"
     ![start-codespace-1](img/ping-reply-paket.png)
 
-## Containerlab _Lab-2_ stoppen (Destroy)
+## Containerlab _Lab-1_ stoppen (Destroy)
 
-Das gestartete Labor kann über die Auswahl des Befehls `Destroy` im Kontextmenü von Lab-2 im Bereich `RUNNING LABS` beendet werden.
+Das gestartete Labor kann über die Auswahl des Befehls `Destroy` im Kontextmenü von Lab-1 im Bereich `RUNNING LABS` beendet werden.
 
-??? info "Screenshot: _Stopp (Desroy) Lab-2_"
+??? info "Screenshot: _Stopp (Desroy) Lab-1_"
     ![start-codespace-1](img/destroy-containerlab-lab-2-1.png)
     ![start-codespace-1](img/destroy-containerlab-lab-2-2.png)
 
