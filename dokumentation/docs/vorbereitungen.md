@@ -15,7 +15,7 @@ Ein GitHub Account wird wie folgt angelegt:
 
 #### GitHub-Startseite in Webbrowser öffnen
 
-[GitHub-Startseite](https://gigthub.com) in Webbrowser öffnen und Sign-up Button auswählen:
+[GitHub-Startseite](https://github.com) in Webbrowser öffnen und Sign-up Button auswählen:
 
 ??? info "Screenshots: _GitHub Sign-up_"
     ![GitHub aufrufen](img/github-profil-anlegen-1.png)
