@@ -101,8 +101,8 @@ aus einer zentralen GitHub Docker-Registry geladen werden. Um dies zu ermöglich
 ## Containerlab Topology Dateien anzeigen und ändern
 
 - `EXPLORER`-Ansicht auswählen (Dateistruktur wird angezeigt)
-- Die Dateien zu den einzelnen Übungen liegen im Verzeichnis `student` (Lab 1 bis 10)
-- Bitte Verzeichnis `student/lab-2/` die Datei `topology.clab.yml` auswählen (Datei wird als Reiter `topology.clab.yml` im Editor-Bereich geöffnet)
+- Die Dateien zu den einzelnen Übungen liegen im Verzeichnis `labs` (Lab 1 bis 10)
+- Bitte Verzeichnis `labs/lab-2/` die Datei `topology.clab.yml` auswählen (Datei wird als Reiter `topology.clab.yml` im Editor-Bereich geöffnet)
 - Bei Bedarf kann das Labornetzwerk über diese Datei konfiguriert werden (wird ggf. in künftigen Labs benötigt)
 - Erklärungstexte für die einzelnen Bereiche können im folgenden Listing durch einen Klick auf die :material-plus-circle:-Symbole angezeigt werden
 
@@ -110,7 +110,7 @@ aus einer zentralen GitHub Docker-Registry geladen werden. Um dies zu ermöglich
     ![login-docker-registry](img/edit-clab-topology-file.png)
 
 
-  ``` yaml title="student/lab-2/topology.clab.yml"
+  ``` yaml title="labs/lab-2/topology.clab.yml"
   name: lab2 # (1) 
 
   mgmt: # (2)
@@ -193,7 +193,7 @@ aus einer zentralen GitHub Docker-Registry geladen werden. Um dies zu ermöglich
 ## Labornetzwerk starten (Deploy)
 
 - Containerlab-Bereich auswählen (über Containerlab Symbol im linken Randmenü)
-- Im Bereich `UNDEPLOYED LOCAL LABS` das Verzeichnis `student/lab-2` öffnen
+- Im Bereich `UNDEPLOYED LOCAL LABS` das Verzeichnis `labs/lab-2` öffnen
 - Rechtsklick auf Datei `topology.clab.yml` und Start des Labors über Menüeintrag `Deploy`
 - Optional: Im Informations-Dialog unten rechts `View Logs` klicken, danach kann man die Logmeldungen während des Starts im Bereich `OUTPUT` beobachten:
     * Fehlende Conatainer-Images werden aus der GitHub Docker Registry `ghcr.io` heruntergeladen und gespeichert
