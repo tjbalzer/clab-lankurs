@@ -10,73 +10,91 @@ topology:
       kind: cisco_iol
       image: ghcr.io/tjbalzer/cisco_iol:L2-17.15.01
       type: L2
-      #startup-config: configs/sw1.cfg.partial
+      startup-config: configs/sw1.cfg.partial
+      labels:
+        graph-posX: "865"
+        graph-posY: "445"
+        graph-groupLabelPos: bottom-center
     SW2:
       kind: cisco_iol
       image: ghcr.io/tjbalzer/cisco_iol:L2-17.15.01
       type: L2
-      #startup-config: configs/sw2.cfg.partial
-    SW3:
+      startup-config: configs/sw2.cfg.partial
+      labels:
+        graph-posX: "955"
+        graph-posY: "445"
+        graph-groupLabelPos: bottom-center
+    HUB:
       kind: cisco_iol
       image: ghcr.io/tjbalzer/cisco_iol:L2-17.15.01
       type: L2
-      #startup-config: configs/sw3.cfg.partial
-    SW4:
-      kind: cisco_iol
-      image: ghcr.io/tjbalzer/cisco_iol:L2-17.15.01
-      type: L2
-      #startup-config: configs/sw4.cfg.partial
-    R1:
-      kind: cisco_iol
-      image: ghcr.io/tjbalzer/cisco_iol:17.15.01
-      startup-config: configs/r1.cfg.partial
-    R2:
-      kind: cisco_iol
-      image: ghcr.io/tjbalzer/cisco_iol:17.15.01
-      startup-config: configs/r2.cfg.partial
-    R3:
-      kind: cisco_iol
-      image: ghcr.io/tjbalzer/cisco_iol:17.15.01
-      startup-config: configs/r3.cfg.partial
-    R4:
-      kind: cisco_iol
-      image: ghcr.io/tjbalzer/cisco_iol:17.15.01
-      startup-config: configs/r4.cfg.partial
+      startup-config: configs/hub.cfg.partial
+      labels:
+        graph-posX: "805"
+        graph-posY: "485"
+        graph-groupLabelPos: bottom-center
     PC1:
       kind: linux
       image: ghcr.io/srl-labs/network-multitool
       exec:
-        - ip address add 192.168.1.10/24 dev eth1
-        - ip route add 192.168.0.0/16 via 192.168.1.1 dev eth1
+        - ip address add 192.168.1.1/24 dev eth1
+        - sysctl -w net.ipv6.conf.all.disable_ipv6=1
+        - sysctl -w net.ipv6.conf.default.disable_ipv6=1
+      labels:
+        graph-posX: "805"
+        graph-posY: "385"
+        graph-groupLabelPos: bottom-center
     PC2:
       kind: linux
       image: ghcr.io/srl-labs/network-multitool
       exec:
-        - ip address add 192.168.2.10/24 dev eth1
-        - ip route add 192.168.0.0/16 via 192.168.2.1 dev eth1
+        - ip address add 192.168.1.2/24 dev eth1
+        - sysctl -w net.ipv6.conf.all.disable_ipv6=1
+        - sysctl -w net.ipv6.conf.default.disable_ipv6=1
+      labels:
+        graph-posX: "735"
+        graph-posY: "445"
+        graph-groupLabelPos: bottom-center
     PC3:
       kind: linux
       image: ghcr.io/srl-labs/network-multitool
       exec:
-        - ip address add 192.168.3.10/24 dev eth1
-        - ip route add 192.168.0.0/16 via 192.168.3.1 dev eth1
+        - ip address add 192.168.1.3/24 dev eth1
+        - sysctl -w net.ipv6.conf.all.disable_ipv6=1
+        - sysctl -w net.ipv6.conf.default.disable_ipv6=1
+      labels:
+        graph-posX: "735"
+        graph-posY: "525"
+        graph-groupLabelPos: bottom-center
     PC4:
       kind: linux
       image: ghcr.io/srl-labs/network-multitool
       exec:
-        - ip address add 192.168.4.10/24 dev eth1
-        - ip route add 192.168.0.0/16 via 192.168.4.1 dev eth1
+        - ip address add 192.168.1.4/24 dev eth1
+        - sysctl -w net.ipv6.conf.all.disable_ipv6=1
+        - sysctl -w net.ipv6.conf.default.disable_ipv6=1
+      labels:
+        graph-posX: "1025"
+        graph-posY: "395"
+        graph-groupLabelPos: bottom-center
+    PC5:
+      kind: linux
+      image: ghcr.io/srl-labs/network-multitool
+      exec:
+        - ip address add 192.168.1.5/24 dev eth1
+        - sysctl -w net.ipv6.conf.all.disable_ipv6=1
+      labels:
+        graph-posX: "1025"
+        graph-posY: "485"
+        graph-groupLabelPos: bottom-center
+  #    br-lankurs:
+  #      kind: bridge
 
   links:
-    - endpoints: ["R1:e0/1", "R2:e0/1"]
-    - endpoints: ["R1:e0/2", "R3:e0/2"]
-    - endpoints: ["R2:e0/2", "R4:e0/2"]
-    - endpoints: ["R3:e0/1", "R4:e0/1"]
-    - endpoints: ["R1:e0/3", "SW1:e0/2"]
-    - endpoints: ["R2:e0/3", "SW2:e0/2"]
-    - endpoints: ["R3:e0/3", "SW3:e0/2"]
-    - endpoints: ["R4:e0/3", "SW4:e0/2"]
-    - endpoints: ["SW1:e0/1", "PC1:eth1"]
-    - endpoints: ["SW2:e0/1", "PC2:eth1"]
-    - endpoints: ["SW3:e0/1", "PC3:eth1"]
-    - endpoints: ["SW4:e0/1", "PC4:eth1"]
+    - endpoints: [ "SW1:e0/1", "SW2:e0/1" ]
+    - endpoints: [ "SW1:e0/2", "HUB:eth1" ]
+    - endpoints: [ "SW1:e0/3", "PC1:eth1" ]
+    - endpoints: [ "SW2:e0/2", "PC4:eth1" ]
+    - endpoints: [ "SW2:e0/3", "PC5:eth1" ]
+    - endpoints: [ "PC2:eth1", "HUB:eth2" ]
+    - endpoints: [ "PC3:eth1", "HUB:eth3" ]
