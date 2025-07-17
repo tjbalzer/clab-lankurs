@@ -638,10 +638,10 @@
 </div>
 <h2 id="arp-tabelle-betrachten">ARP-Tabelle betrachten</h2>
 <ul>
-<li>Mit dem Befehl <code>show arp</code> auf PC1 die ARP-Tabelle anzeigen</li>
-<li>Wenn die Tabelle leer ist:<ul>
+<li>Mit dem Befehl <code>arp -a</code> auf PC1 die ARP-Tabelle anzeigen</li>
+<li>Für den Fall, dass die Tabelle leer ist (nach 5 Minuten ist die Lebenszeit der Einträge abgelaufen) oder keine Einträge mehr enthalten sind, die mit <code>192.168.</code> beginnen:<ul>
 <li>Wiederhole den Ping von PC1 nach PC3</li>
-<li>Dann erneut auf PC1 <code>show arp</code> ausführen</li>
+<li>Dann erneut auf PC1 <code>arp -a</code> ausführen</li>
 </ul>
 </li>
 </ul>
@@ -653,15 +653,15 @@
 </div>
 <h2 id="arp-tabelle-loschen">ARP-Tabelle löschen</h2>
 <ul>
-<li>Lösche die ARP-Tabelle durch Eingabe des Befehls <code>clear arp</code> auf PC1</li>
-<li>Kontrolliere den Inhalt der ARP-Tabelle: <code>show arp</code></li>
+<li>Lösche die ARP-Tabelle durch Eingabe des Befehls <code>arp -d &lt;ip-adresse&gt;</code> auf PC1 (einzeln für jede Adresse die mit <code>192.168.</code> beginnt)</li>
+<li>Kontrolliere den Inhalt der ARP-Tabelle: <code>ip neighbor show</code></li>
 <li>Die Tabelle sollte nun leer sein</li>
 </ul>
 <h2 id="erneuter-mitschnitt-mit-wireshark">Erneuter Mitschnitt mit Wireshark</h2>
 <ul>
 <li>Starte Wireshark auf Interface <code>eth1</code> von PC1</li>
 <li>Wiederhole den Ping von PC1 nach PC3</li>
-<li>Stoppe den Ping-Befehl auf PC1 nach 4-5 Pings über ++crtl+c++</li>
+<li>Stoppe den Ping-Befehl auf PC1 nach 4-5 Pings über <span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-c">C</kbd></span></li>
 <li>Achte darauf: Du willst diesmal <strong>nur Ethernet- und ARP-Pakete</strong> sehen<ul>
 <li>Hierfür passen wir die Wireshark-Ansicht entsprechend an und schalten die Protkollunterstützung für IPv4 aus</li>
 </ul>
