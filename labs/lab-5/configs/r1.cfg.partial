@@ -1,22 +1,18 @@
 !
+vtp mode transparent
+!
 vlan 11
 !
 vlan 12
 !
-interface Ethernet0/0
- description clab-mgmt
- no switchport
- vrf forwarding clab-mgmt
- ip address 172.18.0.2 255.255.0.0
-!         
 interface Ethernet0/1
  switchport trunk encapsulation dot1q
- switchport trunk allowed vlan 1,11,12,1002-1005
+ switchport trunk allowed vlan 1,11,12
  switchport mode trunk
 !         
 interface Ethernet0/2
  switchport trunk encapsulation dot1q
- switchport trunk allowed vlan 1,11,12,1002-1005
+ switchport trunk allowed vlan 1,11,12
  switchport mode trunk
 !         
 interface Ethernet0/3

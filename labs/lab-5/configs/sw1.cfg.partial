@@ -1,4 +1,6 @@
 !
+vtp mode transparent
+!
 vlan 11
 !
 vlan 12
