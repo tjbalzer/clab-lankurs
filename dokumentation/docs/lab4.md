@@ -56,10 +56,10 @@ Suche das **erste Ping-Antwortpaket (ICMP Echo Reply)** und beantworte die folge
 
 ## ARP-Tabelle betrachten
 
-- Mit dem Befehl `show arp` auf PC1 die ARP-Tabelle anzeigen
-- Wenn die Tabelle leer ist:
+- Mit dem Befehl `arp -a` auf PC1 die ARP-Tabelle anzeigen
+- Für den Fall, dass die Tabelle leer ist (nach 5 Minuten ist die Lebenszeit der Einträge abgelaufen) oder keine Einträge mehr enthalten sind, die mit `192.168.` beginnen:
     * Wiederhole den Ping von PC1 nach PC3
-    * Dann erneut auf PC1 `show arp` ausführen
+    * Dann erneut auf PC1 `arp -a` ausführen
 
 !!! question "Aufgabe"
     Notiere die ARP-Tabelle und erkläre:
@@ -68,20 +68,20 @@ Suche das **erste Ping-Antwortpaket (ICMP Echo Reply)** und beantworte die folge
 
 ## ARP-Tabelle löschen
 
-- Lösche die ARP-Tabelle durch Eingabe des Befehls `clear arp` auf PC1
-- Kontrolliere den Inhalt der ARP-Tabelle: `show arp`
+- Lösche die ARP-Tabelle durch Eingabe des Befehls `arp -d <ip-adresse>` auf PC1 (einzeln für jede Adresse die mit `192.168.` beginnt)
+- Kontrolliere den Inhalt der ARP-Tabelle: `ip neighbor show`
 - Die Tabelle sollte nun leer sein
 
 ## Erneuter Mitschnitt mit Wireshark
 
 - Starte Wireshark auf Interface `eth1` von PC1
 - Wiederhole den Ping von PC1 nach PC3
-- Stoppe den Ping-Befehl auf PC1 nach 4-5 Pings über ++crtl+c++
+- Stoppe den Ping-Befehl auf PC1 nach 4-5 Pings über ++ctrl+c++
 - Achte darauf: Du willst diesmal **nur Ethernet- und ARP-Pakete** sehen
     * Hierfür passen wir die Wireshark-Ansicht entsprechend an und schalten die Protkollunterstützung für IPv4 aus
 
 ## Protokollunterstützung für IPv4 deaktivieren
-
+orre
 - Gehe im Wireshark-Menü auf: `Analyse >> Protokolle aktivieren`
 - Deaktiviere **IPv4** durch Abwählen des entsprechenden Kästchens
 
