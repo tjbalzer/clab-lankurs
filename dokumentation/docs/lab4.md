@@ -81,7 +81,7 @@ Suche das **erste Ping-Antwortpaket (ICMP Echo Reply)** und beantworte die folge
     * Hierfür passen wir die Wireshark-Ansicht entsprechend an und schalten die Protkollunterstützung für IPv4 aus
 
 ## Protokollunterstützung für IPv4 deaktivieren
-orre
+
 - Gehe im Wireshark-Menü auf: `Analyse >> Protokolle aktivieren`
 - Deaktiviere **IPv4** durch Abwählen des entsprechenden Kästchens
 
