@@ -12,16 +12,17 @@ In dieser Laborübung sollst du nach dem Starten des Containerlab Labors (gleich
 
 ![Ethernet Frames](img/ethernet-frametypen.png)
 
-Ergänze die Werte in der folgenden Tabelle für die gefundenen Frametypen (auch gerne mehr als ein Protokoll pro Frametyp, sofern möglich). Notiere dabei die Feldinhalte (Länge/Ethertype, DSAP/SSAP), ob ein SNAP Header vorhanden ist (ja/nein) und welches Protokoll diesen Frame produziert hat.
+!!! question "Aufgabe"
+    Ergänze die Werte in der folgenden Tabelle für die gefundenen Frametypen (auch gerne mehr als ein Protokoll pro Frametyp, sofern möglich). Notiere dabei die Feldinhalte (Länge/Ethertype, DSAP/SSAP), ob ein SNAP Header vorhanden ist (ja/nein) und welches Protokoll diesen Frame produziert hat.
 
-Optionale Zusatzaufgabe: Notiere im Feld Bemerkungen, ob es sich um einen Unicast-, Multicast- oder Broadcast-Frame handelt.
+    Optionale Zusatzaufgabe: Notiere im Feld Bemerkungen, ob es sich um einen Unicast-, Multicast- oder Broadcast-Frame handelt.
 
 
-| Paket-Nr.     | Frame-Typ              | Länge bzw. Ethertype      | LLC Header (DSAP/SSAP)     | SNAP? j/n | Protokoll       | Bemerkung                                           |
-|---------------|------------------------|---------------------------|----------------------------|-----------|-----------------|-----------------------------------------------------|
-|               |                        |                           |                            |           |                 |                                                     |
-|               |                        |                           |                            |           |                 |                                                     |
-|               |                        |                           |                            |           |                 |                                                     |
+    | Paket-Nr.     | Frame-Typ              | Länge bzw. Ethertype      | LLC Header (DSAP/SSAP)     | SNAP? j/n | Protokoll       | Bemerkung                                           |
+    |---------------|------------------------|---------------------------|----------------------------|-----------|-----------------|-----------------------------------------------------|
+    |               |                        |                           |                            |           |                 |                                                     |
+    |               |                        |                           |                            |           |                 |                                                     |
+    |               |                        |                           |                            |           |                 |                                                     |
 
 !!! info
     Mögliche Frame-Typen sind:
@@ -31,7 +32,8 @@ Optionale Zusatzaufgabe: Notiere im Feld Bemerkungen, ob es sich um einen Unicas
     - 802.3 + LLC
     - 802.3 + LLC + SNAP
 
-Für einen Frametrp wirst du vermutlich kein Beispiel entdecken, welcher ist das?
+!!! question "Frage"
+    Für einen Frametrp wirst du vermutlich kein Beispiel entdecken, welcher ist das?
 
 !!! note
     Das Netzwerk sollte ohne weiteren Einfluss von dir (z.B. Ping-Befehl auf einen PC) ein oder mehrere Beispiele für die verschiedenen Frametypen liefern (mit Ausnahme eines Typs).
