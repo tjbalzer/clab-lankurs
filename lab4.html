@@ -588,7 +588,7 @@
 <li>Starte das Lab-4 im GitHub Codespace</li>
 <li>Installiere Edgeshark im GitHub Codespace</li>
 </ul>
-<h2 id="erste-aufgabe-ping-test-mit-wireshark-mitschnitt">Erste Aufgabe: Ping-Test mit Wireshark-Mitschnitt</h2>
+<h2 id="ping-test-mit-wireshark-mitschnitt">Ping-Test mit Wireshark-Mitschnitt</h2>
 <p>Nach dem Lab-4 erfolgreich gestartet wurde:</p>
 <ul>
 <li>Verbinde dich mit der Kommandozeile von PC1 (Attach)</li>
@@ -607,7 +607,7 @@
 <ul>
 <li>Welche 48-Bit-Ethernet-Adresse hat der Sender?</li>
 <li>Wie lautet die Ethernet-Adresse des Empfängers?<ul>
-<li>Ist das die Ethernet-Adresse von PC3? Wenn nein: Wessen Ethernet-Adresse ist es?</li>
+<li>Ist das die Ethernet-Adresse von PC3? Wenn nein: Wessen Ethernet-Adresse ist es (Wissensfrage)?</li>
 </ul>
 </li>
 <li>Welcher hexadezimale Wert steht im Ethernet Frametyp-Feld?<ul>
@@ -616,13 +616,32 @@
 </li>
 </ul>
 </div>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>Die Ethernet-Adressen der PCs können ihr auf der Kommandozeile der PCs wie folgt abgefragt werden (Interface <code>eth1</code> ist mit dem Labornetz verbunden):
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>ip link show eth1
+</span></code></pre></div></p>
+<div class="admonition example">
+<p class="admonition-title">Beispiel</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>/ # ip link show eth1
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>19: eth1@if18: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 9500 qdisc noqueue state UP mode DEFAULT group default 
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>    link/ether aa:c1:ab:8c:37:68 brd ff:ff:ff:ff:ff:ff link-netnsid 1
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>/ # 
+</span></code></pre></div>
+</div>
+<details class="info">
+<summary>Alternativ: <em>Ethernet-Adresse im TopopViewer anzeigen</em></summary>
+<p>Link zwischen PC und Switch mit der Maus selektieren. Dann wird wie MAC-Adresse in einer Infobox <code>Link Properties</code> angezeigt:
+<a class="glightbox" href="img/show-mac-in-topoviewer.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Show MAC in TopoViewer" src="img/show-mac-in-topoviewer.png" /></a></p>
+</details>
+</div>
 <h2 id="analyse-der-ping-antwort">Analyse der Ping-Antwort</h2>
 <p>Suche das <strong>erste Ping-Antwortpaket (ICMP Echo Reply)</strong> und beantworte die folgenden Fragen:</p>
 <div class="admonition question">
 <p class="admonition-title">Fragen</p>
 <ul>
 <li>Wie lautet die Ethernet-Adresse des Senders?<ul>
-<li>Gehört die Ethernet-Adresse dem Sender oder dem Empfänger? Wenn nein: Von Welchem Gerät stammt die Ethernet-Adresse?</li>
+<li>Gehört die Ethernet-Adresse dem Sender oder dem Empfänger? Wenn nein: Von Welchem Gerät stammt die Ethernet-Adresse (Wissensfrage)?</li>
 </ul>
 </li>
 <li>Welche Ziel-Ethernet-Adresse steht im Paket?<ul>
@@ -636,26 +655,112 @@
 </li>
 </ul>
 </div>
+<details class="tip">
+<summary>Spickzettel</summary>
+<p>Wenn du dir bei den Antworten auf die Wissensfragen unsicher bist, kannst du z.B. die Ethernet-Adressen des Routers wie folgt überprüfen:</p>
+<ul>
+<li>SSH-Verbindung zu <code>R1</code> aufbauen:
+<a class="glightbox" href="img/connect-to-router-r1.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="SSH-Verbindung R1" src="img/connect-to-router-r1.png" /></a></li>
+<li>Nach Aufforderung das Passwort <code>admin</code> eingeben (Zeichen werden unterdrückt):
+<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>$ ssh admin@clab-lab4-R1
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>Warning: Permanently added &#39;clab-lab4-r1&#39; (RSA) to the list of known hosts.
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>(admin@clab-lab4-r1) Password: 
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>R1#
+</span></code></pre></div></li>
+<li>Anzeige der Interfaces von <code>R1</code>:
+<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>show int e0/1
+</span></code></pre></div>
+Ausgabe:
+<div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>R1#sh int e0/1
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>Ethernet0/1 is up, line protocol is up 
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>    Hardware is AmdP2, address is aabb.cc00.0510 (bia aabb.cc00.0510)
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>    Internet address is 192.168.11.1/24
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>    MTU 1500 bytes, BW 10000 Kbit/sec, DLY 1000 usec, 
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>... &lt;Ausgabe gekürzt&gt;
+</span></code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>show int e0/2
+</span></code></pre></div>
+Ausgabe:
+<div class="language-text highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>R1#sh int e0/2
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>Ethernet0/2 is up, line protocol is up 
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>Hardware is AmdP2, address is aabb.cc00.0520 (bia aabb.cc00.0520)
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>Internet address is 192.168.12.1/24
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>MTU 1500 bytes, BW 10000 Kbit/sec, DLY 1000 usec, 
+</span></code></pre></div></li>
+<li>Wird die Ausgabe mit dem Hinweis <code>--More--</code> gestoppt, hat man folgende Möglichkeiten:<ul>
+<li>Mit der Taste <span class="keys"><kbd class="key-space">Space</kbd></span> die Ausgabe fortsetzen</li>
+<li>Mit der Taste <span class="keys"><kbd class="key-enter">Enter</kbd></span> die Ausgabe zeilenweise fortsetzen</li>
+<li>Mit der Taste <span class="keys"><kbd class="key-q">Q</kbd></span> die Ausgabe abbrechen </li>
+</ul>
+</li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">Warnung</p>
+<p>Wenn du im TopoViewer den Link zwischen PC1 und R1 mit der Maus selektierst, erscheint eine Infobox mit den <code>Link Properties</code>. Die dort für <code>R1</code>angegebene MAC-Adresse ist NICHT die Adresse des Routers, sondern die Adresse des Containers, in welchem der Router als virtuelle Maschine (VM) läuft!</p>
+</div>
+</details>
+<details class="note">
+<summary>ARP- Cache auf Cisco Routern</summary>
+<p>Natürlich nutzt auch ein Router ARP-Requests, um die Ethernet-Adresse eines Endgerätes in einem direkt angeschlossenen IP-Subnets zu ermitteln und speichert die Daten aus den ARP-Replies in seinem eigenen ARP-Cache, der wie folgt angezeigt werden kann:
+<div class="language-text highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>show arp
+</span></code></pre></div>
+Ausgabe:
+<div class="language-text highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>R1#sh ip arp
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>Protocol  Address          Age (min)  Hardware Addr   Type   Interface
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>Internet  192.168.11.1            -   aabb.cc00.0510  ARPA   Ethernet0/1
+</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>Internet  192.168.11.11           0   aac1.abb4.340d  ARPA   Ethernet0/1
+</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>Internet  192.168.12.1            -   aabb.cc00.0520  ARPA   Ethernet0/2
+</span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>Internet  192.168.12.11           0   aac1.ab61.0e4c  ARPA   Ethernet0/2
+</span></code></pre></div>
+Der ARP-Cache des Routers lässt sich über das folgenden Befehl auf der Kommandozeile des Routers löschen:
+<div class="language-text highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>clear arp-cache
+</span></code></pre></div>
+Allerdings zeigt sich, dass die Einträge nach dem löschen des ARP-Cache nach wie in der Tabelle angezeigt werden:
+<div class="language-text highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>R1#clear arp-cache 
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>R1#sh arp          
+</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>Protocol  Address          Age (min)  Hardware Addr   Type   Interface
+</span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>Internet  192.168.11.1            -   aabb.cc00.0510  ARPA   Ethernet0/1
+</span><span id="__span-10-5"><a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>Internet  192.168.11.11           0   aac1.abb4.340d  ARPA   Ethernet0/1
+</span><span id="__span-10-6"><a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a>Internet  192.168.12.1            -   aabb.cc00.0520  ARPA   Ethernet0/2
+</span><span id="__span-10-7"><a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a>Internet  192.168.12.11           0   aac1.ab61.0e4c  ARPA   Ethernet0/2
+</span></code></pre></div>
+Das liegt an der Implementierung von Cisco: Der Befehl <code>clear arp-cache</code> löscht zwar tatsächlich die dynamischen Einträge, allerdings führt der Router sofort nach der Löschung neue ARP-Anfragen für die gelöschten Einträge aus, um zu überprüfen, ob die Endgeräte noch antworten und damit erreichbar sind, inkl. eines Gratuitous ARP mit der Adresse seines eigegenen Interfaces im jeweiligen IP-Subnetz (Prüfung auf ggf. doppelte Vergabe der IP-Adresse des Router-Interfaces):
+<a class="glightbox" href="img/wireshark-trace-after-cisco-clear-arp.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="ARPs after Cisco clear arp" src="img/wireshark-trace-after-cisco-clear-arp.png" /></a></p>
+</details>
 <h2 id="arp-tabelle-betrachten">ARP-Tabelle betrachten</h2>
 <ul>
-<li>Mit dem Befehl <code>arp -a</code> auf PC1 die ARP-Tabelle anzeigen</li>
-<li>Für den Fall, dass die Tabelle leer ist (nach 5 Minuten ist die Lebenszeit der Einträge abgelaufen) oder keine Einträge mehr enthalten sind, die mit <code>192.168.</code> beginnen:<ul>
+<li>Mit dem folgenden Befehl auf PC1 die ARP-Tabelle anzeigen (<code>neigh</code> ist die Kurzform für <code>neighbours</code>: Anzeige der <em>bekannten Nachbarn</em> im IP-Subnetz):
+  <div class="language-text highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>ip neigh show
+</span></code></pre></div></li>
+<li>Für den Fall, dass die Tabelle leer ist (nach einiger Zeit verlieren Einträge ihre Gültigkeit und gehen vom Status <code>REACHABLE</code> in den Status <code>STALE</code>, wenn keine weitere Kommunikation zur gelisteten IP-Adresse stattgefunden hat) oder keine Einträge mehr enthalten sind, die mit <code>192.168.</code> beginnen:<ul>
 <li>Wiederhole den Ping von PC1 nach PC3</li>
-<li>Dann erneut auf PC1 <code>arp -a</code> ausführen</li>
+<li>Dann erneut auf PC1 <code>ip neigh show</code> ausführen</li>
 </ul>
 </li>
 </ul>
 <div class="admonition question">
 <p class="admonition-title">Aufgabe</p>
-<p>Notiere die ARP-Tabelle und erkläre:
-- Die Bedeutung der Spalten
-- Die Bedeutung der Einträge</p>
+<p>Notiere die ARP-Tabelle und erkläre:</p>
+<ul>
+<li>Die Bedeutung der Spalten</li>
+<li>Die Bedeutung der Einträge</li>
+</ul>
+</div>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>Der <code>ip</code>-Befehl ist hier dokumentiert: <a href="https://man7.org/linux/man-pages/man8/ip.8.html">ip(8) - Linux manual page</a>
+Das Kommando <code>ip neighbour</code> ist hier dokumentiert: <a href="https://man7.org/linux/man-pages/man8/ip-neighbour.8.html">ip-neighbour(8) - Linux manual page</a></p>
 </div>
 <h2 id="arp-tabelle-loschen">ARP-Tabelle löschen</h2>
 <ul>
-<li>Lösche die ARP-Tabelle durch Eingabe des Befehls <code>arp -d &lt;ip-adresse&gt;</code> auf PC1 (einzeln für jede Adresse die mit <code>192.168.</code> beginnt)</li>
-<li>Kontrolliere den Inhalt der ARP-Tabelle: <code>ip neighbor show</code></li>
-<li>Die Tabelle sollte nun leer sein</li>
+<li>Lösche die ARP-Tabelle für das Interface <code>eth1</code> durch Eingabe des folgenden Befehls auf PC1:
+  <div class="language-text highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>ip neighbor flush dev eth1
+</span></code></pre></div></li>
+<li>Kontrolliere den Inhalt der ARP-Tabelle:
+  <div class="language-text highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>ip neigh show
+</span></code></pre></div></li>
+<li>Die Tabelle sollte nun leer sein (es werden keine dynamischen Einträge für Interface <code>eth1</code> angezeigt)</li>
 </ul>
 <h2 id="erneuter-mitschnitt-mit-wireshark">Erneuter Mitschnitt mit Wireshark</h2>
 <ul>
@@ -671,7 +776,17 @@
 <ul>
 <li>Gehe im Wireshark-Menü auf: <code>Analyse &gt;&gt; Protokolle aktivieren</code></li>
 <li>Deaktiviere <strong>IPv4</strong> durch Abwählen des entsprechenden Kästchens</li>
+<li>Stelle sicher, dass der Anzeigebereich für die Paketbytes aktiviert ist</li>
 </ul>
+<details class="info">
+<summary>Aktivieren/deaktivieren der Wireshark IPv4 Protokollunterstützung</summary>
+<p><a class="glightbox" href="img/wireshark-deactivate-ipv4-1.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Anlayse &gt;&gt; Protokolle aktivieren" src="img/wireshark-deactivate-ipv4-1.png" /></a>
+<a class="glightbox" href="img/wireshark-deactivate-ipv4-2.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="IPv4 Protokollunterstützung ein-/ausschalten" src="img/wireshark-deactivate-ipv4-2.png" /></a></p>
+</details>
+<details class="info">
+<summary>Anzeigebereich für <em>Paketbytes</em> anzeigen</summary>
+<p><a class="glightbox" href="img/wireshark-packetbyte-view.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Anzeige Paketbereich ein/aus" src="img/wireshark-packetbyte-view.png" /></a></p>
+</details>
 <h2 id="analyse-des-arp-requests">Analyse des ARP-Requests</h2>
 <p>Suche in Wireshark das <strong>ARP-Request-Paket</strong>, markiere es und beantworte die folgenden Fragen:</p>
 <div class="admonition question">
@@ -712,10 +827,10 @@
 </ul>
 <h2 id="bonus-aufgabe-tracefile-analyse">Bonus-Aufgabe: Tracefile-Analyse</h2>
 <ul>
-<li>Öffne in Wireshark das Tracefile: <code>ethernet-wireshark-trace1-1.pcapng</code> im SharePoint-Verzeichnis <code>Kurs Netzwerk Grundlagen/Computer Networking - A Top-Down Approach (Kurose &amp; Ross)/Wireshark Tracefiles/wireshark-traces-8.1</code></li>
-<li>Betrachte die ersten beiden ARP-Pakete:<ul>
-<li>ARP-Request deines Rechners mit Wireshark</li>
-<li>ARP-Reply des PCs, nach dessen MAC-Adresse im ARP-Request gefragt wurde </li>
+<li>Öffne in Wireshark das Tracefile über das Menü <code>Datei &gt;&gt; Öffnen</code> oder <span class="keys"><kbd class="key-alt">Alt</kbd><span>+</span><kbd class="key-d">D</kbd><span>+</span><kbd class="key-o">O</kbd></span>: <code>ethernet-wireshark-trace1.pcapng</code> im SharePoint-Verzeichnis <code>Kurs Netzwerk Grundlagen/Computer Networking - A Top-Down Approach (Kurose &amp; Ross)/Wireshark Tracefiles/wireshark-traces-8.1</code></li>
+<li>Finde die ARP-Request-/Reply-Pakete in der Paketliste:<ul>
+<li>ARP-Request des Wireshark-PCs</li>
+<li>ARP-Reply des Netzteilnehmers, nach dessen MAC-Adresse im ARP-Request gefragt wurde </li>
 </ul>
 </li>
 </ul>
@@ -724,8 +839,12 @@
 <p>In diesem Szenario läuft Wireshark auf dem Rechner, welcher den ARP-Request gesendet hat.</p>
 </div>
 <div class="admonition question">
-<p class="admonition-title">Frage</p>
-<p>In diesem Netzwerk haben weitere Rechner einen ARP-Request (siehe z.B. Paket Nr. 6) gesendet. Warum ist dazu kein passender ARP-Reply im Tracefile enthalten?</p>
+<p class="admonition-title">Fragen</p>
+<ul>
+<li>Wie lautet die IP-Adresse des PCs, auf dem Wireshark läuft?</li>
+<li>Zu welcher IP-Adresse sucht der PC die Ethernet-Adresse und wie lautet die MAC-Adresse des gesuchten Gerätes?</li>
+<li>In diesem Netzwerk haben viele weitere Geräte einen ARP-Request gesendet (siehe Wireshark Paketliste). Warum sind dazu keine passenden ARP-Replies  im Wireshark Tracefile enthalten?</li>
+</ul>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
