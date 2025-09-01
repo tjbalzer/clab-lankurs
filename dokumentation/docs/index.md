@@ -39,4 +39,4 @@ Unterstützend zur Theorie enthält der Kurs Laborübungen, die mit Hilfe von Ne
 
 Sämtliche benötigte Software ist auf den Schulungs-Notebooks vorinstalliert. Die Installation auf Smart Clients ist [hier](vorbereitungen.md#softwareinstallation-auf-dem-smart-client) im Kapitel beschrieben.
 
-Die notwendigen [Vorbereitungen](vorbereitungen.md) zu Durchführung der Laborübungen sowie die Details zur Bearbeitung der Übungen (Kapitel Lab0 bis Lab 11) sind in den folgende Kapiteln dieser Dokumentation beschrieben.
+Die notwendigen [Vorbereitungen](vorbereitungen.md) zu Durchführung der Laborübungen sowie die Details zur Bearbeitung der Übungen (Kapitel Lab0 bis Lab 11) sind in den folgenden Kapiteln dieser Dokumentation beschrieben.

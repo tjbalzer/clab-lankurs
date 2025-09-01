@@ -33,7 +33,7 @@ In dieser Laborübung sollst du nach dem Starten des Containerlab Labors (gleich
     - 802.3 + LLC + SNAP
 
 !!! question "Frage"
-    Für einen Frametrp wirst du vermutlich kein Beispiel entdecken, welcher ist das?
+    Für einen Frametyp wirst du vermutlich kein Beispiel entdecken, welcher ist das?
 
 !!! note
     Das Netzwerk sollte ohne weiteren Einfluss von dir (z.B. Ping-Befehl auf einen PC) ein oder mehrere Beispiele für die verschiedenen Frametypen liefern (mit Ausnahme eines Typs).
