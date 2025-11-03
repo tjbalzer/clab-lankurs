@@ -364,6 +364,19 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Lab 4: Ethernet, ARP & IP Adressen
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="lab4.html" class="md-nav__link md-nav__link--active">
         
   
@@ -375,6 +388,133 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#vorbereitung" class="md-nav__link">
+    <span class="md-ellipsis">
+      Vorbereitung
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ping-test-mit-wireshark-mitschnitt" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ping-Test mit Wireshark-Mitschnitt
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#analyse-der-ersten-ping-anfrage" class="md-nav__link">
+    <span class="md-ellipsis">
+      Analyse der ersten Ping-Anfrage
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#analyse-der-ping-antwort" class="md-nav__link">
+    <span class="md-ellipsis">
+      Analyse der Ping-Antwort
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#arp-tabelle-betrachten" class="md-nav__link">
+    <span class="md-ellipsis">
+      ARP-Tabelle betrachten
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#arp-tabelle-loschen" class="md-nav__link">
+    <span class="md-ellipsis">
+      ARP-Tabelle löschen
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#erneuter-mitschnitt-mit-wireshark" class="md-nav__link">
+    <span class="md-ellipsis">
+      Erneuter Mitschnitt mit Wireshark
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#protokollunterstutzung-fur-ipv4-deaktivieren" class="md-nav__link">
+    <span class="md-ellipsis">
+      Protokollunterstützung für IPv4 deaktivieren
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#analyse-des-arp-requests" class="md-nav__link">
+    <span class="md-ellipsis">
+      Analyse des ARP-Requests
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#analyse-des-arp-replies" class="md-nav__link">
+    <span class="md-ellipsis">
+      Analyse des ARP-Replies
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#wireshark-ansicht-zurucksetzen" class="md-nav__link">
+    <span class="md-ellipsis">
+      Wireshark-Ansicht zurücksetzen
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bonus-aufgabe-tracefile-analyse" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bonus-Aufgabe: Tracefile-Analyse
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -554,6 +694,122 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#vorbereitung" class="md-nav__link">
+    <span class="md-ellipsis">
+      Vorbereitung
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ping-test-mit-wireshark-mitschnitt" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ping-Test mit Wireshark-Mitschnitt
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#analyse-der-ersten-ping-anfrage" class="md-nav__link">
+    <span class="md-ellipsis">
+      Analyse der ersten Ping-Anfrage
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#analyse-der-ping-antwort" class="md-nav__link">
+    <span class="md-ellipsis">
+      Analyse der Ping-Antwort
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#arp-tabelle-betrachten" class="md-nav__link">
+    <span class="md-ellipsis">
+      ARP-Tabelle betrachten
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#arp-tabelle-loschen" class="md-nav__link">
+    <span class="md-ellipsis">
+      ARP-Tabelle löschen
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#erneuter-mitschnitt-mit-wireshark" class="md-nav__link">
+    <span class="md-ellipsis">
+      Erneuter Mitschnitt mit Wireshark
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#protokollunterstutzung-fur-ipv4-deaktivieren" class="md-nav__link">
+    <span class="md-ellipsis">
+      Protokollunterstützung für IPv4 deaktivieren
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#analyse-des-arp-requests" class="md-nav__link">
+    <span class="md-ellipsis">
+      Analyse des ARP-Requests
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#analyse-des-arp-replies" class="md-nav__link">
+    <span class="md-ellipsis">
+      Analyse des ARP-Replies
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#wireshark-ansicht-zurucksetzen" class="md-nav__link">
+    <span class="md-ellipsis">
+      Wireshark-Ansicht zurücksetzen
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bonus-aufgabe-tracefile-analyse" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bonus-Aufgabe: Tracefile-Analyse
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -579,7 +835,6 @@
 <p>Lab Topology</p>
 </figcaption>
 </figure>
-<h1 id="wireshark-lab-ethernet-und-arp">Wireshark-Lab: Ethernet und ARP</h1>
 <p>In dieser Übung analysierst du das <strong>Ethernet-Protokoll</strong> und das <strong>Address Resolution Protocol (ARP, RFC 826)</strong>. Bevor du startest, stelle sicher, dass du die Grundlagen des Ethernet-MAC-Layers und von ARP verstanden hast.</p>
 <p>ARP wird von einem IP-System verwendet, um zu einer bekannten IP-Adresse die passende MAC-Adresse zu ermitteln.</p>
 <h2 id="vorbereitung">Vorbereitung</h2>
