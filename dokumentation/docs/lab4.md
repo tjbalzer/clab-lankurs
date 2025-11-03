@@ -54,7 +54,7 @@ Suche in der Wireshark-Paketliste das **erste Ping-Paket (ICMP Echo Request)**. 
         / # 
         ```
     ??? info "Alternativ: _Ethernet-Adresse im TopopViewer anzeigen_"
-        Link zwischen PC und Switch mit der Maus selektieren. Dann wird wie MAC-Adresse in einer Infobox `Link Properties` angezeigt:
+        Link zwischen PC und Switch mit der rechten Maus auswählen und im `Kreismenü`den Sektor `Properties` auswählen. Dann wird wie MAC-Adresse in einer Infobox `Link Properties` angezeigt:
         ![Show MAC in TopoViewer](img/show-mac-in-topoviewer.png)
 
 ## Analyse der Ping-Antwort

@@ -8,7 +8,7 @@ Lab Topology
 ///
 
 
-In dieser Laborübung sollst du nach dem Starten des Containerlab Labors (gleiche Aufbau wie Lab-2) einen Wireshark Trace auf dem Interface e0/1 von SW1 starten und analysieren. Versuche, für so viele verschiedene Ethernet-Frametypen, die ihr im Kurs kennengelernt habt, Beispiele zu finden. Nutzte dazu die folgende Grafik und bei Bedarf die Details in den LAN-Kurs Folien (Seiten 140-157).
+In dieser Laborübung sollst du nach dem Starten des Containerlab Labors (gleicher Aufbau wie Lab-1) einen Wireshark Trace auf dem Interface e0/1 von SW1 starten und analysieren. Versuche, für so viele verschiedene Ethernet-Frametypen, die ihr im Kurs kennengelernt habt, Beispiele zu finden. Nutzte dazu die folgende Grafik und bei Bedarf die Details in den LAN-Kurs Folien (Seiten 140-157).
 
 ![Ethernet Frames](img/ethernet-frametypen.png)
 

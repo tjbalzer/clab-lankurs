@@ -18,22 +18,28 @@ Lab Topology
 
 Die dafür notwendigen Schritte sind:
 
-- VS Code mit GitHub Codespace verbinden
+- GitHub Codespace starten
 - Containerlab _Lab-1_ starten (Deploy)
 - Mit Kommandozeile von PC1 verbinden
-- _Edgeshark_ im GitHub Codespace starten
 - Ping-Befehl zwischen PC1 und PC3 starten
 - Ping-Pakete zwischen PC1 und PC3 mit Wireshark aufzeichen
 - Ping-Befehl und Wireshark-Aufzeichnung stoppen
 - Paketaufbau Ping Request Paket
 - Paketaufbau Ping Response Paket
 - Containerlab _Lab-1_ stoppen (Destroy)
-- _Edgeshark_ stoppen
 - _GitHub Codespace_ stoppen
 
-## VS Code mit GitHub Codespace verbinden
+## Codespace starten
 
-VS Code starten und Verbindung zum GitHub Codespace des clab-lankurs Repositories herstellen, analog zur Vorgehensweise in der [Übung Lab 0](lab0.md#lab-0-laborumgebung-mit-containerlab)
+Um mit der Laborumgebung zu arbeiten, wird der angelegte GitHub Codespace aus dem geforkten Repository gestartet. Während des Starts wird eine Browserversion von Visual Studio Code mit integriertem _Containerlab_ Plugin gestartet:
+
+??? info "Screenshots: _GitHub Codespace starten_"
+    ![start-codespace-1](img/github-codespace-starten-01-hell.png)
+    ![start-codespace-1](img/github-codespace-starten-02-hell.png)
+    ![start-codespace-1](img/github-codespace-starten-03-hell.png)
+    ![start-codespace-1](img/github-codespace-starten-04-hell.png)
+    ![start-codespace-1](img/github-codespace-starten-05-hell.png)
+    ![start-codespace-1](img/github-codespace-starten-06-hell.png)
 
 ## Containerlab _Lab-1_ starten (Deploy)
 
@@ -59,28 +65,6 @@ VS Code starten und Verbindung zum GitHub Codespace des clab-lankurs Repositorie
     ![start-codespace-1](img/deploy-lab2-8.png)
     ![start-codespace-1](img/deploy-lab2-9.png)
 
-## _Edgeshark_ im GitHub Codespace starten
-
-Wireshark läuft im Rahmen dieses Kurses auf lokalen Notebooks im Schulungsraum. Da unsere Labornetzwerke entfernt in einem GitHub Codespace in der Microsoft Azure Cloud laufen, müssen wir dafür sorgen, dass die entfernten Netzwerkpakete an die lokale Wireshark-Instanz geschickt werden. Hierzu wird auf der entfernten virtuellen Maschine (der GitHub Codespace) die Open Source Software [Edgeshark](https://edgeshark.siemens.io) in Form eines Docker Containers gestartet.
-
-Edgeshark liest die Netzwerkpakete auf den Verbindungen der einzelnen Netzwerkcontainer in unserer Lab-1 Containerlab Topolology und überträgt die Pakete an das `cshargextcap`-Plugin von Wireshark auf dem lokalen Schulungs-PC oder Smart Client (auf den SmartClients wurde das `cshargextcap`-Plugin während der Durchführung der Maßnahmen in der Sektion [Vorbereitungen](vorbereitungen.md) installiert.
-
-_Edgeshark_ wird über die [_VS Code_](https://code.visualstudio.com/) _Command Palette_ wie folgt im GitHub Codespace gestartet:
-
-- _VS Code Command Palette_ über ++ctrl+shift+p++ aufrufen
-- `edgeshark` in der Eingabezeile der _VS Code Command Palette_ eingeben
-- Befehl `Containerlab: Install Edgeshark` aus der Liste auswählen
-- Edgeshark Container wird bei Bedarf aus dem Internet geladen, lokal gespeichert und gestartet
-- Nach dem erfolgreichen Start von _Edgeshark_ können Paketaufzeichnungen gestartet und die aufgezeichneten Paket lokal in Wireshark angzeigt werden (Wireshark wird automatisch nach dem Start der Paketaufzeichnung im entfernten Containerlab Labor lokal gestartet)
-
-??? info "Screenshots: _Edgeshark im GitHub Codespace starten_"
-    ![start-codespace-1](img/install-edgeshark-1.png)
-    ![start-codespace-1](img/install-edgeshark-2.png)
-    ![start-codespace-1](img/install-edgeshark-3.png)
-    ![start-codespace-1](img/install-edgeshark-4.png)
-    ![start-codespace-1](img/install-edgeshark-5.png)
-
-Der erfolgreiche Start kann bei Bedarf geprüft werden, indem man die _Edgeshark_ Startseite aufruft. Nach dem Start von _Edgeshark_ wird unten rechts im Webbrowser
 
 ## Ping-Befehl zwischen PC1 und PC3 starten
 
@@ -95,7 +79,7 @@ Der erfolgreiche Start kann bei Bedarf geprüft werden, indem man die _Edgeshark
 
 - Interface-Ansicht von PC1 im Bereich `RUNNING LABS` aufklappen
 - Rechtsklick auf Interface `eth1`
-- Im Kontektmenü von PC1 `Capture interface (Edgeshark)` auswählen
+- Im Kontektmenü von PC1 `Capture interface (Edgeshark VNC)` auswählen
 - Der Network Packet Analyzer Wireshark wird gestartet und zeichnet die von PC1 ausgehenden Ping-Pakete auf
 
 !!! info
@@ -105,8 +89,9 @@ Der erfolgreiche Start kann bei Bedarf geprüft werden, indem man die _Edgeshark
     - `eth1`: Mit Labornetzwerk verbundenes Interace
 
 ??? info "Screenshots: _Ping-Pakete mit Wireshark aufzeichnen_"
-    ![start-codespace-1](img/wireshark-capture-ping-1.png)
-    ![start-codespace-1](img/wireshark-capture-ping-2.png)
+    ![start-codespace-1](img/wireshark-capture-ping-01.png)
+    ![start-codespace-1](img/wireshark-capture-ping-02.png)
+    ![start-codespace-1](img/wireshark-capture-ping-03.png)
 
 ## Ping-Befehl und Wireshark-Aufzeichnung stoppen
 
@@ -160,33 +145,13 @@ Das gestartete Labor kann über die Auswahl des Befehls `Destroy` im Kontextmen�
 !!! tip
     Am Ende einr Laborübung das Containerlab stoppen, um beim Neustart des Codespaces vor der Bearbeitung einer neuen Laborübung wieder die gleichen Bedingungen vorzufinden.
 
-## _Edgeshark_ stoppen
+## Codespace im GitHub Repository _clab_lankurs_ stoppen
 
-Edgeshark wird bei Bedarf wie folgt gestoppt:
+- Ansicht __clab-lankurs__ GitHub Repository öffnen
+- Über grünen Button `<> Code` + Reiter `Codespaces` (Codespace wird als `Active` angezeigt) + `...`-Menü im Bereich `On current branch` den Eintrag `Stop codespace` auswählen
+- Codespace mit Simulationsumgebung wird gestoppt
 
-- _VS Code Command Palette_ über ++ctrl+shift+p++ aufrufen
-- `edgeshark` in der Eingabezeile der _VS Code Command Palette_ eingeben
-- Befehl `Containerlab: Uninstall Edgeshark` aus der Liste auswählen
-- Edgeshark Container wird gestoppt
-
-??? info "Screenshots: _Edgeshark im GitHub Codespace stoppen_"
-    ![start-codespace-1](img/uninstall-edgeshark-1.png)
-    ![start-codespace-1](img/uninstall-edgeshark-2.png)
-
-!!! warning
-    Wird Edgeshark nicht gestoppt, wird er nach einem Neustart des GitHub Codespaces automatisch wieder gestartet. Wurde der Edgeshark Container vor dem Beenden des Codespaces gestoppt, bleibt der Edgeshark Container bei erneuten Start gestoppt.
-
-!!! tip
-    Am Ende einr Laborübung Edgeshark stoppen, um beim Neustart des Codespaces vor der Bearbeitung einer neuen Laborübung wieder die gleichen Bedingungen vorzufinden.
-
-## GitHub Codespace stoppen (VS Code)
-
-- Auf Fläche `>< Codespaces: <Name des Codespaces>` unten links in VS Code klicken
-- Im angezeigten Menü `Stop Current Codespace` auswählen
-- Codespace mit Containerlab Simulationsumgebung wird gestoppt
-
-??? info "Screenshots: _Stopp Codespace (VS Code)_"
-    ![start-codespace-1](img/stop-codespace-var1-1.png)
-    ![start-codespace-2](img/stop-codespace-var1-2.png)
-    ![start-codespace-3](img/stop-codespace-var1-3.png)
-    ![start-codespace-3](img/stop-codespace-var1-4.png)
+??? info "Screenshots: _Stopp Codespace (GitHub)_"
+    ![start-codespace-1](img/stop-codespace-var2-1.png)
+    ![start-codespace-2](img/stop-codespace-var2-2.png)
+    ![start-codespace-3](img/stop-codespace-var2-3.png)

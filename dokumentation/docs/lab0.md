@@ -20,54 +20,17 @@ Lab Topology
 
 file:///home/tom/Netzwerke/clab-lankurs/dokumentation/site/lab0.html#lab-0-laborumgebung-mit-containerlab_1
 
-## VS Code starten und GitHub Sign-in
+## Codespace starten
 
-Um mit der Laborumgebung zu arbeiten, werden die installierten VS Code Extensions aus dem _Remote Development Pack_ genutzt um VS Code mit dem GitHub-Account des jeweilugen Kursteilnehers zu verbinden, damit der in den [Vorbereitungen](vorbereitungen.md#dev-container-in-github-codespaces-erstellen-und-starten) erstellte _Dev Container_ mit der _Containerlab_ Laborumgebung genutzt werden kann:
+Um mit der Laborumgebung zu arbeiten, wird der angelegte GitHub Codespace aus dem geforkten Repository gestartet. Während des Starts wird eine Browserversion von Visual Studio Code mit integriertem _Containerlab_ Plugin gestartet:
 
-- VS Code auf dem Schulungs-Notebook bzw. Smart-Client starten 
-- Im Menübalken am linken Rand den _Remote Explorer_ auswählen
-- Über den Button `Sign in to GitHub` und die Eingabe des eigenen Usernames bzw. der E-Mail Adresse und des Passworts an GitHub anmelden
-    * `Sign in to GitHub` Button auswählen
-    * Den Dialog `The extension 'GitHub Codespaces' wants to sign in using GitHub._ über den `Allow`-Button bestätigen
-    * Usernamen und Passwort eingeben und über den `Sign in`-Button bestätigen
-    * Button `Continue` neben Usernamen auf Seite `Select user to authorize` auswählen
-    * `Authorize Visual Studio Code`-Webseite über den Button `Authorize Visual-Studio-Code` bestätigen
-    * Falls ein Dialog mit der Frage `https://vscode.dec erlauben, den vscode-Link mit dem System Handler zu öffen, den Haken für `...immer erlauben...` setzen und mit dem Button `Link öffnen` bestätigen
-- Im VS Code Remote Explorer wird nun der Codespace des geforkten `clab-lankurs`-Repositries angezeigt
-
-??? info "Screenshots: _VS Code GitHub Sign-in_"
-    ![start-codespace-1](img/github-codespace-signin-1.png)
-    ![start-codespace-1](img/github-codespace-signin-2.png)
-    ![start-codespace-1](img/github-codespace-signin-3.png)
-    ![start-codespace-1](img/github-codespace-signin-4.png)
-    ![start-codespace-1](img/github-codespace-signin-5.png)
-    ![start-codespace-1](img/github-codespace-signin-6.png)
-    ![start-codespace-1](img/github-codespace-signin-7.png)
-    ![start-codespace-1](img/github-codespace-signin-8.png)
-    ![start-codespace-1](img/github-codespace-signin-9.png)
-    ![start-codespace-1](img/github-codespace-signin-10.png)
-    ![start-codespace-1](img/github-codespace-signin-11.png)
-
-## Verbindung zu `clab-lankurs` Codespace herstellen
-
-Nachdem der GitHub Sign-in erfolgreich war, kann die Verbindung von VS Code zum Codespace `clab-lankurs`, in welchem die Simulationsumgebung laufen wird, hergestellt werden (während dieses Vorgangs wird der Codespace Dev Container gestartet):
-
-- Im _VS Code Remote Explorer_ mit der Maus den angezeigten GitHub Codespace `<DEIN_GITHUB_USER>/clab-lankurs/ <NAME_DEINES_DEV_CONTAINERS> main` auswählen
-- _Dev Container_ über das _Steckersymbol_ `Connect to Codespace` rechts neben dem Namen des Codespaces starten und VS Code mit dem GitHub Codespace verbinden
-- _Containerlab_ Laborumgebung startet und die VS Code _Containerlab Extension_ zeigt im VS Code _Explorer_ das Verzeichnis des `clab-lankurs`-Repositories an, dessen Dateien in die Laborumgebung im Codespace kopiert wurden und dort nun verwendet werden können
-
-!!! note
-    Die Steuerung der GitHub Codespace Simulationsumgebung mit Containerlab erfolgt über die [_Containerlab_ VS Code Extension](https://marketplace.visualstudio.com/items?itemName=srl-labs.vscode-containerlab). Die Details der Steuerung der Simulationsumgebung über _VS Code_ werden im Verlauf der Übungen schrittweise vorgestellt.
-
-!!! note
-    Der Reiter _Welcome to Containerlab_ wird nicht benötigt und kann bei Bedarf geschlossen werden (Tipp: Haken `Don't show this page again` setzen).
-
-??? info "Screenshots: _VS Code mit Codespace des `clab-lankurs`-Repositories verbinden_ "
-    ![start-codespace-1](img/connect-to-codespace-1.png)
-    ![start-codespace-1](img/connect-to-codespace-2.png)
-    ![start-codespace-1](img/connect-to-codespace-3.png)
-    ![start-codespace-1](img/connect-to-codespace-4.png)
-
+??? info "Screenshots: _GitHub Codespace starten_"
+    ![start-codespace-1](img/github-codespace-starten-01-hell.png)
+    ![start-codespace-1](img/github-codespace-starten-02-hell.png)
+    ![start-codespace-1](img/github-codespace-starten-03-hell.png)
+    ![start-codespace-1](img/github-codespace-starten-04-hell.png)
+    ![start-codespace-1](img/github-codespace-starten-05-hell.png)
+    ![start-codespace-1](img/github-codespace-starten-06-hell.png)
 
 ## Zugriff auf GitHub Docker Registry einrichten
 
@@ -75,11 +38,11 @@ Nachdem der GitHub Sign-in erfolgreich war, kann die Verbindung von VS Code zum 
     Die für die nächsten Schritte benötigten Informationen `<YOUR_TOKEN>` und `<USERNAME>` erhalten die Schulungsteilnehmer auf drei Wegen:
 
     1. per E-Mail (für Smart Client Nutzer)
-    2. in einer Datei auf dem Desktop des Schulungs-Notebooks (Teilnehmer ohne Smatz Client)
+    2. in einer Datei auf dem Desktop des Schulungs-Notebooks (Teilnehmer ohne Smart Client)
     3. über den Kursleiter (Fallback, falls 1. + 2. nicht verfügbar)
 
 Für die Funktion der Labornetzwerke müssen nach dem ersten Start des Codespaces einmalig beim Start des ersten Labors noch einige Docker-Images
-aus einer zentralen GitHub Docker-Registry geladen werden. Um dies zu ermöglichen, muss der Zugang zu wie folgt eingerichtet werden:
+aus einer zentralen GitHub Docker-Registry geladen werden. Um dies zu ermöglichen, muss der Zugang wie folgt eingerichtet werden:
 
 - In VS Code ein neues Terminal über da Menü `Terminal` und den Menüeintrag `New Terminal` öffnen
 - Die folgende Schritte im Bereich `TERMINAL` des in VS Code Codespace eingeben:
@@ -194,7 +157,7 @@ aus einer zentralen GitHub Docker-Registry geladen werden. Um dies zu ermöglich
 
 - Containerlab-Bereich auswählen (über Containerlab Symbol im linken Randmenü)
 - Im Bereich `UNDEPLOYED LOCAL LABS` das Verzeichnis `labs/lab-2` öffnen
-- Rechtsklick auf Datei `topology.clab.yml` und Start des Labors über Menüeintrag `Deploy`
+- Rechtsklick auf Datei `topology.clab.yml` und Start des Labors über Menüeintrag `Deploy` 
 - Optional: Im Informations-Dialog unten rechts `View Logs` klicken, danach kann man die Logmeldungen während des Starts im Bereich `OUTPUT` beobachten:
     * Fehlende Conatainer-Images werden aus der GitHub Docker Registry `ghcr.io` heruntergeladen und gespeichert
     * Labor Nodes werden gestartet und Verbindungen zwischen den Nodes etabliert
@@ -245,8 +208,8 @@ Variante 1:
 
 Variante 2:
 
-- RechtAuswahl des gewünschten PCs (z.B. `PC1`) im Bereich `RUNNING LABS`
-- Das mittlere der drei Symbole rechts neben dem PC auswählen 
+- Auswahl des gewünschten PCs mit der Maus (z.B. `PC1`) im Bereich `RUNNING LABS`
+- Das mittlere der drei Symbole rechts neben dem PC auswählen (`Attach Shell`)
 - Im Bereich `TERMINAL` öffnet sich eine Shell (Kommandozeile) für den ausgeählten PC
 
 ??? info "Screenshots: _Variante 2_"
@@ -255,14 +218,14 @@ Variante 2:
 
 Variante 3:
 
-- Symbol des PCs (z.B. PC3) in der TopoViewer-Ansicht auswählen
-- Im Dialog `Actions` den Eintrag `Attach Shell`auswählen
+- Rechtsklick auf das Symbol des PCs (z.B. PC3) mit der Maus in der TopoViewer-Ansicht
+- Im `Actions`-Kreis den Eintrag `Shell`auswählen
 - Im Bereich `TERMINAL` öffnet sich eine Shell (Kommandozeile) für den ausgeählten PC
 
 ??? info "Screenshots: _Variante 3_"
-    ![start-codespace-1](img/attach-shell-var3-1.png)
-    ![start-codespace-1](img/attach-shell-var3-2.png)
-    ![start-codespace-1](img/attach-shell-terminal.png)
+    ![start-codespace-1](img/attach-shell-var3-01.png)
+    ![start-codespace-1](img/attach-shell-var3-02.png)
+    ![start-codespace-1](img/attach-shell-var3-03-terminal.png)
 
 ## Befehl auf Kommandozeile eines PCs ausführen
 
@@ -274,7 +237,7 @@ Variante 3:
 ??? info "Screenshot: _Ping-Befehl eingeben_"
     ![start-codespace-1](img/ping-lab2-pc1-pc3.png)
 
-## Containerlab _Lab-2_ stoppen (Destroy)
+## Labornetzwerk stoppen (Destroy)
 
 Das gestartete Labor kann über die Auswahl des Befehls `Destroy` im Kontextmenü von Lab-2 im Bereich `RUNNING LABS` beendet werden.
 
@@ -284,22 +247,8 @@ Das gestartete Labor kann über die Auswahl des Befehls `Destroy` im Kontextmen�
 
 ## Codespace im GitHub Repository _clab_lankurs_ stoppen
 
-Variante 1 (in VS Code):
-
-- Auf Fläche `>< Codespaces: <Name des Codespaces>` unten links in VS Code klicken
-- Im angezeigten Menü `Stop Current Codespace` auswählen
-- Codespace mit Simulationsumgebung wird gestoppt
-
-??? info "Screenshots: _Stopp Codespace (VS Code Editor)_"
-    ![start-codespace-1](img/stop-codespace-var1-1.png)
-    ![start-codespace-2](img/stop-codespace-var1-2.png)
-    ![start-codespace-3](img/stop-codespace-var1-3.png)
-    ![start-codespace-3](img/stop-codespace-var1-4.png)
-
-Variante 2 (direkt auf GitHub):
-
 - Ansicht __clab-lankurs__ GitHub Repository öffnen
-- Über grünen Button `<> Code` + Reiter `Codespaces` (Codespace wird als `Active` angezeigt) + `...`-Menü im Bereich `On current branch`den Eintrag `Stop codespace` auswählen
+- Über grünen Button `<> Code` + Reiter `Codespaces` (Codespace wird als `Active` angezeigt) + `...`-Menü im Bereich `On current branch` den Eintrag `Stop codespace` auswählen
 - Codespace mit Simulationsumgebung wird gestoppt
 
 ??? info "Screenshots: _Stopp Codespace (GitHub)_"
