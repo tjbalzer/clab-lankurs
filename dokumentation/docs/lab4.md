@@ -7,8 +7,6 @@
 Lab Topology
 ///
 
-# Wireshark-Lab: Ethernet und ARP
-
 In dieser Übung analysierst du das **Ethernet-Protokoll** und das **Address Resolution Protocol (ARP, RFC 826)**. Bevor du startest, stelle sicher, dass du die Grundlagen des Ethernet-MAC-Layers und von ARP verstanden hast.
 
 ARP wird von einem IP-System verwendet, um zu einer bekannten IP-Adresse die passende MAC-Adresse zu ermitteln.
