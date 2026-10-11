@@ -1,0 +1,129 @@
+{
+  "freeTextAnnotations": [
+    {
+      "id": "freeText_1787325122112",
+      "text": "192.168.11.11",
+      "position": {
+        "x": 147.5,
+        "y": 538
+      },
+      "fontSize": 10,
+      "fontColor": "#bbbebf",
+      "fontWeight": "normal",
+      "fontStyle": "normal",
+      "textDecoration": "none",
+      "textAlign": "left",
+      "fontFamily": "Arial"
+    },
+    {
+      "id": "freeText_1787325228253",
+      "text": "192.168.11.12",
+      "position": {
+        "x": 341,
+        "y": 538.5
+      },
+      "fontSize": 10,
+      "fontColor": "#bbbebf",
+      "fontWeight": "normal",
+      "fontStyle": "normal",
+      "textDecoration": "none",
+      "textAlign": "left",
+      "fontFamily": "Arial"
+    },
+    {
+      "id": "freeText_1787325280477",
+      "text": "192.168.12.11",
+      "position": {
+        "x": 448,
+        "y": 538
+      },
+      "fontSize": 10,
+      "fontColor": "#bbbebf",
+      "fontWeight": "normal",
+      "fontStyle": "normal",
+      "textDecoration": "none",
+      "textAlign": "left",
+      "fontFamily": "Arial"
+    },
+    {
+      "id": "freeText_1787325318816",
+      "text": "192.168.12.12",
+      "position": {
+        "x": 641.5,
+        "y": 538
+      },
+      "fontSize": 10,
+      "fontColor": "#bbbebf",
+      "fontWeight": "normal",
+      "fontStyle": "normal",
+      "textDecoration": "none",
+      "textAlign": "left",
+      "fontFamily": "Arial"
+    }
+  ],
+  "freeShapeAnnotations": [],
+  "trafficRateAnnotations": [],
+  "groupStyleAnnotations": [],
+  "networkNodeAnnotations": [],
+  "nodeAnnotations": [
+    {
+      "id": "SW1",
+      "interfacePattern": "e0/{n}",
+      "position": {
+        "x": 260,
+        "y": 400
+      }
+    },
+    {
+      "id": "SW2",
+      "interfacePattern": "e0/{n}",
+      "position": {
+        "x": 560,
+        "y": 400
+      }
+    },
+    {
+      "id": "R1",
+      "interfacePattern": "e0/{n}",
+      "position": {
+        "x": 400,
+        "y": 300
+      }
+    },
+    {
+      "id": "PC1",
+      "position": {
+        "x": 220,
+        "y": 540
+      }
+    },
+    {
+      "id": "PC2",
+      "position": {
+        "x": 300,
+        "y": 540
+      }
+    },
+    {
+      "id": "PC3",
+      "position": {
+        "x": 520,
+        "y": 540
+      }
+    },
+    {
+      "id": "PC4",
+      "position": {
+        "x": 600,
+        "y": 540
+      }
+    }
+  ],
+  "edgeAnnotations": [],
+  "aliasEndpointAnnotations": [],
+  "viewerSettings": {
+    "style": "default",
+    "linkLabelMode": "show-all",
+    "lastNonTelemetryLinkLabelMode": "show-all"
+  }
+}
