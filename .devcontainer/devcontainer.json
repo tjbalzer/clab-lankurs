@@ -4,5 +4,6 @@
         "cpus": 2, 
         "memory": "8gb",
         "storage": "32gb"
-    }
+    },
+    "postCreateCommand": "grep -qxF 'source ${containerWorkspaceFolder}/.devcontainer/aliases.sh' ~/.bashrc || echo 'source ${containerWorkspaceFolder}/.devcontainer/aliases.sh' >> ~/.bashrc"
 }
