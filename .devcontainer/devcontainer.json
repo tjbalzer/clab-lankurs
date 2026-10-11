@@ -5,5 +5,6 @@
         "memory": "8gb",
         "storage": "32gb"
     },
-    "postCreateCommand": "grep -qxF 'source ${containerWorkspaceFolder}/.devcontainer/aliases.sh' ~/.bashrc || echo 'source ${containerWorkspaceFolder}/.devcontainer/aliases.sh' >> ~/.bashrc"
+    "postCreateCommand": "for rc in \"$HOME/.bashrc\" \"$HOME/.zshrc\"; do touch \"$rc\"; grep -qxF 'source /workspaces/clab-lankurs/.devcontainer/aliases.sh' \"$rc\" || echo 'source /workspaces/clab-lankurs/.devcontainer/aliases.sh' >> \"$rc\"; done"
+}
 }
