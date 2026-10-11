@@ -7,4 +7,3 @@
     },
     "postCreateCommand": "for rc in \"$HOME/.bashrc\" \"$HOME/.zshrc\"; do touch \"$rc\"; grep -qF '/.devcontainer/aliases.sh' \"$rc\" || echo 'source ${containerWorkspaceFolder}/.devcontainer/aliases.sh' >> \"$rc\"; done"
 }
-}
